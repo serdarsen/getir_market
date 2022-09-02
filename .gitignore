@@ -10,3 +10,5 @@ node_modules/
 /.vscode/*
 !/.vscode/settings.json
 .history/
+
+package-lock.json

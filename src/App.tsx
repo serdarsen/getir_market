@@ -1,9 +1,10 @@
 import React from "react";
 import "./app.scss";
+import { Header } from "./component";
 
 const App: React.FC = () => (
-  <div>
-    Getir Market
+  <div className="app">
+    <Header />
   </div>
 );
 

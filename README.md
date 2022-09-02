@@ -1,16 +1,23 @@
 # Getir Market
 ### [Live Site on Heroku](https://getir-market.herokuapp.com/)
 
+<br/>
 ![Getir Market](./docs/screenshot.png)
+<br/>
 
 ## Introduction
-Getir Market is an implementation of my interview assignment given by Getir. This is a project that converts a [Figma template](./docs/design.fig) into a modern React application. You can find detailed information in [assignment.pdf](./docs/assignment.pdf).
+Getir Market is an implementation of my interview assignment given by Getir. This is a project that converts a [Figma design](./docs/design.fig) into a modern React application. You can find detailed information in [assignment.pdf](./docs/assignment.pdf).
 
 ### Feature
 
-- Responsive Design.
-- Ability to keep data on web storage.
-- Built with Webpack.
+Focus points in this project :
+
+- React Functional components and their reusability
+- React file and folder structure
+- Fundamental CSS properties to master flex & grid
+- Fundamentals of the CSS BEM Model
+- Perfectly placed media queries for satisfactory responsiveness covering almost devices
+- Pixel Perfect Designs
 
 ## Usage
 run `npm run dev`, browse `localhost:4000`

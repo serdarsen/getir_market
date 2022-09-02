@@ -1,0 +1,38 @@
+.app__header {
+    background-color: #1EA4CE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app__header_logo {
+    flex-grow: 1;
+    text-align: center;
+    padding: 0 0 0 12rem;
+}
+
+.app__header_basket {
+    height: 5rem;
+    margin: 0 5rem 0 0;
+    display: flex;
+    background-color: #147594;
+    padding: 0 1.5rem;
+    align-items: center;
+}
+
+.app__header_basket p {
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    /* or 129% */
+
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.16px;
+
+    color: #FFFFFF;
+
+    margin: 0.07rem 0 0 0.5rem;
+}

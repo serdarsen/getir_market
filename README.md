@@ -1,5 +1,5 @@
 # Getir Market
-### [Live Site on Heroku](https://getir-market.herokuapp.com/)
+### [Live Site on Heroku](https://serdarsen-getir-market.herokuapp.com/)
 
 <br/>
 ![Getir Market](./docs/screenshot.png)

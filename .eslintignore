@@ -1,0 +1,11 @@
+build/
+docs/
+node_modules/
+
+package-lock.json
+server.js
+
+*.md
+*.scss
+*.css
+*.svg

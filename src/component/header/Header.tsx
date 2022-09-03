@@ -26,7 +26,9 @@ const Header: React.FC = () => {
         <div
           className="app__header_basket-container"
         >
-          <div className="app__header_basket-items" />
+          <div className="app__header_basket-items">
+            Basket items
+          </div>
         </div>
         )}
       </div>

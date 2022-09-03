@@ -1,1 +1,6 @@
-.app__main {}
+.app__main {
+    display: grid;
+    grid-template-columns: repeat(18, 1fr);
+    align-items: center;
+    justify-items: center;
+}

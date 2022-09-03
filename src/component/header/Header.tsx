@@ -7,7 +7,7 @@ const Header: React.FC = () => {
   const [toggleBasket, setToggleBasket] = useState(false);
 
   return (
-    <div className="app__header">
+    <header className="app__header">
       <div className="app__header_logo">
         <LogoIcon />
       </div>
@@ -32,7 +32,7 @@ const Header: React.FC = () => {
         </div>
         )}
       </div>
-    </div>
+    </header>
   );
 };
 

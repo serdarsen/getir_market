@@ -1,10 +1,12 @@
 import React from "react";
 import "./app.scss";
-import { Header } from "./component";
+import { Footer, Header, Main } from "./component";
 
 const App: React.FC = () => (
   <div className="app">
     <Header />
+    <Main />
+    <Footer />
   </div>
 );
 

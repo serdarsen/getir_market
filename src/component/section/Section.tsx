@@ -5,7 +5,7 @@ import {
 import {
   useAppDispatch,
   useAppSelector,
-} from "../../service/ReduxHelper";
+} from "../../service/ReduxHook";
 import "./section.scss";
 
 const Section: React.FC = () => {

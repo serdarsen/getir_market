@@ -1,23 +1,23 @@
 const path = require("path");
 
 const jsonServer = require("json-server");
-const server = jsonServer.create();
+const app = jsonServer.create();
 
 const router = jsonServer.router(
     path.join(__dirname, "src", "mock", "db.json")
 );
 
 const middlewares = jsonServer.defaults();
-server.use(middlewares);
+app.use(middlewares);
 
-server.use(jsonServer.rewriter({
+app.use(jsonServer.rewriter({
     "/api/*": "/$1",
 }));
 
-server.use(router);
+app.use(router);
 
 const port = process.env.PORT || 8080;
 
-server.listen(port, () => {
+app.listen(port, () => {
     console.log(`Server is running on port ${port}`)
 });

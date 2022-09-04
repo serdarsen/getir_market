@@ -2,4 +2,34 @@
     grid-column-start: 6;
     grid-column-end: 12;
     justify-self: stretch;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
+
+.app__section-title {
+    /* Heading / H4 */
+
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 26px;
+    /* identical to box height, or 130% */
+
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.25px;
+
+    /* Black / 500 */
+    color: #6F6F6F;
+}
+
+.app__section-chip {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.app__section-grid {}

@@ -1,0 +1,23 @@
+.app__chip {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6px 16px;
+    gap: 10px;
+
+    background: #1EA4CE;
+    border-radius: 2px;
+}
+
+.app__chip-text {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 18px;
+    /* identical to box height, or 138% */
+
+    text-align: center;
+
+    color: #F2F0FD;
+}

@@ -1,15 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import BasketIcon from "../../asset/BasketIcon";
 import LogoIcon from "../../asset/LogoIcon";
-import DataService from "../../service/DataService";
 import "./header.scss";
 
 const Header: React.FC = () => {
   const [toggleBasket, setToggleBasket] = useState(false);
-
-  useEffect(() => {
-    DataService.findCompanies();
-  }, []);
 
   return (
     <header className="app__header">

@@ -1,4 +1,4 @@
-export interface Item {
+export default interface Item {
     id: number;
     tags: string[];
     price: number;

@@ -16,8 +16,7 @@ interface Configuration extends WebpackConfiguration {
     devServer: WebpackDevServerConfiguration;
 }
 
-const currentTask = process.env.npm_lifecycle_event;
-const isPro = currentTask === "build";
+const isPro = process.env.npm_lifecycle_event === "build";
 
 const commonPlugins = [
   new HtmlWebpackPlugin({

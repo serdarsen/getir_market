@@ -1,4 +1,5 @@
 import { CleanWebpackPlugin } from "clean-webpack-plugin";
+import DotEnv from "dotenv-webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import Path from "path";
@@ -22,6 +23,9 @@ const commonPlugins = [
   new HtmlWebpackPlugin({
     template: Path.join(__dirname, "src", "index.html"),
   }),
+  new DotEnv({
+    path: Path.resolve(__dirname, ".env"),
+  }),
 ];
 
 const devPlugins = [
@@ -40,7 +44,7 @@ const config: Configuration = {
   mode: isPro ? "production" : "development",
   entry: Path.join(__dirname, "src", "index.tsx"),
   output: {
-    path: Path.resolve(__dirname, "build"),
+    path: Path.resolve(__dirname, "public"),
     filename: "main.[contenthash].js",
   },
   module: {
@@ -79,7 +83,7 @@ const config: Configuration = {
   plugins: isPro ? proPlugins : devPlugins,
   devtool: "inline-source-map",
   devServer: {
-    static: Path.join(__dirname, "build"),
+    static: Path.join(__dirname, "public"),
     historyApiFallback: true,
     port: 4000,
     open: false,

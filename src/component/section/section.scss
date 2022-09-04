@@ -1,11 +1,12 @@
 .app__section {
     grid-column-start: 6;
-    grid-column-end: 12;
+    grid-column-end: 16;
     justify-self: stretch;
 
     display: flex;
     flex-direction: column;
-    gap: 10px;
+
+    padding: 0 10px 0 10px;
 }
 
 .app__section-title {
@@ -24,12 +25,21 @@
 
     /* Black / 500 */
     color: #6F6F6F;
+
+    margin: 0 0 20px 0;
 }
 
 .app__section-chip {
     display: inline-flex;
     flex-wrap: wrap;
     gap: 10px;
+
+    margin: 0 0 16px 0;
 }
 
-.app__section-grid {}
+.app__section-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    justify-content: center;
+}

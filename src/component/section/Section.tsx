@@ -1,8 +1,11 @@
 import React, { useEffect } from "react";
+import Item from "../../model/Item";
 import { findCompaniesFetch } from "../../service/CompanySlice";
 import { findItemsFetch } from "../../service/ItemSlice";
 import { useAppDispatch, useAppSelector } from "../../service/ReduxHook";
+import Card from "../card/Card";
 import Chip from "../chip/Chip";
+import ItemCard from "../itemcard/ItemCard";
 import "./section.scss";
 
 const Section: React.FC = () => {
@@ -24,7 +27,11 @@ const Section: React.FC = () => {
       <div className="app__section-chip">
         {["mug", "shirt"].map((itemType) => <Chip text={itemType} />)}
       </div>
-      <div className="app__section-grid" />
+      <Card>
+        <div className="app__section-grid">
+          {items.map((item: Item) => <ItemCard key={item.id} item={item} />)}
+        </div>
+      </Card>
     </section>
   );
 };

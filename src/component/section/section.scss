@@ -2,43 +2,4 @@
     grid-column-start: 6;
     grid-column-end: 16;
     justify-self: stretch;
-
-    display: flex;
-    flex-direction: column;
-
-    padding: 0 10px 0 10px;
-}
-
-.app__section-title {
-    /* Heading / H4 */
-
-    font-family: inherit;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 26px;
-    /* identical to box height, or 130% */
-
-    display: flex;
-    align-items: center;
-    letter-spacing: 0.25px;
-
-    /* Black / 500 */
-    color: #6F6F6F;
-
-    margin: 0 0 20px 0;
-}
-
-.app__section-chip {
-    display: inline-flex;
-    flex-wrap: wrap;
-    gap: 10px;
-
-    margin: 0 0 16px 0;
-}
-
-.app__section-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    justify-items: center;
 }

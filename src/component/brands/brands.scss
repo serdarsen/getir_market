@@ -1,0 +1,21 @@
+.app__brands {
+    width: 296px;
+    height: 274px;
+}
+
+.app__brands-title {
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 18px;
+    /* identical to box height */
+
+    display: flex;
+    align-items: center;
+
+    /* Grayscale / 500 */
+    color: #697488;
+}
+
+.app__brands-content {}

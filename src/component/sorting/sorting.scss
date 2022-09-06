@@ -1,0 +1,21 @@
+.app__sorting {
+    width: 296px;
+    height: 214px;
+}
+
+.app__sorting-title {
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 18px;
+    /* identical to box height */
+
+    display: flex;
+    align-items: center;
+
+    /* Grayscale / 500 */
+    color: #697488;
+}
+
+.app__sorting-content {}

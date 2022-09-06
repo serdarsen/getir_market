@@ -17,7 +17,7 @@ const Checkbox: React.FC<Prop> = ({ id, name, text }: Prop) => (
 
     />
     <div className="checkbox__body" />
-    {text}
+    <div className="checkbox__text">{text}</div>
   </label>
 );
 

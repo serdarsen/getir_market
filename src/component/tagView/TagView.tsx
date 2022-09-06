@@ -7,7 +7,7 @@ const TagView: React.FC = () => (
   <div className="tag-view">
     <p className="tag-view__title">Tags</p>
     <Card>
-      <div className="tag-view__content">
+      <div className="tag-view__body">
         <Checkbox
           id="tagViewCheckboxId1"
           name="tagViewCheckboxName1"

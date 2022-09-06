@@ -6,31 +6,23 @@
 }
 
 .product-view__title {
-    /* Heading / H4 */
-
     font-family: inherit;
     font-style: normal;
     font-weight: 400;
-    font-size: 20px;
-    line-height: 26px;
-    /* identical to box height, or 130% */
-
+    font-size: 1.25rem; // 20px;
+    line-height: 1.625rem; // 26px;
     display: flex;
     align-items: center;
-    letter-spacing: 0.25px;
-
-    /* Black / 500 */
-    color: #6F6F6F;
-
-    margin: 0 0 20px 0;
+    letter-spacing: 0.015625rem; // 0.25px;
+    color: #6F6F6F; // black-400
+    margin: 0 0 1.25rem 0;
 }
 
 .product-view__chip {
     display: inline-flex;
     flex-wrap: wrap;
-    gap: 10px;
-
-    margin: 0 0 16px 0;
+    gap: 0.5em;
+    margin: 0 0 1em 0;
 }
 
 .product-view__body {

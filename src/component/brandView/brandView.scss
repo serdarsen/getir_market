@@ -4,18 +4,15 @@
 }
 
 .brand-view__title {
-    font-family: inherit;
+    font-family: 'Open Sans';
     font-style: normal;
     font-weight: 600;
-    font-size: 13px;
-    line-height: 18px;
-    /* identical to box height */
-
+    font-size: 0.8125rem; // 13px;
+    line-height: 1.125rem; // 18px;
     display: flex;
     align-items: center;
-
-    /* Grayscale / 500 */
-    color: #697488;
+    margin: 0 0 0.75rem 0;
+    color: #697488; // color-gray-500;
 }
 
 .brand-view__body {}

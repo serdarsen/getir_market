@@ -1,23 +1,38 @@
-.chip {
+.chip {}
+
+.chip__input {
+    display: none;
+}
+
+.chip__body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 6px 16px;
-    gap: 10px;
-
-    background: #1EA4CE;
+    padding: 0.375em 1em 0.375em 1em;
+    gap: 0.5em;
+    background: #F2F0FD; // gray-100
     border-radius: 2px;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
 }
 
 .chip__text {
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 600;
-    font-size: 13px;
-    line-height: 18px;
-    /* identical to box height, or 138% */
+    font-size: 0.8125rem; // 13px;
+    line-height: 1.125rem; // 18px;
+    color: #1EA4CE; // blue-100
+    display: flex;
+    align-items: center;
+}
 
-    text-align: center;
+.chip__input:checked+.chip__body {
+    background: #1EA4CE; // blue-100
+}
 
-    color: #F2F0FD;
+.chip__input:checked+.chip__body p {
+    color: #F2F0FD; // gray-100
 }

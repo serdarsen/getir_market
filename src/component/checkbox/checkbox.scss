@@ -39,3 +39,15 @@
 .checkbox__input:checked+.checkbox__body::after {
     transform: scale(1);
 }
+
+.checkbox__text {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.875rem; // 14px;
+    line-height: 1.125rem; // 18px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.16px;
+    color: #525252; // black-600
+}

@@ -17,7 +17,7 @@ const Radio: React.FC<Prop> = ({ id, name, text }: Prop) => (
 
     />
     <div className="radio__body" />
-    {text}
+    <p className="radio__text">{text}</p>
   </label>
 );
 

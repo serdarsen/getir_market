@@ -15,12 +15,23 @@ const ProductView: React.FC = () => {
     dispatch(findItemsFetch());
   }, [dispatch]);
 
+  const onChangeChip = (id: string, checked: boolean): void => {
+    console.log(`${id} is checked: ${checked}`);
+  };
+
   return (
     <div className="product-view">
       <h4 className="product-view__title">Products</h4>
 
       <div className="product-view__chip">
-        {["mug", "shirt"].map((itemType) => <Chip text={itemType} />)}
+        {["mug", "shirt"].map((itemType) => (
+          <Chip
+            id={`chipId${itemType}`}
+            name={`chipName${itemType}`}
+            text={itemType}
+            onChange={onChangeChip}
+          />
+        ))}
       </div>
 
       <Card>

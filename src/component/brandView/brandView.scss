@@ -2,8 +2,8 @@
 @use "../../scss/mixin.scss";
 
 .brand-view {
-    width: 296px;
-    height: 274px;
+    width: 18.5em;
+    height: 17.125em;
 }
 
 .brand-view__title {
@@ -11,4 +11,7 @@
     margin: 0 0 0.75rem 0;
 }
 
-.brand-view__body {}
+.brand-view__body {
+    width: 18.5em;
+    height: 15.25em;
+}

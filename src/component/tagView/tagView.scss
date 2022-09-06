@@ -2,8 +2,8 @@
 @use "../../scss/mixin.scss";
 
 .tag-view {
-    width: 296px;
-    height: 274px;
+    width: 18.5em;
+    height: 17.125em;
 }
 
 .tag-view__title {
@@ -11,4 +11,7 @@
     margin: 0 0 0.75rem 0;
 }
 
-.tag-view__body {}
+.tag-view__body {
+    width: 18.5em;
+    height: 15.25em;
+}

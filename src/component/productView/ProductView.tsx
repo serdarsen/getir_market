@@ -4,7 +4,7 @@ import { findItemsFetch } from "../../service/ItemSlice";
 import { useAppDispatch, useAppSelector } from "../../service/ReduxHook";
 import Card from "../card/Card";
 import Chip from "../chip/Chip";
-import ProductItemView from "../productItemView/ProductItemView";
+import ItemView from "../itemView/ItemView";
 import "./productView.scss";
 
 const ProductView: React.FC = () => {
@@ -38,7 +38,7 @@ const ProductView: React.FC = () => {
       <Card>
         <div className="product-view__body">
           {items.map(
-            (item: Item) => <ProductItemView key={item.id} item={item} />,
+            (item: Item) => <ItemView key={item.id} item={item} />,
           )}
         </div>
       </Card>

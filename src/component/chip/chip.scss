@@ -1,4 +1,4 @@
-.app__chip {
+.chip {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -9,7 +9,7 @@
     border-radius: 2px;
 }
 
-.app__chip-text {
+.chip__text {
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 600;

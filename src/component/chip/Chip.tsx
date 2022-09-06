@@ -6,8 +6,8 @@ type Prop = {
 }
 
 const Chip: React.FC<Prop> = ({ text }) => (
-  <div className="app__chip">
-    <p className="app__chip-text">{text}</p>
+  <div className="chip">
+    <p className="chip__text">{text}</p>
   </div>
 );
 

@@ -6,7 +6,7 @@ type Prop = {
 }
 
 const Card: React.FC<Prop> = ({ children }: Prop) => (
-  <div className="app__card">
+  <div className="card">
     {children}
   </div>
 );

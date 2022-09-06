@@ -8,15 +8,15 @@ type Prop = {
 }
 
 const Radio: React.FC<Prop> = ({ id, name, text }: Prop) => (
-  <label className="app__radio" htmlFor={id}>
+  <label className="radio" htmlFor={id}>
     <input
       id={id}
       name={name}
-      className="app__radio-input"
+      className="radio__input"
       type="radio"
 
     />
-    <div className="app__radio-box" />
+    <div className="radio__body" />
     {text}
   </label>
 );

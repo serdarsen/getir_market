@@ -1,7 +1,7 @@
 import React from "react";
 
 const CheckIcon: React.FC = () => (
-  <div className="app__checkbox-icon">
+  <div className="checkbox-icon">
     <svg
       width="13"
       height="9"

@@ -1,0 +1,65 @@
+.basket-view {
+    height: 4.5em;
+    width: 8.0625em;
+    display: flex;
+    margin: 0 6.5rem 0 0;
+    cursor: pointer;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.basket-view:hover {
+    background-color: #147594;
+}
+
+.basket-view:focus {
+    background-color: #147594;
+}
+
+.basket-view__price {
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.01rem;
+    color: #FFFFFF;
+    margin: 0 0 0 0.5rem;
+}
+
+.basket-view__popup {
+    padding: 2rem;
+    position: absolute;
+
+    right: 0;
+    top: 6rem;
+
+    min-width: 18rem;
+
+    border-radius: 2px;
+    border: 0.5rem solid #1EA4CE;
+}
+
+@media screen and (max-width: 700px) {
+    .basket-view__price {
+        display: none;
+    }
+
+    .basket-view__popup {
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .basket-view__price {
+        display: none;
+    }
+
+    .basket-view__popup {
+        margin: 0;
+        min-width: 14rem;
+    }
+}

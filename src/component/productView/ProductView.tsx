@@ -4,10 +4,10 @@ import { findItemsFetch } from "../../service/ItemSlice";
 import { useAppDispatch, useAppSelector } from "../../service/ReduxHook";
 import Card from "../card/Card";
 import Chip from "../chip/Chip";
-import ItemCard from "../itemcard/ItemCard";
-import "./products.scss";
+import ItemCard from "../productItemView/ProductItemView";
+import "./productView.scss";
 
-const Products: React.FC = () => {
+const ProductView: React.FC = () => {
   const items = useAppSelector((state) => state.items.items);
   const dispatch = useAppDispatch();
 
@@ -16,13 +16,13 @@ const Products: React.FC = () => {
   }, [dispatch]);
 
   return (
-    <div className="app__products">
-      <h4 className="app__products-title">Products</h4>
-      <div className="app__products-chip">
+    <div className="product-view">
+      <h4 className="product-view__title">Products</h4>
+      <div className="product-view__chip">
         {["mug", "shirt"].map((itemType) => <Chip text={itemType} />)}
       </div>
       <Card>
-        <div className="app__products-grid">
+        <div className="product-view__body">
           {items.map((item: Item) => <ItemCard key={item.id} item={item} />)}
         </div>
       </Card>
@@ -30,4 +30,4 @@ const Products: React.FC = () => {
   );
 };
 
-export default Products;
+export default ProductView;

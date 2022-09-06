@@ -1,16 +1,23 @@
 import React from "react";
 import "./checkbox.scss";
 
-const Checkbox: React.FC = () => (
-  <label className="app__checkbox" htmlFor="appCheckboxId">
+type Prop = {
+    id: string,
+    name: string,
+    text: string
+}
+
+const Checkbox: React.FC<Prop> = ({ id, name, text }: Prop) => (
+  <label className="checkbox" htmlFor={id}>
     <input
-      className="app__checkbox-input"
+      id={id}
+      name={name}
+      className="checkbox__input"
       type="checkbox"
-      name="appCheckboxName"
-      id="appCheckboxId"
+
     />
-    <div className="app__checkbox-box" />
-    All
+    <div className="checkbox__body" />
+    {text}
   </label>
 );
 

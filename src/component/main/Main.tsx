@@ -4,7 +4,7 @@ import Section from "../section/Section";
 import "./main.scss";
 
 const Main: React.FC = () => (
-  <main className="app__main">
+  <main className="main">
     <Aside />
     <Section />
   </main>

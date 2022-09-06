@@ -1,9 +1,9 @@
 import React from "react";
-import Products from "../products/Products";
+import Products from "../productView/ProductView";
 import "./section.scss";
 
 const Section: React.FC = () => (
-  <section className="app__section">
+  <section className="section">
     <Products />
   </section>
 );

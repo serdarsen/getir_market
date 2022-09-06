@@ -1,15 +1,15 @@
-.app__radio {
+.radio {
     display: inline-flex;
     align-items: center;
     cursor: pointer;
 
 }
 
-.app__radio-input {
+.radio__input {
     display: none;
 }
 
-.app__radio-box {
+.radio__body {
     width: 1.375em;
     height: 1.375em;
     display: flex;
@@ -23,7 +23,7 @@
     border-radius: 17.5px;
 }
 
-.app__radio-box::after {
+.radio__body::after {
     content: url("data:image/svg+xml,%3Csvg width='10' height='7' viewBox='0 0 10 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 1L3.5 6L1 3.72727' stroke='%231EA4CE' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
     color: #1EA4CE;
     transform: scale(0);
@@ -32,10 +32,10 @@
     height: 0.32em;
 }
 
-.app__radio-input:checked+.app__radio-box {
+.radio__input:checked+.radio__body {
     border: 2px solid #1EA4CE;
 }
 
-.app__radio-input:checked+.app__radio-box::after {
+.radio__input:checked+.radio__body::after {
     transform: scale(1);
 }

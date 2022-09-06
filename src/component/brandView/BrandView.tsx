@@ -1,12 +1,12 @@
 import React from "react";
 import Card from "../card/Card";
-import "./brands.scss";
+import "./brandView.scss";
 
 const Brands: React.FC = () => (
-  <div className="app__brands">
-    <p className="app__brands-title">Brands</p>
+  <div className="brand-view">
+    <p className="brand-view__title">Brands</p>
     <Card>
-      <div className="app__brands-content">
+      <div className="brand-view__body">
         Brands
       </div>
     </Card>

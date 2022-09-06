@@ -1,20 +1,14 @@
+@use "../../scss/color.scss";
+@use "../../scss/mixin.scss";
+
 .product-view {
     display: flex;
     flex-direction: column;
-
     padding: 0 10px 0 10px;
 }
 
 .product-view__title {
-    font-family: inherit;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 1.25rem; // 20px;
-    line-height: 1.625rem; // 26px;
-    display: flex;
-    align-items: center;
-    letter-spacing: 0.015625rem; // 0.25px;
-    color: #6F6F6F; // black-400
+    @include mixin.font(400, 1.25rem, 1.625rem, color.$black-400, 0.015625rem);
     margin: 0 0 1.25rem 0;
 }
 

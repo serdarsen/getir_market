@@ -1,18 +1,14 @@
+@use "../../scss/color.scss";
+@use "../../scss/mixin.scss";
+
 .tag-view {
     width: 296px;
     height: 274px;
 }
 
 .tag-view__title {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 0.8125rem; // 13px;
-    line-height: 1.125rem; // 18px;
-    display: flex;
-    align-items: center;
+    @include mixin.font(600, 0.8125rem, 1.125rem, color.$gray-500, normal);
     margin: 0 0 0.75rem 0;
-    color: #697488; // color-gray-500;
 }
 
 .tag-view__body {}

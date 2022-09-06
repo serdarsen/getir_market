@@ -26,6 +26,7 @@ const ProductView: React.FC = () => {
       <div className="product-view__chip">
         {["mug", "shirt"].map((itemType) => (
           <Chip
+            key={`chipId${itemType}`}
             id={`chipId${itemType}`}
             name={`chipName${itemType}`}
             text={itemType}

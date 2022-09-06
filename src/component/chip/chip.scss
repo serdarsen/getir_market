@@ -1,3 +1,6 @@
+@use "../../scss/color.scss";
+@use "../../scss/mixin.scss";
+
 .chip {}
 
 .chip__input {
@@ -12,21 +15,12 @@
     gap: 0.5em;
     background: #F2F0FD; // gray-100
     border-radius: 2px;
-    text-decoration: none;
-    border: none;
-    outline: none;
-    cursor: pointer;
+
+    @include mixin.reset-button;
 }
 
 .chip__text {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 0.8125rem; // 13px;
-    line-height: 1.125rem; // 18px;
-    color: #1EA4CE; // blue-100
-    display: flex;
-    align-items: center;
+    @include mixin.font(600, 0.8125rem, 1.125rem, color.$blue-100, normal);
 }
 
 .chip__input:checked+.chip__body {

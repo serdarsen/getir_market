@@ -1,3 +1,6 @@
+@use "../../scss/color.scss";
+@use "../../scss/mixin.scss";
+
 .radio {
     display: inline-flex;
     align-items: center;
@@ -41,13 +44,5 @@
 }
 
 .radio__text {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 0.875rem; // 14px;
-    line-height: 1.125rem; // 18px;
-    display: flex;
-    align-items: center;
-    letter-spacing: 0.16px;
-    color: #525252; // black-600
+    @include mixin.font(400, 0.875rem, 1.125rem, color.$black-600, 0.01rem);
 }

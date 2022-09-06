@@ -1,3 +1,6 @@
+@use "../../scss/color.scss";
+@use "../../scss/mixin.scss";
+
 .product-item-view {
     display: flex;
     flex-direction: column;
@@ -29,37 +32,18 @@
 }
 
 .product-item-view__price {
-    font-family: inherit;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    /* or 143% */
-
-    color: #1EA4CE;
+    @include mixin.font(400, 0.875rem, 1.125rem, color.$blue-100, normal);
 }
 
 .product-item-view__name {}
 
 .product-item-view__button {
-    display: block;
-    width: 100%;
-
-    border: none;
-    outline: none;
-    cursor: pointer;
-
     margin: 0.125rem 0px 0.125rem 0px;
     padding: 0.125rem 0.125rem 0.125rem 0.125rem;
     border-radius: 2px;
 
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 0.75rem;
-    line-height: 1.25rem;
-    /* identical to box height, or 167% */
-
-    color: #fff;
     background: #1EA4CE;
+
+    @include mixin.reset-button;
+    @include mixin.font(600, 0.75rem, 1.25rem, color.$white, normal);
 }

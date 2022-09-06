@@ -14,7 +14,7 @@ const ProductItemView: React.FC<Prop> = ({ item }) => (
         alt={item.name}
       />
     </div>
-    <div className="product-item-view__typography">
+    <div className="product-item-view__body">
       <p className="product-item-view__price">
         ₺
         {" "}

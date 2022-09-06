@@ -3,10 +3,10 @@
     flex-direction: column;
     justify-content: space-between;
 
-    width: 124px;
-    height: 225px;
+    width: 7.75em;
+    height: 14em;
 
-    margin: 22px 10px 0px 10px;
+    margin: 1.3em 0.6em 0 0.6em;
 }
 
 .product-item-view__bg {
@@ -15,15 +15,15 @@
     align-items: center;
     justify-content: center;
 
-    width: 124px;
-    height: 124px;
+    width: 7.7em;
+    height: 7.7em;
 
     background: #FEFEFE;
-    border: 1.17666px solid #F3F0FE;
+    border: 1.1px solid #F3F0FE;
     border-radius: 12px;
 }
 
-.product-item-view__typography {
+.product-item-view__body {
     display: flex;
     flex-direction: column;
 }
@@ -32,8 +32,8 @@
     font-family: inherit;
     font-style: normal;
     font-weight: 400;
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
     /* or 143% */
 
     color: #1EA4CE;
@@ -43,8 +43,8 @@
     font-family: inherit;
     font-style: normal;
     font-weight: 600;
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
     /* or 143% */
 
     /* Grayscale / 700 */
@@ -59,15 +59,15 @@
     outline: none;
     cursor: pointer;
 
-    margin: 2px 0px 2px 0px;
-    padding: 2px 2px 2px 2px;
+    margin: 0.125rem 0px 0.125rem 0px;
+    padding: 0.125rem 0.125rem 0.125rem 0.125rem;
     border-radius: 2px;
 
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 600;
-    font-size: 12px;
-    line-height: 20px;
+    font-size: 0.75rem;
+    line-height: 1.25rem;
     /* identical to box height, or 167% */
 
     color: #fff;

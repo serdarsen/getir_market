@@ -44,22 +44,15 @@
 }
 
 @media screen and (max-width: 700px) {
+    .basket-view {
+        margin: 0;
+    }
+
     .basket-view__price {
         display: none;
     }
 
     .basket-view__popup {
         margin: 0;
-    }
-}
-
-@media screen and (max-width: 550px) {
-    .basket-view__price {
-        display: none;
-    }
-
-    .basket-view__popup {
-        margin: 0;
-        min-width: 14rem;
     }
 }

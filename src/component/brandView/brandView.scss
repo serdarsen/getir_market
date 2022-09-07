@@ -14,5 +14,18 @@
 .brand-view__body {
     width: 18.5em;
     height: 15.25em;
-    padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+}
+
+.brand-view__search {
+    padding: 1.5em 1.5em 0.75em 1.5em;
+}
+
+.brand-view__brands {
+    width: 17em;
+    height: 8.875em;
+    display: flex;
+    flex-direction: column;
+    gap: 1.125em;
+    overflow-y: scroll;
+    padding: 0.35em 1.5em 0.8125em 1.5em;
 }

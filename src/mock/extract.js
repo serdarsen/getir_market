@@ -1,10 +1,11 @@
 /* 
    
    Extract Helper
-   Extract helper extracts tags and item types from items located in db.json, in order to create their mock databases in db.json
+   Extract helper extracts tags and item types from items located in db.json, 
+   in order to create their mock database tables in db.json
 
    Usage
-   node /src/mock/extract.js
+   node ./src/mock/extract.js
 
 */
 
@@ -13,7 +14,7 @@ const fs = require("fs");
 const db =  require("./db.json");
 
 const extract = () => {
-  const { items } = db;
+  const { items, companies } = db;
 
   const tagsSet = new Set();
   const itemTypesSet = new Set();
@@ -28,7 +29,7 @@ const extract = () => {
 
   const tags = Array.from(tagsSet);
   const itemTypes = Array.from(itemTypesSet);
-  const updatedDb = { tags, itemTypes, ...db };
+  const updatedDb = { tags, itemTypes, items, companies };
 
   const file = path.join(__dirname, "db.json");
   const writeStream = fs.createWriteStream(file);

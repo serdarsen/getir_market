@@ -1,7 +1,10 @@
 import React, { useEffect } from "react";
 import { Item } from "../../model";
-import { findItemsFetch } from "../../service/ItemSlice";
-import { useAppDispatch, useAppSelector } from "../../service/ReduxHook";
+import {
+  findItemsFetch,
+  useAppDispatch,
+  useAppSelector,
+} from "../../service";
 import Card from "../card/Card";
 import Chip from "../chip/Chip";
 import ItemView from "../itemView/ItemView";

@@ -1,9 +1,8 @@
-import axios from "axios";
 import { Company } from "../model";
-import { JSON_API } from "./ServiceConstant";
+import BaseService from "./BaseService";
 
 export const findCompanies = async (): Promise<Company[]> => {
-  const response = await axios.get(`${JSON_API}/companies`);
+  const response = await BaseService.get("companies");
 
   const { data } = response || {};
 

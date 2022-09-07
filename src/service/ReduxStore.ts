@@ -4,6 +4,7 @@ import CompanySaga from "./CompanySaga";
 import CompanyReducer from "./CompanySlice";
 import ItemSaga from "./ItemSaga";
 import ItemReducer from "./ItemSlice";
+import TagReducer from "./TagSlice";
 
 const SagaMiddleware = createSagaMiddleware();
 
@@ -11,6 +12,7 @@ export const ReduxStore = configureStore({
   reducer: {
     companies: CompanyReducer,
     items: ItemReducer,
+    tags: TagReducer,
   },
   middleware: [SagaMiddleware],
 });

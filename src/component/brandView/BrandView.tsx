@@ -1,7 +1,10 @@
 import React, { useEffect } from "react";
 import Company from "../../model/Company";
-import { findCompaniesFetch } from "../../service/CompanySlice";
-import { useAppDispatch, useAppSelector } from "../../service/ReduxHook";
+import {
+  findCompaniesFetch,
+  useAppDispatch,
+  useAppSelector,
+} from "../../service";
 import Card from "../card/Card";
 import Checkbox from "../checkbox/Checkbox";
 import Search from "../search/Search";

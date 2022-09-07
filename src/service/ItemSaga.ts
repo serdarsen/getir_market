@@ -4,14 +4,12 @@ import {
 import { findItems } from "./ItemService";
 import { findItemsSuccess } from "./ItemSlice";
 
-function* findItemsFetch():
-    Generator<CallEffect | PutEffect, void> {
+function* findItemsFetch(): Generator<CallEffect | PutEffect, void> {
   const items = yield call(findItems);
   yield put(findItemsSuccess(items));
 }
 
-function* ItemSaga():
-    Generator<ForkEffect, void> {
+function* ItemSaga(): Generator<ForkEffect, void> {
   yield takeEvery("ItemSlice/findItemsFetch", findItemsFetch);
 }
 

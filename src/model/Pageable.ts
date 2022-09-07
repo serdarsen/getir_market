@@ -1,4 +1,6 @@
-export type Pageable<T> = {
+type Pageable<T> = {
     data: T;
     totalCount: number;
 }
+
+export default Pageable;

@@ -1,4 +1,4 @@
-export type Item = {
+type Item = {
     id: number;
     tags: string[];
     price: number;
@@ -9,3 +9,5 @@ export type Item = {
     manufacturer: string;
     itemType: string;
 }
+
+export default Item;

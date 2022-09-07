@@ -1,4 +1,4 @@
-export type Company = {
+type Company = {
     id: number;
     slug: string;
     name: string;
@@ -9,3 +9,5 @@ export type Company = {
     account: number;
     contact: string;
 }
+
+export default Company;

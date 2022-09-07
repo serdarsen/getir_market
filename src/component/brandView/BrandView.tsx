@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Company } from "../../model/Company";
+import Company from "../../model/Company";
 import { findCompaniesFetch } from "../../service/CompanySlice";
 import { useAppDispatch, useAppSelector } from "../../service/ReduxHook";
 import Card from "../card/Card";

@@ -1,6 +1,5 @@
 import axios from "axios";
-import { Item } from "../model/Item";
-import { Pageable } from "../model/Pageable";
+import { Item, Pageable } from "../model";
 import { JSON_API } from "./ServiceConstant";
 
 export const findItems = async (): Promise<Pageable<Item[]>> => {

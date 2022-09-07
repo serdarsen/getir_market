@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Item } from "../../model/Item";
+import { Item } from "../../model";
 import { findItemsFetch } from "../../service/ItemSlice";
 import { useAppDispatch, useAppSelector } from "../../service/ReduxHook";
 import Card from "../card/Card";

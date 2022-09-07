@@ -1,21 +1,27 @@
 import React from "react";
 import Card from "../card/Card";
-import Checkbox from "../checkbox/Checkbox";
+import Search from "../search/Search";
 import "./tagView.scss";
 
-const TagView: React.FC = () => (
-  <div className="tag-view">
-    <p className="tag-view__title">Tags</p>
-    <Card>
-      <div className="tag-view__body">
-        <Checkbox
-          id="tagViewCheckboxId1"
-          name="tagViewCheckboxName1"
-          text="All"
-        />
-      </div>
-    </Card>
-  </div>
-);
+const TagView: React.FC = () => {
+  const onSearch = (searchTerm: string):void => {
+    console.log("searchTerm: ", searchTerm);
+  };
+
+  return (
+    <div className="tag-view">
+      <p className="tag-view__title">Tags</p>
+      <Card>
+        <div className="tag-view__body">
+          <Search
+            id="tagViewSearchId"
+            placeholder="Search tag"
+            onSearch={onSearch}
+          />
+        </div>
+      </Card>
+    </div>
+  );
+};
 
 export default TagView;

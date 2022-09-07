@@ -1,4 +1,4 @@
-export default interface Company {
+export type Company = {
     id: number;
     slug: string;
     name: string;

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Company from "../../model/Company";
+import { Company } from "../../model/Company";
 import { findCompaniesFetch } from "../../service/CompanySlice";
 import { useAppDispatch, useAppSelector } from "../../service/ReduxHook";
 import Card from "../card/Card";
@@ -34,6 +34,7 @@ const Brands: React.FC = () => {
           <div className="brand-view__brands">
             <Checkbox
               id="brandViewCheckboxIdAll"
+              key="brandViewCheckboxKeyAll"
               name="brandViewCheckboxNameAll"
               text="All"
             />
@@ -41,6 +42,7 @@ const Brands: React.FC = () => {
               (company: Company) => (
                 <Checkbox
                   id={`brandViewCheckboxId${company.id}`}
+                  key={`brandViewCheckboxKey${company.id}`}
                   name={`brandViewCheckboxName${company.id}`}
                   text={company.name}
                 />

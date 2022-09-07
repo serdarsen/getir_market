@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Item from "../../model/Item";
+import { Item } from "../../model/Item";
 import { findItemsFetch } from "../../service/ItemSlice";
 import { useAppDispatch, useAppSelector } from "../../service/ReduxHook";
 import Card from "../card/Card";
@@ -8,7 +8,7 @@ import ItemView from "../itemView/ItemView";
 import "./productView.scss";
 
 const ProductView: React.FC = () => {
-  const items = useAppSelector((state) => state.items.items);
+  const items = useAppSelector((state) => state.items.pageable);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -26,8 +26,8 @@ const ProductView: React.FC = () => {
       <div className="product-view__chip">
         {["mug", "shirt"].map((itemType) => (
           <Chip
-            key={`chipId${itemType}`}
             id={`chipId${itemType}`}
+            key={`chipKey${itemType}`}
             name={`chipName${itemType}`}
             text={itemType}
             onChange={onChangeChip}
@@ -37,7 +37,7 @@ const ProductView: React.FC = () => {
 
       <Card>
         <div className="product-view__body">
-          {items.map(
+          {items.data.map(
             (item: Item) => <ItemView key={item.id} item={item} />,
           )}
         </div>

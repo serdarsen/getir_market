@@ -1,4 +1,4 @@
-export default interface Item {
+export type Item = {
     id: number;
     tags: string[];
     price: number;

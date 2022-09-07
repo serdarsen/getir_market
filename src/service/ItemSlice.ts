@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const ItemSlice = createSlice({
   name: "ItemSlice",
   initialState: {
-    items: [],
+    pageable: { data: [], totalCount: 0 },
     isLoading: false,
   },
   reducers: {
@@ -11,7 +11,7 @@ export const ItemSlice = createSlice({
       state.isLoading = true;
     },
     findItemsSuccess: (state, action) => {
-      state.items = action.payload;
+      state.pageable = action.payload;
       state.isLoading = false;
     },
     findItemsFailure: (state) => {

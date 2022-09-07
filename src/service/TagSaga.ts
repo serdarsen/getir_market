@@ -5,8 +5,8 @@ import { findTags } from "./TagService";
 import { findTagsSuccess } from "./TagSlice";
 
 function* findTagsFetch(): Generator<CallEffect | PutEffect, void> {
-  const companies = yield call(findTags);
-  yield put(findTagsSuccess(companies));
+  const tags = yield call(findTags);
+  yield put(findTagsSuccess(tags));
 }
 
 function* TagSaga(): Generator<ForkEffect, void> {

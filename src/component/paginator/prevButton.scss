@@ -1,0 +1,7 @@
+@use "../../scss/color.scss";
+@use "../../scss/mixin.scss";
+
+.prev-button {
+    @include mixin.create-font(600, 0.875rem, 1rem, color.$blue-100, normal);
+    @include mixin.reset-button
+}

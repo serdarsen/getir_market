@@ -9,6 +9,9 @@ export {
   findItemsSuccess,
 } from "./ItemSlice";
 export {
+  setPage,
+} from "./PageSlice";
+export {
   useAppDispatch,
   useAppSelector,
 } from "./ReduxHook";

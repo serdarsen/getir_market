@@ -1,0 +1,13 @@
+@use "../../scss/color.scss";
+@use "../../scss/mixin.scss";
+
+.next-button {
+    @include mixin.create-font(600, 0.875rem, 1rem, color.$blue-100, normal);
+    @include mixin.reset-button;
+
+    display: inline-flex;
+}
+
+.next-button:disabled {
+    color: color.$gray-500;
+}

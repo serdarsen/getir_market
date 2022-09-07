@@ -1,26 +1,36 @@
 import React from "react";
+import CheckIcon from "../../asset/CheckIcon";
+import { setPage, useAppDispatch } from "../../service";
+import NextButton from "./NextButton";
 import PageButton from "./PageButton";
 import "./paginator.scss";
+import PrevButton from "./PrevButton";
 
 const Paginator: React.FC = () => {
-  const onChangePageButton = (id: string, checked: boolean): void => {
-    console.log(`${id} is checked: ${checked}`);
+  const dispatch = useAppDispatch();
+
+  const onChangePageButton = (page: number, checked: boolean): void => {
+    console.log(`${page} is checked: ${checked}`);
+    dispatch(setPage(page));
   };
 
   return (
     <div className="paginator">
+      <CheckIcon />
+      <PrevButton />
       <PageButton
         id="pageButtonId1"
         name="pageButtonName"
-        text="1"
+        page={1}
         onChange={onChangePageButton}
       />
       <PageButton
         id="pageButtonId2"
         name="pageButtonName"
-        text="2"
+        page={2}
         onChange={onChangePageButton}
       />
+      <NextButton />
     </div>
   );
 };

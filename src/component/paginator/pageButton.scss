@@ -1,0 +1,33 @@
+@use "../../scss/color.scss";
+@use "../../scss/mixin.scss";
+
+.page-button {}
+
+.page-button__input {
+    display: none;
+}
+
+.page-button__body {
+    width: 2em;
+    height: 2.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75em 0.75em 0.75em 0.75em;
+    background: transparent;
+    border-radius: 2px;
+
+    @include mixin.reset-button;
+}
+
+.page-button__text {
+    @include mixin.create-font(600, 0.8125rem, 1.125rem, color.$gray-500, normal);
+}
+
+.page-button__input:checked+.page-button__body {
+    background: color.$blue-100;
+}
+
+.page-button__input:checked+.page-button__body p {
+    color: color.$white;
+}

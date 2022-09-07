@@ -21,14 +21,14 @@
     margin: 0 0.75em 0 0;
     flex-shrink: 0;
     transition: background 0.15s, border-color 0.15s;
-    background: #FFFFFF;
-    border: 2px solid #DFDEE2;
+    background: color.$white;
+    border: 2px solid color.$gray-400;
     border-radius: 17.5px;
 }
 
 .radio__body::after {
     content: url("data:image/svg+xml,%3Csvg width='10' height='7' viewBox='0 0 10 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 1L3.5 6L1 3.72727' stroke='%231EA4CE' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
-    color: #1EA4CE;
+    color: color.$blue-100;
     transform: scale(0);
     transition: transform 0.15s;
     width: 0.6em;
@@ -36,7 +36,7 @@
 }
 
 .radio__input:checked+.radio__body {
-    border: 2px solid #1EA4CE;
+    border: 2px solid color.$blue-100;
 }
 
 .radio__input:checked+.radio__body::after {
@@ -44,5 +44,5 @@
 }
 
 .radio__text {
-    @include mixin.font(400, 0.875rem, 1.125rem, color.$black-600, 0.01rem);
+    @include mixin.create-font(400, 0.875rem, 1.125rem, color.$black-600, 0.01rem);
 }

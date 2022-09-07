@@ -9,7 +9,7 @@
 }
 
 .product-view__title {
-    @include mixin.font(400, 1.25rem, 1.625rem, color.$black-400, 0.015625rem);
+    @include mixin.create-font(400, 1.25rem, 1.625rem, color.$black-400, 0.015625rem);
     margin: 0 0 1.25rem 0;
 }
 

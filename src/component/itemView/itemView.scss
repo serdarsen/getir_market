@@ -21,8 +21,8 @@
     width: 7.7em;
     height: 7.7em;
 
-    background: #FEFEFE;
-    border: 1.1px solid #F3F0FE;
+    background: color.$gray-200;
+    border: 1.1px solid color.$gray-300;
     border-radius: 12px;
 }
 
@@ -32,11 +32,11 @@
 }
 
 .item-view__price {
-    @include mixin.font(400, 0.875rem, 1.125rem, color.$blue-100, normal);
+    @include mixin.create-font(400, 0.875rem, 1.125rem, color.$blue-100, normal);
 }
 
 .item-view__name {
-    @include mixin.font(600, 0.875rem, 1.25rem, color.$gray-700, normal);
+    @include mixin.create-font(600, 0.875rem, 1.25rem, color.$gray-700, normal);
 }
 
 .item-view__button {
@@ -44,8 +44,8 @@
     padding: 0.125rem 0.125rem 0.125rem 0.125rem;
     border-radius: 2px;
 
-    background: #1EA4CE;
+    background: color.$blue-100;
 
     @include mixin.reset-button;
-    @include mixin.font(600, 0.75rem, 1.25rem, color.$white, normal);
+    @include mixin.create-font(600, 0.75rem, 1.25rem, color.$white, normal);
 }

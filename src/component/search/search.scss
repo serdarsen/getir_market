@@ -7,5 +7,5 @@
     padding: 0.75rem 0.75rem 0.75rem 0.75rem;
     border: 2px solid color.$black-100;
     border-radius: 2px;
-    @include mixin.font(600, 0.875rem, 1.5rem, color.$black-300, 0.01rem);
+    @include mixin.create-font(600, 0.875rem, 1.5rem, color.$black-300, 0.01rem);
 }

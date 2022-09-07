@@ -7,7 +7,7 @@
 }
 
 .tag-view__title {
-    @include mixin.font(600, 0.8125rem, 1.125rem, color.$gray-500, normal);
+    @include mixin.create-font(600, 0.8125rem, 1.125rem, color.$gray-500, normal);
     margin: 0 0 0.75rem 0;
 }
 

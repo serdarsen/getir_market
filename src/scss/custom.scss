@@ -1,15 +1,13 @@
+@use "./color.scss";
+
 * {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
 
-html {
-    font-size: 16px;
-}
-
 body {
     width: 100%;
     min-height: 100vh;
-    background-color: #FAFAFA;
+    background-color: color.$gray-50;
 }

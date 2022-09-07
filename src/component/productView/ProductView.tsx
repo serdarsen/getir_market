@@ -8,6 +8,7 @@ import {
 import Card from "../card/Card";
 import Chip from "../chip/Chip";
 import ItemView from "../itemView/ItemView";
+import Paginator from "../paginator/Paginator";
 import "./productView.scss";
 
 const ProductView: React.FC = () => {
@@ -45,6 +46,8 @@ const ProductView: React.FC = () => {
           )}
         </div>
       </Card>
+
+      <Paginator />
 
     </div>
   );

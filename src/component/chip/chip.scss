@@ -13,20 +13,20 @@
     align-items: center;
     padding: 0.375em 1em 0.375em 1em;
     gap: 0.5em;
-    background: #F2F0FD; // gray-100
+    background: color.$gray-100;
     border-radius: 2px;
 
     @include mixin.reset-button;
 }
 
 .chip__text {
-    @include mixin.font(600, 0.8125rem, 1.125rem, color.$blue-100, normal);
+    @include mixin.create-font(600, 0.8125rem, 1.125rem, color.$blue-100, normal);
 }
 
 .chip__input:checked+.chip__body {
-    background: #1EA4CE; // blue-100
+    background: color.$blue-100;
 }
 
 .chip__input:checked+.chip__body p {
-    color: #F2F0FD; // gray-100
+    color: color.$gray-100;
 }

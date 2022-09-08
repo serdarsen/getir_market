@@ -15,6 +15,15 @@
     justify-self: center;
 }
 
+.header__logo {
+    width: 8.828125em;
+    height: 2.52em;
+}
+
+.header__logo path {
+    fill: color.$white;
+}
+
 .header__right {
     grid-column: 3 / 4;
     justify-self: end;

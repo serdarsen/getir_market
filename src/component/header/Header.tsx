@@ -7,7 +7,7 @@ import "./header.scss";
 const Header: React.FC = () => (
   <header className="header">
     <div className="header__center">
-      <LogoIcon />
+      <LogoIcon className="header__logo" />
     </div>
     <div className="header__right">
       <BasketView />

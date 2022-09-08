@@ -1,3 +1,6 @@
+@use "../../scss/color.scss";
+@use "../../scss/mixin.scss";
+
 .paginator {
     display: flex;
     flex-direction: row;
@@ -5,4 +8,22 @@
     align-items: center;
     justify-content: center;
     margin: 2em 0 0 0;
+}
+
+.paginator__page-button-group {
+    display: flex;
+    flex-direction: row;
+    height: 2.5em;
+    align-items: center;
+    justify-content: center;
+    gap: 0.1em;
+    margin: 0 2.8125em 0 2.8125em;
+}
+
+.paginator__seperator {
+    display: flex;
+    align-items: center;
+    @include mixin.create-font(600, 0.8125rem, 1.125rem, color.$gray-500, normal);
+    @include mixin.reset-button;
+    padding: 0 0.6rem 0.4rem 0.6rem;
 }

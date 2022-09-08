@@ -1,13 +1,18 @@
 import React from "react";
-import CheckIcon from "../../asset/CheckIcon";
-import { setPage, useAppDispatch } from "../../service";
-import NextButton from "./NextButton";
+import { setPage, useAppDispatch, useAppSelector } from "../../service";
+import ArrowButton from "./ArrowButton";
 import PageButton from "./PageButton";
 import "./paginator.scss";
-import PrevButton from "./PrevButton";
 
 const Paginator: React.FC = () => {
+  const items = useAppSelector((state) => state.items.pageable);
   const dispatch = useAppDispatch();
+
+  const pageSize = Math.ceil(items.totalCount / items.data.length);
+  console.log("pageSize: ", pageSize);
+
+  const first = [1, 2, 3, 4];
+  const last = [106, 107, 108, 109];
 
   const onChangePageButton = (page: number, checked: boolean): void => {
     console.log(`${page} is checked: ${checked}`);
@@ -16,21 +21,29 @@ const Paginator: React.FC = () => {
 
   return (
     <div className="paginator">
-      <CheckIcon />
-      <PrevButton />
-      <PageButton
-        id="pageButtonId1"
-        name="pageButtonName"
-        page={1}
-        onChange={onChangePageButton}
-      />
-      <PageButton
-        id="pageButtonId2"
-        name="pageButtonName"
-        page={2}
-        onChange={onChangePageButton}
-      />
-      <NextButton />
+      <ArrowButton text="Prev" direction="left" />
+      <div className="paginator__page-button-group">
+        {first.map((page) => (
+          <PageButton
+            id={`pageButtonId${page}`}
+            key={`pageButtonId${page}`}
+            name="pageButtonName"
+            page={page}
+            onChange={onChangePageButton}
+          />
+        ))}
+        <div className="paginator__seperator">...</div>
+        {last.map((page) => (
+          <PageButton
+            id={`pageButtonId${page}`}
+            key={`pageButtonId${page}`}
+            name="pageButtonName"
+            page={page}
+            onChange={onChangePageButton}
+          />
+        ))}
+      </div>
+      <ArrowButton text="Next" direction="right" />
     </div>
   );
 };

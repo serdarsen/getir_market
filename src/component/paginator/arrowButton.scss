@@ -1,0 +1,39 @@
+@use "../../scss/color.scss";
+@use "../../scss/mixin.scss";
+
+.arrow-button {
+    @include mixin.create-font(600, 0.875rem, 1rem, color.$blue-100, normal);
+    @include mixin.reset-button;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.arrow-button:disabled {
+    color: color.$gray-500;
+}
+
+.arrow-button__icon {
+    width: 0.875rem;
+    height: 0.875rem;
+}
+
+.arrow-button__icon path {
+    fill: color.$blue-100;
+}
+
+.arrow-button__icon path:disabled {
+    fill: color.$gray-500;
+}
+
+.arrow-button--left {
+    flex-direction: row;
+}
+
+.arrow-button--right {
+    flex-direction: row-reverse;
+}
+
+.arrow-button--left .arrow-button__icon {
+    transform: rotate(180deg);
+}

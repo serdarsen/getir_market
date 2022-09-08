@@ -15,7 +15,7 @@ const Paginator: React.FC = () => {
   const pageSize = Math.ceil(items.totalCount / PER_PAGE_ITEM_SIZE);
 
   const hasPrev = pageNo > 1;
-  const hasNext = pageNo + 1 < pageSize;
+  const hasNext = pageNo < pageSize;
 
   const createPageNumbers = (): number[] => {
     const limit = pageNo <= 4 || pageNo > pageSize - 4 ? 4 : 2;

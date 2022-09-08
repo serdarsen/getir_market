@@ -4,25 +4,40 @@ import "./pageButton.scss";
 type Prop = {
     id: string,
     name: string,
-    page: number,
-    onChange: (page: number, checked: boolean) => void
+    pageNo: number,
+    value: number,
+    onChange: (value: number, checked: boolean) => void
 }
 
 const PageButton: React.FC<Prop> = ({
-  id, name, page, onChange,
-}: Prop) => (
-  <label className="page-button" htmlFor={id}>
-    <input
-      id={id}
-      name={name}
-      className="page-button__input"
-      type="radio"
-      onChange={(e) => onChange(page, e.target.checked)}
-    />
-    <div className="page-button__body">
-      <p className="page-button__text">{page}</p>
-    </div>
-  </label>
-);
+  id, name, pageNo, value, onChange,
+}: Prop) => {
+  const isSeperator = value === 0;
+
+  const createClassName = (): string => {
+    let className = "page-button";
+    if (isSeperator) {
+      className += " page-button--seperator-mode";
+    }
+
+    return className;
+  };
+
+  return (
+    <label className={createClassName()} htmlFor={id}>
+      <input
+        id={id}
+        name={name}
+        className="page-button__input"
+        type="radio"
+        onChange={(e) => onChange(value, e.target.checked)}
+        checked={pageNo === value}
+      />
+      <div className="page-button__body">
+        <p className="page-button__text">{isSeperator ? "..." : value}</p>
+      </div>
+    </label>
+  );
+};
 
 export default PageButton;

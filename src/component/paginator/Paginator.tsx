@@ -1,49 +1,80 @@
+import _ from "lodash";
 import React from "react";
-import { setPage, useAppDispatch, useAppSelector } from "../../service";
+import { setPageNo, useAppDispatch, useAppSelector } from "../../service";
 import ArrowButton from "./ArrowButton";
 import PageButton from "./PageButton";
 import "./paginator.scss";
 
 const Paginator: React.FC = () => {
+  const PER_PAGE_ITEM_SIZE = 16;
+
   const items = useAppSelector((state) => state.items.pageable);
+  const pageNo = useAppSelector((state) => state.pageNo.pageNo);
   const dispatch = useAppDispatch();
 
-  const pageSize = Math.ceil(items.totalCount / items.data.length);
-  console.log("pageSize: ", pageSize);
+  const pageSize = Math.ceil(items.totalCount / PER_PAGE_ITEM_SIZE);
 
-  const first = [1, 2, 3, 4];
-  const last = [106, 107, 108, 109];
+  const hasPrev = pageNo > 1;
+  const hasNext = pageNo + 1 < pageSize;
+
+  const createPageNumbers = (): number[] => {
+    const limit = pageNo <= 4 || pageNo > pageSize - 4 ? 4 : 2;
+    const first = _.range(1, limit + 1);
+    const middle = _.range(pageNo - 1, pageNo + 2);
+    const last = _.range(pageSize - limit + 1, pageSize + 1);
+
+    const normal = [...first, 0, ...last];
+    const expanded = [...first, 0, ...middle, 0, ...last];
+
+    const pageNumbers = limit === 2 ? expanded : normal;
+
+    return pageNumbers;
+  };
 
   const onChangePageButton = (page: number, checked: boolean): void => {
-    console.log(`${page} is checked: ${checked}`);
-    dispatch(setPage(page));
+    if (page > 0) {
+      dispatch(setPageNo(page));
+    }
+  };
+
+  const onClickLeftArrowButton = (): void => {
+    if (pageNo > 1) {
+      dispatch(setPageNo(pageNo - 1));
+    }
+  };
+
+  const onClickRightArrowButton = (): void => {
+    if (pageNo < items.totalCount) {
+      dispatch(setPageNo(pageNo + 1));
+    }
   };
 
   return (
     <div className="paginator">
-      <ArrowButton text="Prev" direction="left" />
+      <ArrowButton
+        text="Prev"
+        direction="left"
+        onClick={onClickLeftArrowButton}
+        disabled={!hasPrev}
+      />
       <div className="paginator__page-button-group">
-        {first.map((page) => (
+        {createPageNumbers().map((page: number, index: number) => (
           <PageButton
             id={`pageButtonId${page}`}
-            key={`pageButtonId${page}`}
+            key={`pageButtonId${page}${index}`}
             name="pageButtonName"
-            page={page}
-            onChange={onChangePageButton}
-          />
-        ))}
-        <div className="paginator__seperator">...</div>
-        {last.map((page) => (
-          <PageButton
-            id={`pageButtonId${page}`}
-            key={`pageButtonId${page}`}
-            name="pageButtonName"
-            page={page}
+            pageNo={pageNo}
+            value={page}
             onChange={onChangePageButton}
           />
         ))}
       </div>
-      <ArrowButton text="Next" direction="right" />
+      <ArrowButton
+        text="Next"
+        direction="right"
+        onClick={onClickRightArrowButton}
+        disabled={!hasNext}
+      />
     </div>
   );
 };

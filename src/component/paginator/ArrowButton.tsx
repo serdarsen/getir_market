@@ -4,10 +4,14 @@ import "./arrowButton.scss";
 
 type Prop = {
     direction: "left" | "right";
-    text: string
+    text: string;
+    onClick: () => void,
+    disabled: boolean
 }
 
-const ArrowButton: React.FC<Prop> = ({ direction, text }: Prop) => {
+const ArrowButton: React.FC<Prop> = ({
+  direction, text, onClick, disabled,
+}: Prop) => {
   const createClassName = (): string => {
     let className = "arrow-button";
     if (direction === "left") {
@@ -20,10 +24,15 @@ const ArrowButton: React.FC<Prop> = ({ direction, text }: Prop) => {
   };
 
   return (
-    <div className={createClassName()}>
+    <button
+      disabled={disabled}
+      type="button"
+      className={createClassName()}
+      onClick={onClick}
+    >
       <ArrowIcon className="arrow-button__icon" />
       {text}
-    </div>
+    </button>
   );
 };
 

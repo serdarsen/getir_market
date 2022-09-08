@@ -15,7 +15,7 @@ export const ReduxStore = configureStore({
     companies: CompanyReducer,
     items: ItemReducer,
     tags: TagReducer,
-    page: PageReducer,
+    pageNo: PageReducer,
   },
   middleware: [SagaMiddleware],
 });

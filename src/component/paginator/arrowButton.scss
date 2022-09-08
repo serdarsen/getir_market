@@ -22,7 +22,7 @@
     fill: color.$blue-100;
 }
 
-.arrow-button__icon path:disabled {
+.arrow-button:disabled .arrow-button__icon path {
     fill: color.$gray-500;
 }
 

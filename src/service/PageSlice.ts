@@ -3,17 +3,17 @@ import { createSlice } from "@reduxjs/toolkit";
 export const PageSlice = createSlice({
   name: "PageSlice",
   initialState: {
-    page: 1,
+    pageNo: 1,
   },
   reducers: {
-    setPage: (state, action) => {
-      state.page = action.payload;
+    setPageNo: (state, action) => {
+      state.pageNo = action.payload;
     },
   },
 });
 
 export const {
-  setPage,
+  setPageNo,
 } = PageSlice.actions;
 
 export default PageSlice.reducer;

@@ -13,7 +13,6 @@ import "./productView.scss";
 
 const ProductView: React.FC = () => {
   const items = useAppSelector((state) => state.items.pageable);
-  const page = useAppSelector((state) => state.page.page);
   const dispatch = useAppDispatch();
 
   useEffect(() => {

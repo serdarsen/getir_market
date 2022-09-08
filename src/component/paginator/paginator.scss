@@ -19,11 +19,3 @@
     gap: 0.1em;
     margin: 0 2.8125em 0 2.8125em;
 }
-
-.paginator__seperator {
-    display: flex;
-    align-items: center;
-    @include mixin.create-font(600, 0.8125rem, 1.125rem, color.$gray-500, normal);
-    @include mixin.reset-button;
-    padding: 0 0.6rem 0.4rem 0.6rem;
-}

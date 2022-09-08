@@ -31,3 +31,7 @@
 .page-button__input:checked+.page-button__body p {
     color: color.$white;
 }
+
+.page-button--seperator-mode {
+    padding: 0 0.6rem 0.4rem 0.6rem;
+}

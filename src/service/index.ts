@@ -9,7 +9,7 @@ export {
   findItemsSuccess,
 } from "./ItemSlice";
 export {
-  setPage,
+  setPageNo,
 } from "./PageSlice";
 export {
   useAppDispatch,

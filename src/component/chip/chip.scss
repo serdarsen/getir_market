@@ -26,6 +26,6 @@
     background: color.$blue-100;
 }
 
-.chip__input:checked .chip__text {
+.chip__input:checked+.chip__body p {
     color: color.$gray-100;
 }

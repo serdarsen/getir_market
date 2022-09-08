@@ -4,7 +4,7 @@ import CompanySaga from "./CompanySaga";
 import CompanyReducer from "./CompanySlice";
 import ItemSaga from "./ItemSaga";
 import ItemReducer from "./ItemSlice";
-import PageReducer from "./PageSlice";
+import PageReducer from "./PaginationSlice";
 import TagSaga from "./TagSaga";
 import TagReducer from "./TagSlice";
 

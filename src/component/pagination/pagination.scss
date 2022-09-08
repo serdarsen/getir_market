@@ -1,7 +1,7 @@
 @use "../../scss/color.scss";
 @use "../../scss/mixin.scss";
 
-.paginator {
+.pagination {
     display: flex;
     flex-direction: row;
     height: 2.5em;
@@ -10,7 +10,7 @@
     margin: 2em 0 0 0;
 }
 
-.paginator__page-button-group {
+.pagination__page-button-group {
     display: flex;
     flex-direction: row;
     height: 2.5em;

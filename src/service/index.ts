@@ -10,7 +10,7 @@ export {
 } from "./ItemSlice";
 export {
   setPageNo,
-} from "./PageSlice";
+} from "./PaginationSlice";
 export {
   useAppDispatch,
   useAppSelector,

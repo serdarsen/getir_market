@@ -3,9 +3,9 @@ import React from "react";
 import { setPageNo, useAppDispatch, useAppSelector } from "../../service";
 import ArrowButton from "./ArrowButton";
 import PageButton from "./PageButton";
-import "./paginator.scss";
+import "./pagination.scss";
 
-const Paginator: React.FC = () => {
+const Pagination: React.FC = () => {
   const PER_PAGE_ITEM_SIZE = 16;
 
   const items = useAppSelector((state) => state.items.pageable);
@@ -50,14 +50,14 @@ const Paginator: React.FC = () => {
   };
 
   return (
-    <div className="paginator">
+    <div className="pagination">
       <ArrowButton
         text="Prev"
         direction="left"
         onClick={onClickLeftArrowButton}
         disabled={!hasPrev}
       />
-      <div className="paginator__page-button-group">
+      <div className="pagination__page-button-group">
         {createPageNumbers().map((page: number, index: number) => (
           <PageButton
             id={`pageButtonId${page}`}
@@ -79,4 +79,4 @@ const Paginator: React.FC = () => {
   );
 };
 
-export default Paginator;
+export default Pagination;

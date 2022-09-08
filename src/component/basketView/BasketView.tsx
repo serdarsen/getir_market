@@ -14,11 +14,8 @@ const BasketView: React.FC = () => {
       role="button"
       tabIndex={0}
     >
-
-      <BasketIcon />
-
+      <BasketIcon className="basket-view__icon" />
       <p className="basket-view__price">₺ 39,97</p>
-
       {toggleBasket && (
       <div
         className="basket-view__popup"
@@ -28,7 +25,6 @@ const BasketView: React.FC = () => {
         </div>
       </div>
       )}
-
     </div>
   );
 };

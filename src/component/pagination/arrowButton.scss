@@ -2,8 +2,8 @@
 @use "../../scss/mixin.scss";
 
 .arrow-button {
-    @include mixin.create-font(600, 0.875rem, 1rem, color.$blue-100, normal);
     @include mixin.reset-button;
+    @include mixin.create-font(600, 0.875rem, 1rem, color.$blue-100, normal);
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;

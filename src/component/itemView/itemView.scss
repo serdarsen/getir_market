@@ -40,12 +40,10 @@
 }
 
 .item-view__button {
+    @include mixin.reset-button;
+    @include mixin.create-font(600, 0.75rem, 1.25rem, color.$white, normal);
     margin: 0.125rem 0px 0.125rem 0px;
     padding: 0.125rem 0.125rem 0.125rem 0.125rem;
     border-radius: 2px;
-
     background: color.$blue-100;
-
-    @include mixin.reset-button;
-    @include mixin.create-font(600, 0.75rem, 1.25rem, color.$white, normal);
 }

@@ -8,6 +8,7 @@
 }
 
 .chip__body {
+    @include mixin.reset-button;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,8 +16,6 @@
     gap: 0.5em;
     background: color.$gray-100;
     border-radius: 2px;
-
-    @include mixin.reset-button;
 }
 
 .chip__text {
@@ -27,6 +26,6 @@
     background: color.$blue-100;
 }
 
-.chip__input:checked+.chip__body p {
+.chip__input:checked .chip__text {
     color: color.$gray-100;
 }

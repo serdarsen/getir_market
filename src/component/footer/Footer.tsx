@@ -3,7 +3,9 @@ import "./footer.scss";
 
 const Footer: React.FC = () => (
   <footer className="footer">
-    Footer
+    <p>©2019 Market</p>
+    <p>•</p>
+    <p>Privacy Policy</p>
   </footer>
 );
 

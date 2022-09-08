@@ -1,3 +1,13 @@
+@use "../../scss/color.scss";
+@use "../../scss/mixin.scss";
+
 .footer {
+    @include mixin.reset-button;
+    @include mixin.create-font(400, 0.8125rem, 1.41375rem, color.$blue-100, normal);
     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 8.5rem 0 2.5rem 0
 }

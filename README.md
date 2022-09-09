@@ -28,5 +28,6 @@ run `npm run dev`, browse `localhost:4000`
 - [React Redux](https://react-redux.js.org/)
 - [Redux-Saga](https://redux-saga.js.org/)
 - [Redux Toolkit](https://redux-toolkit.js.org/)
+- [cra-template-redux-typescript](https://github.com/reduxjs/cra-template-redux-typescript)
 - [JEST](https://jestjs.io/)
 - [JSON Server](https://github.com/typicode/json-server)

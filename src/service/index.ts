@@ -1,4 +1,8 @@
 export {
+  appendBasketItem,
+  removeBasketItem,
+} from "./BasketSlice";
+export {
   findCompaniesFailure,
   findCompaniesFetch,
   findCompaniesSuccess,

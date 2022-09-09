@@ -1,7 +1,7 @@
 @use "../../scss/color.scss";
 @use "../../scss/mixin.scss";
 
-.item-view {
+.product-item-view {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -12,7 +12,7 @@
     margin: 1.3em 0.6em 0 0.6em;
 }
 
-.item-view__bg {
+.product-item-view__bg {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -26,21 +26,21 @@
     border-radius: 12px;
 }
 
-.item-view__body {
+.product-item-view__body {
     display: flex;
     flex-direction: column;
 }
 
-.item-view__price {
+.product-item-view__price {
     @include mixin.create-font(400, 0.875rem, 1.25rem, color.$blue-100, normal);
 }
 
-.item-view__name {
+.product-item-view__name {
     @include mixin.create-font(600, 0.875rem, 1.25rem, color.$gray-700, normal);
     height: 2.5rem;
 }
 
-.item-view__button {
+.product-item-view__button {
     @include mixin.reset-button;
     @include mixin.create-font(600, 0.75rem, 1.25rem, color.$white, normal);
     margin: 0.125rem 0px 0.125rem 0px;

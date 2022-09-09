@@ -7,8 +7,8 @@ import {
 } from "../../service";
 import Card from "../card/Card";
 import Chip from "../chip/Chip";
-import ItemView from "../itemView/ItemView";
 import Pagination from "../pagination/Pagination";
+import ItemView from "../productItemView/ProductItemView";
 import "./productView.scss";
 
 const ProductView: React.FC = () => {

@@ -1,10 +1,11 @@
 import { Action, configureStore, ThunkAction } from "@reduxjs/toolkit";
 import createSagaMiddleware from "redux-saga";
+import BasketReducer from "./BasketSlice";
 import CompanySaga from "./CompanySaga";
 import CompanyReducer from "./CompanySlice";
 import ItemSaga from "./ItemSaga";
 import ItemReducer from "./ItemSlice";
-import PageReducer from "./PaginationSlice";
+import PaginationReducer from "./PaginationSlice";
 import TagSaga from "./TagSaga";
 import TagReducer from "./TagSlice";
 
@@ -15,7 +16,8 @@ export const ReduxStore = configureStore({
     companies: CompanyReducer,
     items: ItemReducer,
     tags: TagReducer,
-    pageNo: PageReducer,
+    pageNo: PaginationReducer,
+    basketItems: BasketReducer,
   },
   middleware: [SagaMiddleware],
 });

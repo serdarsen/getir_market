@@ -2,6 +2,7 @@
 @use "../../scss/mixin.scss";
 
 .basket-view {
+    @include mixin.reset-button;
     height: 4.5em;
     width: 8.0625em;
     display: inline-flex;

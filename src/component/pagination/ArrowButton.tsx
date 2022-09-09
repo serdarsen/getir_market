@@ -1,5 +1,5 @@
 import React from "react";
-import ArrowIcon from "../../asset/ArrowIcon";
+import { ArrowIcon } from "../../icon";
 import "./arrowButton.scss";
 
 type Prop = {

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import BasketIcon from "../../asset/BasketIcon";
+import { BasketIcon } from "../../icon";
 import "./basketView.scss";
 
 const BasketView: React.FC = () => {

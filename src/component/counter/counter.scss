@@ -1,0 +1,52 @@
+@use "../../scss/color.scss";
+@use "../../scss/mixin.scss";
+
+.counter {
+    display: flex;
+    flex-direction: row;
+    width: 4.625rem;
+    height: 2.04375rem;
+    gap: 0.4375rem;
+}
+
+.counter__decrease-button {
+    @include mixin.reset-button;
+}
+
+.counter__decrease-icon {
+    width: 0.625em;
+    height: 0.1275em;
+}
+
+.counter__decrease-icon rect {
+    fill: color.$blue-100;
+    stroke: color.$blue-100;
+    stroke-width: 0.0625em;
+    stroke-linejoin: round;
+}
+
+.counter__label {
+    @include mixin.create-font(700, 0.9375rem, 1.25rem, color.$white, normal);
+    width: 2rem;
+    height: 2.04375rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: color.$blue-100;
+}
+
+.counter__increase-button {
+    @include mixin.reset-button;
+}
+
+.counter__increase-icon {
+    width: 0.625em;
+    height: 0.625em;
+}
+
+.counter__increase-icon path {
+    fill: none;
+    stroke: color.$blue-100;
+    stroke-width: 0.0625em;
+    stroke-linejoin: round;
+}

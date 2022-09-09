@@ -1,6 +1,6 @@
 import React from "react";
 
-import LogoIcon from "../../asset/LogoIcon";
+import { LogoIcon } from "../../icon";
 import BasketView from "../basketView/BasketView";
 import "./header.scss";
 

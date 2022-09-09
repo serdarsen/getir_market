@@ -1,32 +1,34 @@
-import React, { useState } from "react";
-import { BasketIcon } from "../../icon";
+import React, { KeyboardEvent, MouseEvent } from "react";
 import "./basketView.scss";
 
-const BasketView: React.FC = () => {
-  const [toggleBasket, setToggleBasket] = useState(false);
+type Prop = {
+    visible: boolean
+}
 
-  return (
+const BasketView: React.FC<Prop> = ({ visible }: Prop) => {
+  const onClick = (e: MouseEvent<HTMLDivElement>): void => {
+    e.preventDefault();
+    e.stopPropagation();
+  };
+
+  const onKeyDown = (e: KeyboardEvent<HTMLDivElement>): void => {
+    e.preventDefault();
+    e.stopPropagation();
+  };
+
+  return visible ? (
     <div
       className="basket-view"
-      onClick={() => setToggleBasket(!toggleBasket)}
-      onKeyDown={() => setToggleBasket(!toggleBasket)}
-      onBlur={() => setToggleBasket(false)}
+      onClick={onClick}
+      onKeyDown={onKeyDown}
       role="button"
       tabIndex={0}
     >
-      <BasketIcon className="basket-view__icon" />
-      <p className="basket-view__price">₺ 39,97</p>
-      {toggleBasket && (
-      <div
-        className="basket-view__popup"
-      >
-        <div className="basket-view__body">
-          Basket items
-        </div>
+      <div className="basket-view__body">
+        Basket items
       </div>
-      )}
     </div>
-  );
+  ) : null;
 };
 
 export default BasketView;

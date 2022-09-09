@@ -1,7 +1,7 @@
 import React from "react";
 
 import { LogoIcon } from "../../icon";
-import BasketView from "../basketView/BasketView";
+import BasketButton from "../basketButton/BasketButton";
 import "./header.scss";
 
 const Header: React.FC = () => (
@@ -10,7 +10,7 @@ const Header: React.FC = () => (
       <LogoIcon className="header__logo" />
     </div>
     <div className="header__right">
-      <BasketView />
+      <BasketButton />
     </div>
   </header>
 );

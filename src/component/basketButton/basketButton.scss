@@ -1,0 +1,64 @@
+@use "../../scss/color.scss";
+@use "../../scss/mixin.scss";
+
+.basket-button {
+    @include mixin.reset-button;
+    height: 4.5em;
+    width: 8.0625em;
+    display: inline-flex;
+    margin: 0 6.5rem 0 0;
+    cursor: pointer;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.basket-button:hover {
+    background-color: color.$blue-200;
+}
+
+.basket-button--active {
+    background-color: color.$blue-200;
+}
+
+.basket-button__icon {
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.basket-button__icon path {
+    fill: color.$white;
+}
+
+.basket-button__price {
+    @include mixin.create-font(600, 0.8125rem, 1.125rem, color.$white, 0.01rem);
+    margin: 0 0 0 0.5rem;
+    padding: 0.1rem 0 0 0;
+}
+
+.basket-button__popup {
+    padding: 2rem;
+    position: absolute;
+
+    right: 0;
+    top: 6rem;
+
+    min-width: 18rem;
+
+    border-radius: 2px;
+    border: 0.5rem solid color.$blue-100;
+}
+
+@media screen and (max-width: 700px) {
+    .basket-button {
+        margin: 0;
+    }
+
+    .basket-button__price {
+        display: none;
+    }
+
+    .basket-button__popup {
+        margin: 0;
+    }
+}

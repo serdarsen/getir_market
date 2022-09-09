@@ -2,41 +2,6 @@
 @use "../../scss/mixin.scss";
 
 .basket-view {
-    @include mixin.reset-button;
-    height: 4.5em;
-    width: 8.0625em;
-    display: inline-flex;
-    margin: 0 6.5rem 0 0;
-    cursor: pointer;
-    position: relative;
-    align-items: center;
-    justify-content: center;
-}
-
-.basket-view:hover {
-    background-color: color.$blue-200;
-}
-
-.basket-view:focus {
-    background-color: color.$blue-200;
-}
-
-.basket-view__icon {
-    width: 1.5em;
-    height: 1.5em;
-}
-
-.basket-view__icon path {
-    fill: color.$white;
-}
-
-.basket-view__price {
-    @include mixin.create-font(600, 0.8125rem, 1.125rem, color.$white, 0.01rem);
-    margin: 0 0 0 0.5rem;
-    padding: 0.1rem 0 0 0;
-}
-
-.basket-view__popup {
     padding: 2rem;
     position: absolute;
 

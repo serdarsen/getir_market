@@ -1,4 +1,6 @@
 import React, { KeyboardEvent, MouseEvent } from "react";
+import { useAppSelector } from "../../service";
+import BasketItemView from "../basketItemView/BasketItemView";
 import "./basketView.scss";
 
 type Prop = {
@@ -6,6 +8,8 @@ type Prop = {
 }
 
 const BasketView: React.FC<Prop> = ({ visible }: Prop) => {
+  const basketItems = useAppSelector((state) => state.basketItems.basketItems);
+
   const onClick = (e: MouseEvent<HTMLDivElement>): void => {
     e.preventDefault();
     e.stopPropagation();
@@ -24,9 +28,7 @@ const BasketView: React.FC<Prop> = ({ visible }: Prop) => {
       role="button"
       tabIndex={0}
     >
-      <div className="basket-view__body">
-        Basket items
-      </div>
+      {basketItems.map((item) => <BasketItemView item={item} />)}
     </div>
   ) : null;
 };

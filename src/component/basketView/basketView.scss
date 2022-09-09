@@ -2,30 +2,21 @@
 @use "../../scss/mixin.scss";
 
 .basket-view {
-    padding: 2rem;
+    padding: 1.660625em 1em 1.660625em 1em;
     position: absolute;
-
     right: 0;
-    top: 6rem;
-
-    min-width: 18rem;
-
+    top: 6em;
+    width: 18.5em;
+    min-height: 9em;
     border-radius: 2px;
-    border: 0.5rem solid color.$blue-100;
-
+    border: 0.5em solid color.$blue-100;
     background-color: color.$white;
+    display: flex;
+    flex-direction: column;
 }
 
 @media screen and (max-width: 700px) {
     .basket-view {
-        margin: 0;
-    }
-
-    .basket-view__price {
-        display: none;
-    }
-
-    .basket-view__popup {
         margin: 0;
     }
 }

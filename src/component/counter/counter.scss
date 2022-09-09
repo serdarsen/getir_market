@@ -14,15 +14,28 @@
 }
 
 .counter__decrease-icon {
-    width: 0.625em;
-    height: 0.1275em;
+    width: 0.9em;
+    height: 0.20em;
+    margin: 0.11em 0 0 0;
 }
 
 .counter__decrease-icon rect {
     fill: color.$blue-100;
     stroke: color.$blue-100;
-    stroke-width: 0.0625em;
+    stroke-width: 0.05em;
     stroke-linejoin: round;
+    width: 0.8em;
+    height: 0.14em;
+}
+
+.counter__decrease-button:hover .counter__decrease-icon rect {
+    fill: color.$gray-700;
+    stroke: color.$gray-700;
+}
+
+.counter__decrease-button:active .counter__decrease-icon rect {
+    fill: color.$gray-700;
+    stroke: color.$gray-700;
 }
 
 .counter__label {
@@ -40,13 +53,22 @@
 }
 
 .counter__increase-icon {
-    width: 0.625em;
-    height: 0.625em;
+    width: 1em;
+    height: 1em;
+    margin: 0.15em 0 0 0;
 }
 
 .counter__increase-icon path {
     fill: none;
     stroke: color.$blue-100;
-    stroke-width: 0.0625em;
+    stroke-width: 0.085em;
     stroke-linejoin: round;
+}
+
+.counter__increase-button:hover .counter__increase-icon path {
+    stroke: color.$gray-700;
+}
+
+.counter__increase-button:active .counter__increase-icon path {
+    stroke: color.$gray-700;
 }

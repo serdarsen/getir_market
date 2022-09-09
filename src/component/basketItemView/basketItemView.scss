@@ -3,4 +3,33 @@
 
 .basket-item-view {
     background-color: color.$white;
+    width: 15.5em;
+    height: 3.704375em;
+    border-bottom: 1.02px solid color.$black-50;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.basket-item-view__left {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 0 0.375em;
+}
+
+.basket-item-view__name {
+    @include mixin.create-font(400, 0.875rem, 1.25rem, color.$gray-700, 0.01rem);
+    width: 7.125rem;
+    height: 1.16rem;
+    overflow: hidden;
+}
+
+.basket-item-view__price {
+    @include mixin.create-font(600, 0.875rem, 1.25rem, color.$blue-100, normal);
+}
+
+.basket-item-view__right {
+    width: 4.625em;
+    height: 2.04375em;
+    margin: 0 0.375em 0 0;
 }

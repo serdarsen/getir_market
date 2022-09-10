@@ -7,7 +7,7 @@ Promise<Pageable<Item[]>> => {
     const [pageNo] = options;
 
     const response = await BaseService.get(
-      `items?_page=${pageNo}&_limit=16`,
+      `items?_sort=price&_order=asc&_page=${pageNo}&_limit=16`,
     );
 
     const { data, headers = {} } = response || {};

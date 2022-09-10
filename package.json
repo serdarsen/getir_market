@@ -5,9 +5,10 @@
     "author": "Serdar ŞEN",
     "main": "index.tsx",
     "scripts": {
-        "dev": "webpack-dev-server --config webpack.config.ts",
-        "start": "node server.js",
-        "build": "webpack --config webpack.config.ts"
+        "dev-json-server": "json-server --watch ./src/mock/db.json --port 3004 --routes ./src/mock/routes.json",
+        "dev": "npm run dev-json-server && webpack-dev-server --config webpack.config.ts",
+        "build": "webpack --config webpack.config.ts",
+        "start": "node server.js"
     },
     "keywords": [],
     "license": "MIT",

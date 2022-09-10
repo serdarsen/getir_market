@@ -9,12 +9,12 @@
 
 */
 
-const path = require("path");
-const fs = require("fs");
-const db =  require("./db.json");
+const Path = require("path");
+const FS = require("fs");
+const Database =  require("./db.json");
 
 const extract = () => {
-  const { items, companies } = db;
+  const { items, companies } = Database;
 
   const tagsSet = new Set();
   const itemTypesSet = new Set();
@@ -31,8 +31,8 @@ const extract = () => {
   const itemTypes = Array.from(itemTypesSet);
   const updatedDb = { tags, itemTypes, items, companies };
 
-  const file = path.join(__dirname, "db.json");
-  const writeStream = fs.createWriteStream(file);
+  const file = Path.join(__dirname, "db.json");
+  const writeStream = FS.createWriteStream(file);
 
   writeStream.write(JSON.stringify(updatedDb, null, 4));
   writeStream.on("finish", () => {

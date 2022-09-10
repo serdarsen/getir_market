@@ -1,23 +1,34 @@
-const path = require("path");
+const Express = require("express");
+const Path = require("path");
+const JsonServer = require("json-server");
 
-const jsonServer = require("json-server");
-const app = jsonServer.create();
+//App Server
+const appServerInstance = Express();
+appServerInstance.use(Express.static(Path.join(__dirname, "build")));
+appServerInstance.set("port", process.env.PORT || 8080);
 
-const router = jsonServer.router(
-    path.join(__dirname, "src", "mock", "db.json")
+appServerInstance.listen(appServerInstance.get("port"), () => {
+  console.log("App server is running on port ", appServerInstance.get("port"));
+});
+
+//Json Server
+const jsonServerInstance = JsonServer.create();
+
+const router = JsonServer.router(
+    Path.join(__dirname, "src", "mock", "db.json")
 );
 
-const middlewares = jsonServer.defaults();
-app.use(middlewares);
+const middlewares = JsonServer.defaults({logger: false});
+jsonServerInstance.use(middlewares);
 
-app.use(jsonServer.rewriter({
+jsonServerInstance.use(JsonServer.rewriter({
     "/api/*": "/$1",
 }));
 
-app.use(router);
+jsonServerInstance.use(router);
 
-const port = process.env.PORT || 8080;
+const jsonServerPort = 3004;
 
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`)
+jsonServerInstance.listen(jsonServerPort, () => {
+    console.log(`Json server is running on port ${jsonServerPort}`)
 });

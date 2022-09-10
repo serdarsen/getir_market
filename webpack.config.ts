@@ -43,7 +43,7 @@ const config: Configuration = {
   mode: isPro ? "production" : "development",
   entry: Path.join(__dirname, "src", "index.tsx"),
   output: {
-    path: Path.resolve(__dirname, "public"),
+    path: Path.resolve(__dirname, "build"),
     filename: "main.[contenthash].js",
   },
   module: {
@@ -82,7 +82,7 @@ const config: Configuration = {
   plugins: isPro ? proPlugins : devPlugins,
   devtool: "inline-source-map",
   devServer: {
-    static: Path.join(__dirname, "public"),
+    static: Path.join(__dirname, "build"),
     historyApiFallback: true,
     port: 4000,
     open: false,

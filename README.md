@@ -6,6 +6,24 @@
 ## Introduction
 Getir Market is an implementation of my interview assignment given by Getir. This is a project that converts a [Figma design](./docs/design.fig) into a modern React application. You can find detailed information in [assignment.pdf](./docs/assignment.pdf).
 
+### Implementation
+* To be able to analyze in detail, I broke down the task into smaller pieces.
+    * Creating main responsive layout struture. 
+    * Transforming Figma element sizes and colors into React components using rem and em units. 
+    * Creating components from scratch in order to obtain an easy-to-maintain codebase. 
+    * Creating mock json server api.
+    * Creating powerful global state management.
+    * Testing and creating unit tests.
+<br/><br/>    
+* I applied html semantic elements.  
+* I handled the context operations individually to have a separation of concerns.  
+* I applied the Clean Code Naming Conventions and the Single Responsibility Principle to write clean tests.
+
+<br/><br/>
+* We have Redux, React-Redux, Redux-Saga, and Redux-Toolkit libraries to create a global state management infrastructure.
+    *  I avoided using Redux because of its suggestion to use Redux-Toolkit.
+    *  I implemented React-Redux, Redux-Saga, and Redux-Toolkit libs to work together because of their efficiency.
+
 ### Feature
 
 Focus points in this project :
@@ -14,12 +32,13 @@ Focus points in this project :
 - React file and folder structure
 - Fundamental CSS properties to master flex & grid
 - Fundamentals of the CSS BEM Model
-- Perfectly placed media queries for satisfactory responsiveness covering almost devices
+- Perfectly placed media queries for satisfactory responsiveness covering almost devices (in development)
 - Pixel Perfect Designs
 - Powerful global state management
+- Unit test coverage (in development)
 
 ## Usage
-run `npm run dev`, browse `localhost:4000`
+run `npm run dev`, browse `localhost:8080`
 
 ## Reference
 - [Webpack](https://webpack.js.org/)

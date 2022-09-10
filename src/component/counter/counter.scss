@@ -23,7 +23,6 @@
     fill: color.$blue-100;
     stroke: color.$blue-100;
     stroke-width: 0.05em;
-    stroke-linejoin: round;
     width: 0.8em;
     height: 0.14em;
 }
@@ -61,8 +60,7 @@
 .counter__increase-icon path {
     fill: none;
     stroke: color.$blue-100;
-    stroke-width: 0.085em;
-    stroke-linejoin: round;
+    stroke-width: 0.07em;
 }
 
 .counter__increase-button:hover .counter__increase-icon path {

@@ -13,6 +13,7 @@
     background-color: color.$white;
     display: flex;
     flex-direction: column;
+    gap: 1.04em;
 }
 
 @media screen and (max-width: 700px) {

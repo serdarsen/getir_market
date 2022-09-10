@@ -36,8 +36,8 @@ Focus points in this project :
 - Unit test coverage (in development)
 
 ## Usage
-- The project built with `node v18.8.0` and `npm 8.18.0`
-- To be able to watch logs and develop locally, run `npm run dev-json-server` and `npm run dev` in seperate terminals, browse `localhost:4000`
+- The project built with `node v18.8.0` and `npm 8.18.0`.
+- To be able to watch logs and develop locally, create `.env` file in the project root dir with a `DEV=true` property in it, and run `npm run dev-json-server` and `npm run dev` scripts in seperate terminals, browse `localhost:4000`.
 
 ## Reference
 - [Webpack](https://webpack.js.org/)

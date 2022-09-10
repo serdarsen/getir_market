@@ -15,10 +15,8 @@ Getir Market is an implementation of my interview assignment given by Getir. Thi
     * Creating powerful global state management.
     * Testing and creating unit tests.
 <br/><br/>    
-* I applied html semantic elements.  
 * I handled the context operations individually to have a separation of concerns.  
 * I applied the Clean Code Naming Conventions and the Single Responsibility Principle to write clean tests.
-
 <br/><br/>
 * We have Redux, React-Redux, Redux-Saga, and Redux-Toolkit libraries to create a global state management infrastructure.
     *  I avoided using Redux because of its suggestion to use Redux-Toolkit.

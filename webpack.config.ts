@@ -43,7 +43,7 @@ const config: Configuration = {
   mode: isPro ? "production" : "development",
   entry: Path.join(__dirname, "src", "index.tsx"),
   output: {
-    path: Path.resolve(__dirname, "build"),
+    path: Path.resolve(__dirname, "public"),
     filename: "main.[contenthash].js",
   },
   module: {

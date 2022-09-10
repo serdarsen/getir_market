@@ -1,8 +1,12 @@
 import axios from "axios";
 
-const { location } = window || {};
-const { protocol, hostname } = location || {};
-axios.defaults.baseURL = `${protocol}//${hostname}:3004`;
+const isPro = process.env.npm_lifecycle_event === "build";
+
+if (isPro) {
+  const { location } = window || {};
+  const { protocol, hostname } = location || {};
+  axios.defaults.baseURL = `${protocol}//${hostname}:3004`;
+}
 
 export const PRODUCT_PLACEHOLDER_IMAGE_URL = "//www.colorbook.io/imagecreator.php?hex=C4C4C4&width=92&height=92&text=Item";
 

@@ -2,7 +2,7 @@
 @use "../../scss/mixin.scss";
 
 .basket-view {
-    padding: 1.660625em 1em 1.660625em 1em;
+    padding: 1.660625em 1em 1.021875em 1em;
     position: absolute;
     right: 0;
     top: 6em;
@@ -14,6 +14,20 @@
     display: flex;
     flex-direction: column;
     gap: 1.04em;
+}
+
+.basket-view__total {
+    @include mixin.create-font(600, 0.875rem, 1rem, color.$gray-700, normal);
+    width: 5.75rem;
+    height: 3.19375rem;
+    color: color.$blue-100;
+    border: 0.125rem solid color.$blue-100;
+    border-radius: 2px;
+    background-color: color.$white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 0 9.75rem;
 }
 
 @media screen and (max-width: 700px) {

@@ -1,17 +1,31 @@
 import React from "react";
-import { Item } from "../../model";
+import {
+  removeBasketItem,
+  updateBasketItem,
+  useAppDispatch,
+} from "../../context";
+import { BasketItem } from "../../model";
 import Counter from "../counter/Counter";
+import CurrencyView from "../currencyView/CurrencyView";
 import "./basketItemView.scss";
 
 type Prop = {
-    item: Item
+    basketItem: BasketItem
 }
 
-const BasketItemView: React.FC<Prop> = ({ item }: Prop) => {
-  const price = `₺ ${item.price}`;
+const BasketItemView: React.FC<Prop> = ({ basketItem }: Prop) => {
+  const dispatch = useAppDispatch();
 
   const onChangeCounter = (count: number): void => {
-    console.log("count: ", count);
+    if (count === 0) {
+      dispatch(removeBasketItem(basketItem));
+      return;
+    }
+
+    dispatch(updateBasketItem({
+      ...basketItem,
+      quantity: count,
+    }));
   };
 
   return (
@@ -20,17 +34,16 @@ const BasketItemView: React.FC<Prop> = ({ item }: Prop) => {
         <div className="basket-item-view__left">
           <p
             className="basket-item-view__name"
-            title={item.name}
+            title={basketItem.name}
           >
-            {item.name}
+            {basketItem.name}
 
           </p>
-          <p
+          <div
             className="basket-item-view__price"
-            title={price}
           >
-            {price}
-          </p>
+            <CurrencyView currency={basketItem.price} gap={0} />
+          </div>
         </div>
         <div className="basket-item-view__right">
           <Counter

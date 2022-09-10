@@ -28,13 +28,11 @@
 
 .basket-item-view__name {
     @include mixin.create-font(400, 0.875rem, 1.25rem, color.$gray-700, 0.01rem);
-    width: 7.125rem;
-    height: 1.16rem;
     overflow: hidden;
 }
 
 .basket-item-view__price {
-    @include mixin.create-font(600, 0.875rem, 1.25rem, color.$blue-100, normal);
+    @include mixin.create-font(600, 0.875rem, 1.25rem, color.$blue-100, 0.01rem);
 }
 
 .basket-item-view__right {

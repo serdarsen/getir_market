@@ -46,5 +46,12 @@
     margin: 0.125rem 0px 0.125rem 0px;
     padding: 0.125rem 0.125rem 0.125rem 0.125rem;
     border-radius: 2px;
-    background: color.$blue-100;
+    background-color: color.$blue-100;
+}
+
+.product-item-view__button--active {
+    background-color: color.$white;
+    color: color.$blue-100;
+    padding: 0 0 0 0;
+    border: 0.125rem solid color.$blue-100;
 }

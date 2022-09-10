@@ -7,7 +7,7 @@ type Prop = {
 }
 
 const Counter: React.FC<Prop> = ({ onChange }: Prop) => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(1);
 
   const onDecrease = (): void => {
     if (count > 0) {

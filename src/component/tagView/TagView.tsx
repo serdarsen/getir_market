@@ -3,14 +3,14 @@ import {
   findTagsFetch,
   useAppDispatch,
   useAppSelector,
-} from "../../service";
+} from "../../context";
 import Card from "../card/Card";
 import Checkbox from "../checkbox/Checkbox";
 import Search from "../search/Search";
 import "./tagView.scss";
 
 const TagView: React.FC = () => {
-  const tags = useAppSelector((state) => state.tags.tags);
+  const tags = useAppSelector((state) => state.tag.tags);
   const dispatch = useAppDispatch();
 
   useEffect(() => {

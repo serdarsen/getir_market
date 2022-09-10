@@ -13,11 +13,11 @@ const SagaMiddleware = createSagaMiddleware();
 
 export const ReduxStore = configureStore({
   reducer: {
-    companies: CompanyReducer,
-    items: ItemReducer,
-    tags: TagReducer,
-    pageNo: PaginationReducer,
-    basketItems: BasketReducer,
+    company: CompanyReducer,
+    item: ItemReducer,
+    tag: TagReducer,
+    pagination: PaginationReducer,
+    basket: BasketReducer,
   },
   middleware: [SagaMiddleware],
 });

@@ -1,11 +1,11 @@
 import {
   call, CallEffect, ForkEffect, put, PutEffect, takeEvery,
 } from "redux-saga/effects";
-import { findTags } from "./TagService";
+import { TagService } from "../service";
 import { findTagsSuccess } from "./TagSlice";
 
 function* findTagsFetch(): Generator<CallEffect | PutEffect, void> {
-  const tags = yield call(findTags);
+  const tags = yield call(TagService.findTags);
   yield put(findTagsSuccess(tags));
 }
 

@@ -33,7 +33,7 @@
 .basket-button__price {
     @include mixin.create-font(600, 0.8125rem, 1.125rem, color.$white, 0.01rem);
     margin: 0 0 0 0.5rem;
-    padding: 0.1rem 0 0 0;
+    padding: 0.19rem 0 0 0;
 }
 
 .basket-button__popup {

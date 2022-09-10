@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import { Item } from "../../model";
 import {
   findItemsFetch,
   useAppDispatch,
   useAppSelector,
-} from "../../service";
+} from "../../context";
+import { Item } from "../../model";
 import Card from "../card/Card";
 import Chip from "../chip/Chip";
 import Pagination from "../pagination/Pagination";
@@ -12,7 +12,8 @@ import ProductItemView from "../productItemView/ProductItemView";
 import "./productView.scss";
 
 const ProductView: React.FC = () => {
-  const items = useAppSelector((state) => state.items.pageable);
+  const items = useAppSelector((state) => state.item.pageable);
+  const basketItemIds = useAppSelector((state) => state.basket.basketItemIds);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -42,7 +43,13 @@ const ProductView: React.FC = () => {
       <Card>
         <div className="product-view__body">
           {items.data.map(
-            (item: Item) => <ProductItemView key={item.id} item={item} />,
+            (item: Item) => (
+              <ProductItemView
+                key={item.id}
+                item={item}
+                itemInBasket={basketItemIds.includes(item.id)}
+              />
+            ),
           )}
         </div>
       </Card>

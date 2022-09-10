@@ -1,17 +1,17 @@
 import React, { useEffect } from "react";
-import Company from "../../model/Company";
 import {
   findCompaniesFetch,
   useAppDispatch,
   useAppSelector,
-} from "../../service";
+} from "../../context";
+import Company from "../../model/Company";
 import Card from "../card/Card";
 import Checkbox from "../checkbox/Checkbox";
 import Search from "../search/Search";
 import "./brandView.scss";
 
 const Brands: React.FC = () => {
-  const companies = useAppSelector((state) => state.companies.companies);
+  const companies = useAppSelector((state) => state.company.companies);
   const dispatch = useAppDispatch();
 
   useEffect(() => {

@@ -1,41 +1,65 @@
 import React from "react";
+import {
+  appendBasketItem,
+  removeBasketItem,
+  useAppDispatch,
+} from "../../context";
 import { Item } from "../../model";
-import { appendBasketItem, useAppDispatch } from "../../service";
+import { PRODUCT_PLACEHOLDER_IMAGE_URL } from "../../service/BaseService";
+import CurrencyView from "../currencyView/CurrencyView";
 import "./productItemView.scss";
 
 type Prop = {
-    item: Item
+    item: Item,
+    itemInBasket: boolean
 }
 
-const ProductItemView: React.FC<Prop> = ({ item }) => {
+const ProductItemView: React.FC<Prop> = ({ item, itemInBasket }) => {
   const dispatch = useAppDispatch();
 
-  const onClickAdd = (): void => {
-    dispatch(appendBasketItem(item));
+  const onClickButton = (): void => {
+    if (itemInBasket) {
+      dispatch(removeBasketItem(item));
+      return;
+    }
+
+    dispatch(appendBasketItem({
+      id: item.id,
+      price: item.price,
+      name: item.name,
+      quantity: 1,
+    }));
   };
 
-  const price = `₺ ${item.price}`;
+  const createButtonClassName = (): string => {
+    let className = "product-item-view__button";
+    if (itemInBasket) {
+      className += " product-item-view__button--active";
+    }
+
+    return className;
+  };
 
   return (
     <div className="product-item-view">
       <div className="product-item-view__bg">
         <img
-          src="//www.colorbook.io/imagecreator.php?hex=C4C4C4&width=92&height=92&text=Item"
+          src={PRODUCT_PLACEHOLDER_IMAGE_URL}
           alt={item.name}
         />
       </div>
       <div className="product-item-view__body">
-        <p className="product-item-view__price" title={price}>
-          {price}
-        </p>
+        <div className="product-item-view__price">
+          <CurrencyView currency={item.price} gap={0.2} />
+        </div>
         <p className="product-item-view__name" title={item.name}>{item.name}</p>
       </div>
       <button
         type="button"
-        className="product-item-view__button"
-        onClick={onClickAdd}
+        className={createButtonClassName()}
+        onClick={onClickButton}
       >
-        Add
+        {itemInBasket ? "Remove" : "Add"}
       </button>
     </div>
   );

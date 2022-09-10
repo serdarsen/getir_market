@@ -1,6 +1,10 @@
 import _ from "lodash";
 import React from "react";
-import { setPageNo, useAppDispatch, useAppSelector } from "../../service";
+import {
+  setPageNo,
+  useAppDispatch,
+  useAppSelector,
+} from "../../context";
 import ArrowButton from "./ArrowButton";
 import PageButton from "./PageButton";
 import "./pagination.scss";
@@ -8,8 +12,8 @@ import "./pagination.scss";
 const Pagination: React.FC = () => {
   const PER_PAGE_ITEM_SIZE = 16;
 
-  const items = useAppSelector((state) => state.items.pageable);
-  const pageNo = useAppSelector((state) => state.pageNo.pageNo);
+  const items = useAppSelector((state) => state.item.pageable);
+  const pageNo = useAppSelector((state) => state.pagination.pageNo);
   const dispatch = useAppDispatch();
 
   const pageSize = Math.ceil(items.totalCount / PER_PAGE_ITEM_SIZE);

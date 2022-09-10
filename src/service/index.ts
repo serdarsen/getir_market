@@ -1,26 +1,3 @@
-export {
-  appendBasketItem,
-  removeBasketItem,
-} from "./BasketSlice";
-export {
-  findCompaniesFailure,
-  findCompaniesFetch,
-  findCompaniesSuccess,
-} from "./CompanySlice";
-export {
-  findItemsFailure,
-  findItemsFetch,
-  findItemsSuccess,
-} from "./ItemSlice";
-export {
-  setPageNo,
-} from "./PaginationSlice";
-export {
-  useAppDispatch,
-  useAppSelector,
-} from "./ReduxHook";
-export {
-  findTagsFailure,
-  findTagsFetch,
-  findTagsSuccess,
-} from "./TagSlice";
+export { default as CompanyService } from "./CompanyService";
+export { default as ItemService } from "./ItemService";
+export { default as TagService } from "./TagService";

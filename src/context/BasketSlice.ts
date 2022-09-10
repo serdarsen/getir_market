@@ -22,6 +22,13 @@ const removeBasketItemById = (
   (item) => item.id !== id,
 );
 
+const updateExistingBasketItem = (
+  basketItems: BasketItem[],
+  basketItem: BasketItem,
+): BasketItem[] => basketItems.map(
+  (item) => (item.id === basketItem.id ? basketItem : item),
+);
+
 const appendNewBasketItem = (
   basketItems: BasketItem[],
   basketItem: BasketItem,
@@ -63,8 +70,7 @@ export const BasketSlice = createSlice({
         return;
       }
 
-      const filteredBasketItems = removeBasketItemById(basketItems, payload.id);
-      state.basketItems = appendNewBasketItem(filteredBasketItems, payload);
+      state.basketItems = updateExistingBasketItem(basketItems, payload);
       state.totalPrice = calculateTotalPrice(state.basketItems);
     },
   },

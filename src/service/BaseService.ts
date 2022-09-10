@@ -2,7 +2,7 @@ import axios from "axios";
 
 const isPro = process.env.npm_lifecycle_event === "build";
 
-if (isPro) {
+if (!isPro) {
   const { location } = window || {};
   const { protocol, hostname } = location || {};
   axios.defaults.baseURL = `${protocol}//${hostname}:3004`;

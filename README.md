@@ -6,7 +6,7 @@
 ## Introduction
 Getir Market is an implementation of my interview assignment given by Getir. This is a project that converts a [Figma design](./docs/design.fig) into a modern React application. You can find detailed information in [assignment.pdf](./docs/assignment.pdf).
 
-### Implementation
+## Implementation
 * To be able to analyze in detail, I broke down the task into smaller pieces.
     * Creating main responsive layout struture. 
     * Transforming Figma element sizes and colors into React components using rem and em units. 

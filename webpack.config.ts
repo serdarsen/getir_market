@@ -18,6 +18,8 @@ interface Configuration extends WebpackConfiguration {
 
 const isPro = process.env.npm_lifecycle_event === "build";
 
+console.log("myDebug PORT: ", process.env.PORT);
+
 const commonPlugins = [
   new HtmlWebpackPlugin({
     template: Path.join(__dirname, "src", "index.html"),
@@ -82,7 +84,7 @@ const config: Configuration = {
   plugins: isPro ? proPlugins : devPlugins,
   devtool: "inline-source-map",
   devServer: {
-    static: Path.join(__dirname, "build"),
+    static: Path.join(__dirname, "public"),
     historyApiFallback: true,
     port: 4000,
     open: false,

@@ -9,9 +9,9 @@ import ArrowButton from "./ArrowButton";
 import PageButton from "./PageButton";
 import "./pagination.scss";
 
-const Pagination: React.FC = () => {
-  const PER_PAGE_ITEM_SIZE = 16;
+export const PER_PAGE_ITEM_SIZE = 16;
 
+const Pagination: React.FC = () => {
   const items = useAppSelector((state) => state.item.pageable);
   const pageNo = useAppSelector((state) => state.pagination.pageNo);
   const dispatch = useAppDispatch();

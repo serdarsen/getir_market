@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import {
   findCompaniesFetch,
+  setBrandSearchTerm,
   useAppDispatch,
   useAppSelector,
 } from "../../context";
@@ -12,6 +13,11 @@ import "./brandView.scss";
 
 const Brands: React.FC = () => {
   const companies = useAppSelector((state) => state.company.companies);
+
+  const brandSearchTerm = useAppSelector(
+    (state) => state.pagination.brandSearchTerm,
+  );
+
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -19,7 +25,7 @@ const Brands: React.FC = () => {
   }, [dispatch]);
 
   const onSearch = (searchTerm: string):void => {
-    console.log("searchTerm: ", searchTerm);
+    dispatch(setBrandSearchTerm(searchTerm));
   };
 
   return (
@@ -31,6 +37,7 @@ const Brands: React.FC = () => {
             <Search
               id="brandViewSearchId"
               placeholder="Search brand"
+              searchTerm={brandSearchTerm}
               onSearch={onSearch}
             />
           </div>

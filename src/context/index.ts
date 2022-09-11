@@ -14,7 +14,12 @@ export {
   findItemsSuccess,
 } from "./ItemSlice";
 export {
-  setPageNo,
+  appendBrandFilter,
+  appendTagFilter,
+  removeBrandFilter,
+  removeTagFilter,
+  setBrandSearchTerm, setPageNo,
+  setSortOption, setTagSearchTerm,
 } from "./PaginationSlice";
 export {
   useAppDispatch,

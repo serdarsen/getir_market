@@ -1,24 +1,20 @@
-import React, { FormEvent, useEffect, useState } from "react";
+import React, { FormEvent } from "react";
 import "./search.scss";
 
 type Prop = {
     id: string,
     placeholder: string,
+    searchTerm: string,
     onSearch: (searchTerm: string) => void
 }
 
-const Search: React.FC<Prop> = ({ id, placeholder, onSearch }: Prop) => {
-  const [searchTerm, setSearchTerm] = useState("");
-
+const Search: React.FC<Prop> = ({
+  id, placeholder, searchTerm, onSearch,
+}: Prop) => {
   const onSubmit = (e: FormEvent<HTMLFormElement>):void => {
     e.preventDefault();
     e.stopPropagation();
-    onSearch(searchTerm);
   };
-
-  useEffect(() => {
-    onSearch(searchTerm);
-  }, [onSearch, searchTerm]);
 
   return (
     <form
@@ -32,7 +28,7 @@ const Search: React.FC<Prop> = ({ id, placeholder, onSearch }: Prop) => {
         placeholder={placeholder}
         name="search"
         value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
+        onChange={(e) => onSearch(e.target.value)}
       />
     </form>
   );

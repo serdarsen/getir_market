@@ -5,7 +5,7 @@ type Prop = {
     id: string,
     name: string,
     text: string,
-    onChange: (id: string, checked: boolean) => void
+    onChange: () => void
 }
 
 const Chip: React.FC<Prop> = ({
@@ -17,7 +17,7 @@ const Chip: React.FC<Prop> = ({
       name={name}
       className="chip__input"
       type="checkbox"
-      onChange={(e) => onChange(id, e.target.checked)}
+      onChange={onChange}
     />
     <div className="chip__body">
       <p className="chip__text">{text}</p>

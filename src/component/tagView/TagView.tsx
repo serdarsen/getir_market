@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import {
   findTagsFetch,
+  setTagSearchTerm,
   useAppDispatch,
   useAppSelector,
 } from "../../context";
@@ -11,6 +12,11 @@ import "./tagView.scss";
 
 const TagView: React.FC = () => {
   const tags = useAppSelector((state) => state.tag.tags);
+
+  const tagSearchTerm = useAppSelector(
+    (state) => state.pagination.tagSearchTerm,
+  );
+
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -18,7 +24,7 @@ const TagView: React.FC = () => {
   }, [dispatch]);
 
   const onSearch = (searchTerm: string):void => {
-    console.log("searchTerm: ", searchTerm);
+    dispatch(setTagSearchTerm(searchTerm));
   };
 
   return (
@@ -30,6 +36,7 @@ const TagView: React.FC = () => {
             <Search
               id="tagViewSearchId"
               placeholder="Search tag"
+              searchTerm={tagSearchTerm}
               onSearch={onSearch}
             />
           </div>

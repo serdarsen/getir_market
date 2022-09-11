@@ -19,7 +19,7 @@ Getir Market is an implementation of my interview assignment given by Getir. Thi
 * I applied the Clean Code Naming Conventions and the Single Responsibility Principle to write clean tests.
 <br/><br/>
 * We have Redux, React-Redux, Redux-Saga, and Redux-Toolkit libraries to create a global state management infrastructure.
-    *  I avoided using Redux because of its suggestion to use Redux-Toolkit.
+    *  I avoided using Redux because of [its suggestion to use Redux-Toolkit](https://redux.js.org/introduction/why-rtk-is-redux-today).
     *  I implemented React-Redux, Redux-Saga, and Redux-Toolkit libs to work together because of their efficiency.
 
 ### Feature

@@ -12,8 +12,8 @@ export const PRODUCT_PLACEHOLDER_IMAGE_URL = "//www.colorbook.io/imagecreator.ph
 
 export const JSON_API_URL = "/api";
 
-const BaseService = {
+const baseService = {
   get: (url: string) => axios.get(`${JSON_API_URL}/${url}`),
 };
 
-export default BaseService;
+export default baseService;

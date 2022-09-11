@@ -1,6 +1,6 @@
-import BaseService from "./BaseService";
+import baseService from "./baseService";
 
-const TagService = {
+const tagService = {
   findTags: async (options: any[]): Promise<string[]> => {
     const [searchTerm] = options;
 
@@ -10,7 +10,7 @@ const TagService = {
       url += `?name_like=${encodeURIComponent(searchTerm)}`;
     }
 
-    const response = await BaseService.get(url);
+    const response = await baseService.get(url);
 
     const { data } = response || {};
 
@@ -18,4 +18,4 @@ const TagService = {
   },
 };
 
-export default TagService;
+export default tagService;

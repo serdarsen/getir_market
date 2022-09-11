@@ -2,17 +2,17 @@ export {
   appendBasketItem,
   removeBasketItem,
   updateBasketItem,
-} from "./BasketSlice";
+} from "./basketSlice";
 export {
   findCompaniesFailure,
   findCompaniesFetch,
   findCompaniesSuccess,
-} from "./CompanySlice";
+} from "./companySlice";
 export {
   findItemsFailure,
   findItemsFetch,
   findItemsSuccess,
-} from "./ItemSlice";
+} from "./itemSlice";
 export {
   appendBrandFilter,
   appendTagFilter,
@@ -20,13 +20,13 @@ export {
   removeTagFilter,
   setBrandSearchTerm, setPageNo,
   setSortOption, setTagSearchTerm,
-} from "./PaginationSlice";
+} from "./paginationSlice";
 export {
   useAppDispatch,
   useAppSelector,
-} from "./ReduxHook";
+} from "./reduxHook";
 export {
   findTagsFailure,
   findTagsFetch,
   findTagsSuccess,
-} from "./TagSlice";
+} from "./tagSlice";

@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const TagSlice = createSlice({
-  name: "TagSlice",
+export const tagSlice = createSlice({
+  name: "tagSlice",
   initialState: {
     tags: [],
     isLoading: false,
@@ -24,6 +24,6 @@ export const {
   findTagsFetch,
   findTagsSuccess,
   findTagsFailure,
-} = TagSlice.actions;
+} = tagSlice.actions;
 
-export default TagSlice.reducer;
+export default tagSlice.reducer;

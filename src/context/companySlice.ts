@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const CompanySlice = createSlice({
-  name: "CompanySlice",
+export const companySlice = createSlice({
+  name: "companySlice",
   initialState: {
     companies: [],
     isLoading: false,
@@ -24,6 +24,6 @@ export const {
   findCompaniesFetch,
   findCompaniesSuccess,
   findCompaniesFailure,
-} = CompanySlice.actions;
+} = companySlice.actions;
 
-export default CompanySlice.reducer;
+export default companySlice.reducer;

@@ -2,9 +2,9 @@ import {
   call, CallEffect, ForkEffect,
   put, PutEffect, select, SelectEffect, takeLatest,
 } from "redux-saga/effects";
-import { CompanyService } from "../service";
-import { findCompaniesSuccess } from "./CompanySlice";
-import { RootState } from "./ReduxStore";
+import { companyService } from "../service";
+import { findCompaniesSuccess } from "./companySlice";
+import { RootState } from "./reduxStore";
 
 const getBrandSearchTerm = (
   state: RootState,
@@ -16,16 +16,16 @@ SelectEffect | CallEffect | PutEffect, void
   const brandSearchTerm = yield select(getBrandSearchTerm);
 
   const companies = yield call(
-    CompanyService.findCompanies,
+    companyService.findCompanies,
     [brandSearchTerm],
   );
 
   yield put(findCompaniesSuccess(companies));
 }
 
-function* CompanySaga(): Generator<ForkEffect, void> {
-  yield takeLatest("CompanySlice/findCompaniesFetch", findCompaniesFetch);
-  yield takeLatest("PaginationSlice/setBrandSearchTerm", findCompaniesFetch);
+function* companySaga(): Generator<ForkEffect, void> {
+  yield takeLatest("companySlice/findCompaniesFetch", findCompaniesFetch);
+  yield takeLatest("paginationSlice/setBrandSearchTerm", findCompaniesFetch);
 }
 
-export default CompanySaga;
+export default companySaga;

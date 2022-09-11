@@ -34,8 +34,8 @@ const appendNewBasketItem = (
   basketItem: BasketItem,
 ): BasketItem[] => [...basketItems, basketItem];
 
-export const BasketSlice = createSlice({
-  name: "BasketSlice",
+export const basketSlice = createSlice({
+  name: "basketSlice",
   initialState: {
     basketItems: [] as BasketItem[],
     basketItemIds: [] as number[],
@@ -80,6 +80,6 @@ export const {
   appendBasketItem,
   removeBasketItem,
   updateBasketItem,
-} = BasketSlice.actions;
+} = basketSlice.actions;
 
-export default BasketSlice.reducer;
+export default basketSlice.reducer;

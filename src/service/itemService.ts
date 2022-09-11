@@ -1,8 +1,8 @@
 import { PER_PAGE_ITEM_SIZE } from "../component/pagination/Pagination";
 import { Item, Pageable } from "../model";
-import BaseService from "./BaseService";
+import baseService from "./baseService";
 
-const ItemService = {
+const itemService = {
   findItems: async (options: any[]):
 Promise<Pageable<Item[]>> => {
     const [pageNo, sortOption, brandFilter, tagFilter] = options;
@@ -29,7 +29,7 @@ Promise<Pageable<Item[]>> => {
       PER_PAGE_ITEM_SIZE
     }`;
 
-    const response = await BaseService.get(url);
+    const response = await baseService.get(url);
     const { data, headers = {} } = response || {};
     const totalCount = parseInt(headers["x-total-count"] || "0", 10);
     const pageable = { data, totalCount };
@@ -38,4 +38,4 @@ Promise<Pageable<Item[]>> => {
   },
 };
 
-export default ItemService;
+export default itemService;

@@ -3,9 +3,9 @@ import {
   put, PutEffect, select,
   SelectEffect, takeLatest,
 } from "redux-saga/effects";
-import { ItemService } from "../service";
-import { findItemsSuccess } from "./ItemSlice";
-import { RootState } from "./ReduxStore";
+import { itemService } from "../service";
+import { findItemsSuccess } from "./itemSlice";
+import { RootState } from "./reduxStore";
 
 const getPageNo = (
   state: RootState,
@@ -34,17 +34,17 @@ SelectEffect | CallEffect | PutEffect, void> {
   const tagFilter = yield select(getTagFilter);
 
   const items = yield call(
-    ItemService.findItems,
+    itemService.findItems,
     [pageNo, sortOption, brandFilter, tagFilter],
   );
 
   yield put(findItemsSuccess(items));
 }
 
-function* ItemSaga(): Generator<ForkEffect, void> {
-  yield takeLatest("ItemSlice/findItemsFetch", findItemsFetch);
-  yield takeLatest("PaginationSlice/setPageNo", findItemsFetch);
-  yield takeLatest("PaginationSlice/setSortOption", findItemsFetch);
+function* itemSaga(): Generator<ForkEffect, void> {
+  yield takeLatest("itemSlice/findItemsFetch", findItemsFetch);
+  yield takeLatest("paginationSlice/setPageNo", findItemsFetch);
+  yield takeLatest("paginationSlice/setSortOption", findItemsFetch);
 }
 
-export default ItemSaga;
+export default itemSaga;

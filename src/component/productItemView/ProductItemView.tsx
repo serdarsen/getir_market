@@ -5,7 +5,7 @@ import {
   useAppDispatch,
 } from "../../context";
 import { Item } from "../../model";
-import { PRODUCT_PLACEHOLDER_IMAGE_URL } from "../../service/BaseService";
+import { PRODUCT_PLACEHOLDER_IMAGE_URL } from "../../service/baseService";
 import CurrencyView from "../currencyView/CurrencyView";
 import "./productItemView.scss";
 

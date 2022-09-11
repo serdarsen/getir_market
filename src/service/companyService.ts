@@ -1,7 +1,7 @@
 import { Company } from "../model";
-import BaseService from "./BaseService";
+import baseService from "./baseService";
 
-const CompanyService = {
+const companyService = {
   findCompanies: async (options: any[]): Promise<Company[]> => {
     const [searchTerm] = options;
 
@@ -11,7 +11,7 @@ const CompanyService = {
       url += `?name_like=${encodeURIComponent(searchTerm)}`;
     }
 
-    const response = await BaseService.get(url);
+    const response = await baseService.get(url);
 
     const { data } = response || {};
 
@@ -19,4 +19,4 @@ const CompanyService = {
   },
 };
 
-export default CompanyService;
+export default companyService;

@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const PaginationSlice = createSlice({
-  name: "PaginationSlice",
+export const paginationSlice = createSlice({
+  name: "paginationSlice",
   initialState: {
     pageNo: 1,
     sortOption: ["asc", "price"],
@@ -52,6 +52,6 @@ export const {
   removeTagFilter,
   setBrandSearchTerm,
   setTagSearchTerm,
-} = PaginationSlice.actions;
+} = paginationSlice.actions;
 
-export default PaginationSlice.reducer;
+export default paginationSlice.reducer;

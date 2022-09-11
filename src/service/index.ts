@@ -1,3 +1,3 @@
-export { default as CompanyService } from "./CompanyService";
-export { default as ItemService } from "./ItemService";
-export { default as TagService } from "./TagService";
+export { default as companyService } from "./companyService";
+export { default as itemService } from "./itemService";
+export { default as tagService } from "./tagService";

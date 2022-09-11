@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const ItemSlice = createSlice({
-  name: "ItemSlice",
+export const itemSlice = createSlice({
+  name: "itemSlice",
   initialState: {
     pageable: { data: [], totalCount: 0 },
     isLoading: false,
@@ -24,6 +24,6 @@ export const {
   findItemsFetch,
   findItemsSuccess,
   findItemsFailure,
-} = ItemSlice.actions;
+} = itemSlice.actions;
 
-export default ItemSlice.reducer;
+export default itemSlice.reducer;

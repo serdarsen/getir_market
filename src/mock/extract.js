@@ -16,20 +16,43 @@ const database =  require("./db.json");
 const extract = () => {
   const { items, companies } = database;
 
-  const tagsSet = new Set();
-  const itemTypesSet = new Set();
+  const tagsSet = {};
+  const itemTypesSet = {};
+  const companiesSet = {};
 
   for(let i = 0; i < items.length; i++) {
     const item = items[i] || {};
-    const {tags, itemType} = item;
+    const {tags, itemType, manufacturer} = item;
 
-    tags.forEach(tag => tagsSet.add(tag))
-    itemTypesSet.add(itemType);
+    tags.forEach(tag => {
+        tagsSet[tag] = tagsSet[tag] ? tagsSet[tag] + 1 : 1; 
+    });
+
+    itemTypesSet[itemType] = itemTypesSet[itemType] 
+                             ? itemTypesSet[itemType] + 1 
+                             : 1;
+
+    companiesSet[manufacturer] = companiesSet[manufacturer] 
+                                 ? companiesSet[manufacturer] + 1 
+                                 : 1;
   }
 
-  const tags = Array.from(tagsSet);
-  const itemTypes = Array.from(itemTypesSet);
-  const updatedDb = { tags, itemTypes, items, companies };
+  const tags_countable = Object.keys(tagsSet).map(tag => ({
+    name: tag, count: tagsSet[tag]
+  }));
+
+  const item_types_countable = Object.keys(itemTypesSet).map(itemType => ({
+    name: itemType, count: itemTypesSet[itemType]
+  }));
+
+  const companies_countable = Object.keys(companiesSet).map(company => ({
+    name: company, count: companiesSet[company]
+  }));
+
+  const updatedDb = {
+    items, companies, item_types_countable, 
+    tags_countable, companies_countable
+  };
 
   const file = path.join(__dirname, "db.json");
   const writeStream = fs.createWriteStream(file);

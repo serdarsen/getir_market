@@ -1,5 +1,4 @@
 @use "../../scss/color.scss";
-@use "../../scss/mixin.scss";
 
 .checkbox {
     display: inline-flex;
@@ -41,6 +40,4 @@
     transform: scale(1);
 }
 
-.checkbox__text {
-    @include mixin.create-font(400, 0.8125rem, 1.125rem, color.$black-600, 0.01rem);
-}
+.checkbox__text {}

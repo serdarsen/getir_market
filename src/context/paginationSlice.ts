@@ -22,6 +22,12 @@ export const paginationSlice = createSlice({
       state.brandFilter = [...state.brandFilter, action.payload];
     },
     removeBrandFilter: (state, action) => {
+      if (action.payload.length === 0
+        || action.payload.includes("All")) {
+        state.brandFilter = [];
+        return;
+      }
+
       state.brandFilter = state.brandFilter.filter(
         (brand) => brand !== action.payload,
       );
@@ -30,6 +36,12 @@ export const paginationSlice = createSlice({
       state.tagFilter = [...state.tagFilter, action.payload];
     },
     removeTagFilter: (state, action) => {
+      if (action.payload.length === 0
+        || action.payload.includes("All")) {
+        state.tagFilter = [];
+        return;
+      }
+
       state.tagFilter = state.tagFilter.filter(
         (tag) => tag !== action.payload,
       );

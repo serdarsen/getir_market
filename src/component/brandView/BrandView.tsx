@@ -1,24 +1,34 @@
 import React, { useEffect } from "react";
 import {
+  appendBrandFilter,
   findCompaniesFetch,
+  removeBrandFilter,
   setBrandSearchTerm,
   useAppDispatch,
   useAppSelector,
 } from "../../context";
-import Company from "../../model/Company";
+import Countable from "../../model/Countable";
 import Card from "../card/Card";
 import Checkbox from "../checkbox/Checkbox";
 import Search from "../search/Search";
 import "./brandView.scss";
 
 const Brands: React.FC = () => {
+  const dispatch = useAppDispatch();
   const companies = useAppSelector((state) => state.company.companies);
+  const brandFilter = useAppSelector((state) => state.pagination.brandFilter);
 
   const brandSearchTerm = useAppSelector(
     (state) => state.pagination.brandSearchTerm,
   );
 
-  const dispatch = useAppDispatch();
+  const onChange = (brandName: string): void => {
+    if (brandFilter.includes(brandName)) {
+      dispatch(removeBrandFilter(brandName));
+    } else {
+      dispatch(appendBrandFilter(brandName));
+    }
+  };
 
   useEffect(() => {
     dispatch(findCompaniesFetch());
@@ -46,16 +56,33 @@ const Brands: React.FC = () => {
               id="brandViewCheckboxIdAll"
               key="brandViewCheckboxKeyAll"
               name="brandViewCheckboxNameAll"
-              text="All"
-            />
+              checked={brandFilter.includes("All")}
+              onChange={() => onChange("All")}
+            >
+              <p className="brand-view__text">All</p>
+            </Checkbox>
             {companies.map(
-              (company: Company) => (
+              (company: Countable) => (
                 <Checkbox
-                  id={`brandViewCheckboxId${company.id}`}
-                  key={`brandViewCheckboxKey${company.id}`}
-                  name={`brandViewCheckboxName${company.id}`}
-                  text={company.name}
-                />
+                  id={`brandViewCheckboxId${company.name}`}
+                  key={`brandViewCheckboxKey${company.name}`}
+                  name={`brandViewCheckboxName${company.name}`}
+                  checked={
+                    brandFilter.includes("All")
+                    || brandFilter.includes(company.name)
+                }
+                  onChange={() => onChange(company.name)}
+                >
+                  <p className="brand-view__text">
+                    {company.name}
+                    <span className="brand-view__count">
+                      (
+                      {company.count}
+                      )
+                    </span>
+
+                  </p>
+                </Checkbox>
               ),
             )}
           </div>

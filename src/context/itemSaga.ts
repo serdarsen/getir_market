@@ -45,6 +45,10 @@ function* itemSaga(): Generator<ForkEffect, void> {
   yield takeLatest("itemSlice/findItemsFetch", findItemsFetch);
   yield takeLatest("paginationSlice/setPageNo", findItemsFetch);
   yield takeLatest("paginationSlice/setSortOption", findItemsFetch);
+  yield takeLatest("paginationSlice/removeBrandFilter", findItemsFetch);
+  yield takeLatest("paginationSlice/appendBrandFilter", findItemsFetch);
+  yield takeLatest("paginationSlice/removeTagFilter", findItemsFetch);
+  yield takeLatest("paginationSlice/appendTagFilter", findItemsFetch);
 }
 
 export default itemSaga;

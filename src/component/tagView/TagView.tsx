@@ -1,23 +1,34 @@
 import React, { useEffect } from "react";
 import {
+  appendTagFilter,
   findTagsFetch,
+  removeTagFilter,
   setTagSearchTerm,
   useAppDispatch,
   useAppSelector,
 } from "../../context";
+import Countable from "../../model/Countable";
 import Card from "../card/Card";
 import Checkbox from "../checkbox/Checkbox";
 import Search from "../search/Search";
 import "./tagView.scss";
 
 const TagView: React.FC = () => {
+  const dispatch = useAppDispatch();
   const tags = useAppSelector((state) => state.tag.tags);
+  const tagFilter = useAppSelector((state) => state.pagination.tagFilter);
 
   const tagSearchTerm = useAppSelector(
     (state) => state.pagination.tagSearchTerm,
   );
 
-  const dispatch = useAppDispatch();
+  const onChange = (tagName: string): void => {
+    if (tagFilter.includes(tagName)) {
+      dispatch(removeTagFilter(tagName));
+    } else {
+      dispatch(appendTagFilter(tagName));
+    }
+  };
 
   useEffect(() => {
     dispatch(findTagsFetch());
@@ -45,16 +56,32 @@ const TagView: React.FC = () => {
               id="tagViewCheckboxIdAll"
               key="tagViewCheckboxKeyAll"
               name="tagViewCheckboxNameAll"
-              text="All"
-            />
+              checked={tagFilter.includes("All")}
+              onChange={() => onChange("All")}
+            >
+              <p className="tag-view__text">All</p>
+            </Checkbox>
             {tags.map(
-              (tag: string) => (
+              (tag: Countable) => (
                 <Checkbox
-                  id={`tagViewCheckboxId${tag}`}
-                  key={`tagViewCheckboxKey${tag}`}
-                  name={`tagViewCheckboxName${tag}`}
-                  text={tag}
-                />
+                  id={`tagViewCheckboxId${tag.name}`}
+                  key={`tagViewCheckboxKey${tag.name}`}
+                  name={`tagViewCheckboxName${tag.name}`}
+                  checked={
+                    tagFilter.includes("All")
+                    || tagFilter.includes(tag.name)
+                  }
+                  onChange={() => onChange(tag.name)}
+                >
+                  <p className="tag-view__text">
+                    {tag.name}
+                    <span className="tag-view__count">
+                      (
+                      {tag.count}
+                      )
+                    </span>
+                  </p>
+                </Checkbox>
               ),
             )}
           </div>

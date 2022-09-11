@@ -1,11 +1,11 @@
-import { Company } from "../model";
+import Countable from "../model/Countable";
 import baseService from "./baseService";
 
 const companyService = {
-  findCompanies: async (options: any[]): Promise<Company[]> => {
+  findCompanies: async (options: any[]): Promise<Countable[]> => {
     const [searchTerm] = options;
 
-    let url = "companies";
+    let url = "companies_countable";
 
     if (searchTerm) {
       url += `?name_like=${encodeURIComponent(searchTerm)}`;

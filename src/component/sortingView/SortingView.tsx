@@ -5,8 +5,8 @@ import Radio from "../radio/Radio";
 import "./sortingView.scss";
 
 const SortingView: React.FC = () => {
-  const sortOption = useAppSelector((state) => state.pagination.sortOption);
   const dispatch = useAppDispatch();
+  const sortOption = useAppSelector((state) => state.pagination.sortOption);
 
   const onChange = (order: string, field: string): void => {
     dispatch(setSortOption({ order, field }));

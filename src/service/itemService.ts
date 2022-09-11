@@ -7,18 +7,22 @@ const itemService = {
 Promise<Pageable<Item[]>> => {
     const [pageNo, sortOption, brandFilter, tagFilter] = options;
 
+    const createFilterQuery = (filters: string[], slug: string): string => {
+      if (filters.length === 0 || filters.includes("All")) {
+        return "";
+      }
+
+      return filters.map(
+        (filter: string) => `${slug}_like=${
+          encodeURIComponent(filter)
+        }`,
+      ).join("&");
+    };
+
     const url = `items?${
-      tagFilter.map(
-        (tag: string) => `tags=${
-          encodeURIComponent(tag)
-        }`,
-      ).join("&")
-    }&${
-      brandFilter.map(
-        (brand: string) => `manufacturer=${
-          encodeURIComponent(brand)
-        }`,
-      ).join("&")
+      createFilterQuery(tagFilter, "tags")
+    }${
+      createFilterQuery(brandFilter, "manufacturer")
     }&_order=${
       sortOption[0]
     }&_sort=${

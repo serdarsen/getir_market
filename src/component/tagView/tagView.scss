@@ -29,3 +29,12 @@
     overflow-y: scroll;
     padding: 0.35em 1.5em 0.8125em 1.5em;
 }
+
+.tag-view__text {
+    @include mixin.create-font(400, 0.8125rem, 1.125rem, color.$black-600, 0.01rem);
+}
+
+.tag-view__count {
+    color: color.$black-300;
+    margin: 0.25em;
+}

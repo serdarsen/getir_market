@@ -21,7 +21,7 @@ Promise<Pageable<Item[]>> => {
 
     const url = `items?${
       createFilterQuery(tagFilter, "tags")
-    }${
+    }&${
       createFilterQuery(brandFilter, "manufacturer")
     }&_order=${
       sortOption[0]

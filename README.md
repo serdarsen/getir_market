@@ -35,6 +35,14 @@ Focus points in this project :
 - Powerful global state management
 - Unit test coverage (in development)
 
+## Further Development
+* The following topics can be considered for further development:
+    * Add ability to save basket items and filters to database.
+    * Refactor search widgets using a single reusable component.
+    * Refactor widgets that include a checkbox or radio using a single reusable component.
+    * Refactor context and service elements that have a similar structure using reusable modules.
+    * Improve API error handling. Research and implement API best pratices like [Redux Toolkit Query](https://redux-toolkit.js.org/rtk-query/usage/examples)
+
 ## Usage
 - The project built with `node v18.8.0` and `npm 8.18.0`.
 - To be able to watch logs and develop locally, create `.env` file in the project root dir with a `DEV=true` property in it, and run `npm run dev-json-server` and `npm run dev` scripts in seperate terminals, browse `localhost:4000`.

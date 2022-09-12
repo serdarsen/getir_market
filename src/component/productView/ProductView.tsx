@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import {
+  appendItemTypeFilter,
   findItemsFetch,
+  removeItemTypeFilter,
   useAppDispatch,
   useAppSelector,
 } from "../../context";
@@ -18,15 +20,22 @@ const ProductView: React.FC = () => {
   const items = useAppSelector((state) => state.item.pageable);
   const itemTypes = useAppSelector((state) => state.itemType.itemTypes);
   const basketItemIds = useAppSelector((state) => state.basket.basketItemIds);
+  const itemTypeFilter = useAppSelector(
+    (state) => state.pagination.itemTypeFilter,
+  );
+
+  const onChangeChip = (itemTypeName: string): void => {
+    if (itemTypeFilter.includes(itemTypeName)) {
+      dispatch(removeItemTypeFilter(itemTypeName));
+    } else {
+      dispatch(appendItemTypeFilter(itemTypeName));
+    }
+  };
 
   useEffect(() => {
     dispatch(findItemsFetch());
     dispatch(findItemTypesFetch());
   }, [dispatch]);
-
-  const onChangeChip = (): void => {
-    console.log("on change chip");
-  };
 
   return (
     <div className="product-view">
@@ -38,9 +47,11 @@ const ProductView: React.FC = () => {
             id={`chipId${itemType.name}`}
             key={`chipKey${itemType.name}`}
             name={`chipName${itemType.name}`}
-            text={itemType.name}
-            onChange={onChangeChip}
-          />
+            checked={itemTypeFilter.includes(itemType.name)}
+            onChange={() => onChangeChip(itemType.name)}
+          >
+            {itemType.name}
+          </Chip>
         ))}
       </div>
 

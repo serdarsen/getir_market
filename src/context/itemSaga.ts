@@ -26,16 +26,22 @@ const getTagFilter = (
 ):
 string[] => state.pagination.tagFilter;
 
+const getItemTypeFilter = (
+  state: RootState,
+):
+  string[] => state.pagination.itemTypeFilter;
+
 function* findItemsFetch(): Generator<
 SelectEffect | CallEffect | PutEffect, void> {
   const pageNo = yield select(getPageNo);
   const sortOption = yield select(getSortOption);
   const brandFilter = yield select(getBrandFilter);
   const tagFilter = yield select(getTagFilter);
+  const itemTypeFilter = yield select(getItemTypeFilter);
 
   const items = yield call(
     itemService.findItems,
-    [pageNo, sortOption, brandFilter, tagFilter],
+    [pageNo, sortOption, brandFilter, tagFilter, itemTypeFilter],
   );
 
   yield put(findItemsSuccess(items));
@@ -49,6 +55,8 @@ function* itemSaga(): Generator<ForkEffect, void> {
   yield takeLatest("paginationSlice/appendBrandFilter", findItemsFetch);
   yield takeLatest("paginationSlice/removeTagFilter", findItemsFetch);
   yield takeLatest("paginationSlice/appendTagFilter", findItemsFetch);
+  yield takeLatest("paginationSlice/removeItemTypeFilter", findItemsFetch);
+  yield takeLatest("paginationSlice/appendItemTypeFilter", findItemsFetch);
 }
 
 export default itemSaga;

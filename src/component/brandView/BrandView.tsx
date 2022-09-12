@@ -22,7 +22,7 @@ const Brands: React.FC = () => {
     (state) => state.pagination.brandSearchTerm,
   );
 
-  const onChange = (brandName: string): void => {
+  const onChangeCheckbox = (brandName: string): void => {
     if (brandFilter.includes(brandName)) {
       dispatch(removeBrandFilter(brandName));
     } else {
@@ -57,7 +57,7 @@ const Brands: React.FC = () => {
               key="brandViewCheckboxKeyAll"
               name="brandViewCheckboxNameAll"
               checked={brandFilter.includes("All")}
-              onChange={() => onChange("All")}
+              onChange={() => onChangeCheckbox("All")}
             >
               <p className="brand-view__text">All</p>
             </Checkbox>
@@ -71,7 +71,7 @@ const Brands: React.FC = () => {
                     brandFilter.includes("All")
                     || brandFilter.includes(company.name)
                 }
-                  onChange={() => onChange(company.name)}
+                  onChange={() => onChangeCheckbox(company.name)}
                 >
                   <p className="brand-view__text">
                     {company.name}

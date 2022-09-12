@@ -22,7 +22,7 @@ const TagView: React.FC = () => {
     (state) => state.pagination.tagSearchTerm,
   );
 
-  const onChange = (tagName: string): void => {
+  const onChangeCheckbox = (tagName: string): void => {
     if (tagFilter.includes(tagName)) {
       dispatch(removeTagFilter(tagName));
     } else {
@@ -57,7 +57,7 @@ const TagView: React.FC = () => {
               key="tagViewCheckboxKeyAll"
               name="tagViewCheckboxNameAll"
               checked={tagFilter.includes("All")}
-              onChange={() => onChange("All")}
+              onChange={() => onChangeCheckbox("All")}
             >
               <p className="tag-view__text">All</p>
             </Checkbox>
@@ -71,7 +71,7 @@ const TagView: React.FC = () => {
                     tagFilter.includes("All")
                     || tagFilter.includes(tag.name)
                   }
-                  onChange={() => onChange(tag.name)}
+                  onChange={() => onChangeCheckbox(tag.name)}
                 >
                   <p className="tag-view__text">
                     {tag.name}

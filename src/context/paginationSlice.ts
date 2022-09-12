@@ -7,6 +7,7 @@ export const paginationSlice = createSlice({
     sortOption: ["asc", "price"],
     brandFilter: [] as string[],
     tagFilter: [] as string[],
+    itemTypeFilter: [] as string[],
     brandSearchTerm: "" as string,
     tagSearchTerm: "" as string,
   },
@@ -57,6 +58,21 @@ export const paginationSlice = createSlice({
     setTagSearchTerm: (state, action) => {
       state.tagSearchTerm = action.payload;
     },
+    appendItemTypeFilter: (state, action) => {
+      state.pageNo = 1;
+      state.itemTypeFilter = [...state.itemTypeFilter, action.payload];
+    },
+    removeItemTypeFilter: (state, action) => {
+      state.pageNo = 1;
+      if (action.payload.length === 0) {
+        state.itemTypeFilter = [];
+        return;
+      }
+
+      state.itemTypeFilter = state.itemTypeFilter.filter(
+        (itemType) => itemType !== action.payload,
+      );
+    },
   },
 });
 
@@ -69,6 +85,8 @@ export const {
   removeTagFilter,
   setBrandSearchTerm,
   setTagSearchTerm,
+  removeItemTypeFilter,
+  appendItemTypeFilter,
 } = paginationSlice.actions;
 
 export default paginationSlice.reducer;

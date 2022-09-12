@@ -15,11 +15,15 @@ export {
 } from "./itemSlice";
 export {
   appendBrandFilter,
+  appendItemTypeFilter,
   appendTagFilter,
   removeBrandFilter,
+  removeItemTypeFilter,
   removeTagFilter,
-  setBrandSearchTerm, setPageNo,
-  setSortOption, setTagSearchTerm,
+  setBrandSearchTerm,
+  setPageNo,
+  setSortOption,
+  setTagSearchTerm,
 } from "./paginationSlice";
 export {
   useAppDispatch,

@@ -5,7 +5,9 @@ import baseService from "./baseService";
 const itemService = {
   findItems: async (options: any[]):
 Promise<Pageable<Item[]>> => {
-    const [pageNo, sortOption, brandFilter, tagFilter] = options;
+    const [
+      pageNo, sortOption, brandFilter, tagFilter, itemTypeFilter,
+    ] = options;
 
     const createFilterQuery = (filters: string[], slug: string): string => {
       if (filters.length === 0 || filters.includes("All")) {
@@ -23,6 +25,8 @@ Promise<Pageable<Item[]>> => {
       createFilterQuery(tagFilter, "tags")
     }&${
       createFilterQuery(brandFilter, "manufacturer")
+    }&${
+      createFilterQuery(itemTypeFilter, "itemType")
     }&_order=${
       sortOption[0]
     }&_sort=${

@@ -1,15 +1,16 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import "./chip.scss";
 
 type Prop = {
     id: string,
     name: string,
-    text: string,
+    children: ReactNode,
+    checked: boolean,
     onChange: () => void
 }
 
 const Chip: React.FC<Prop> = ({
-  id, name, text, onChange,
+  id, name, children, checked, onChange,
 }: Prop) => (
   <label className="chip" htmlFor={id}>
     <input
@@ -17,10 +18,11 @@ const Chip: React.FC<Prop> = ({
       name={name}
       className="chip__input"
       type="checkbox"
+      checked={checked}
       onChange={onChange}
     />
     <div className="chip__body">
-      <p className="chip__text">{text}</p>
+      <p className="chip__text">{children}</p>
     </div>
   </label>
 );

@@ -15,13 +15,16 @@ export const paginationSlice = createSlice({
       state.pageNo = action.payload;
     },
     setSortOption: (state, action) => {
+      state.pageNo = 1;
       const { order, field } = action.payload;
       state.sortOption = [order, field];
     },
     appendBrandFilter: (state, action) => {
+      state.pageNo = 1;
       state.brandFilter = [...state.brandFilter, action.payload];
     },
     removeBrandFilter: (state, action) => {
+      state.pageNo = 1;
       if (action.payload.length === 0
         || action.payload.includes("All")) {
         state.brandFilter = [];
@@ -33,9 +36,11 @@ export const paginationSlice = createSlice({
       );
     },
     appendTagFilter: (state, action) => {
+      state.pageNo = 1;
       state.tagFilter = [...state.tagFilter, action.payload];
     },
     removeTagFilter: (state, action) => {
+      state.pageNo = 1;
       if (action.payload.length === 0
         || action.payload.includes("All")) {
         state.tagFilter = [];

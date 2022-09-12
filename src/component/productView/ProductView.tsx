@@ -20,8 +20,8 @@ const ProductView: React.FC = () => {
     dispatch(findItemsFetch());
   }, [dispatch]);
 
-  const onChangeChip = (id: string, checked: boolean): void => {
-    console.log(`${id} is checked: ${checked}`);
+  const onChangeChip = (): void => {
+    console.log("on change chip");
   };
 
   return (

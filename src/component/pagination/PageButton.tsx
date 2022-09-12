@@ -6,13 +6,13 @@ type Prop = {
     name: string,
     pageNo: number,
     value: number,
-    onChange: (value: number, checked: boolean) => void
+    onChange: () => void
 }
 
 const PageButton: React.FC<Prop> = ({
   id, name, pageNo, value, onChange,
 }: Prop) => {
-  const isSeperator = value === 0;
+  const isSeperator = value < 0;
 
   const createClassName = (): string => {
     let className = "page-button";
@@ -30,7 +30,7 @@ const PageButton: React.FC<Prop> = ({
         name={name}
         className="page-button__input"
         type="radio"
-        onChange={(e) => onChange(value, e.target.checked)}
+        onChange={onChange}
         checked={pageNo === value}
       />
       <div className="page-button__body">

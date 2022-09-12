@@ -6,7 +6,7 @@ type Prop = {
     name: string,
     text: string,
     checked: boolean,
-    onChange: (id: string, checked: boolean) => void
+    onChange: () => void
 }
 
 const Radio: React.FC<Prop> = ({
@@ -19,7 +19,7 @@ const Radio: React.FC<Prop> = ({
       className="radio__input"
       type="radio"
       checked={checked}
-      onChange={(e) => onChange(id, e.target.checked)}
+      onChange={onChange}
 
     />
     <div className="radio__body" />

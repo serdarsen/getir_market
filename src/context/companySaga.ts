@@ -1,6 +1,7 @@
 import {
   call, CallEffect, ForkEffect,
-  put, PutEffect, select, SelectEffect, takeLatest,
+  put, PutEffect, select,
+  SelectEffect, takeLatest,
 } from "redux-saga/effects";
 import { companyService } from "../service";
 import { findCompaniesSuccess } from "./companySlice";

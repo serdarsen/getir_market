@@ -1,5 +1,7 @@
 import {
-  call, CallEffect, ForkEffect, put, PutEffect, select, SelectEffect, takeEvery,
+  call, CallEffect, ForkEffect,
+  put, PutEffect, select,
+  SelectEffect, takeEvery,
 } from "redux-saga/effects";
 import { tagService } from "../service";
 import { RootState } from "./reduxStore";

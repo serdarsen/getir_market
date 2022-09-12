@@ -1,23 +1,30 @@
-import { Action, configureStore, ThunkAction } from "@reduxjs/toolkit";
+import {
+  Action,
+  configureStore,
+  ThunkAction,
+} from "@reduxjs/toolkit";
 import createSagaMiddleware from "redux-saga";
-import BasketReducer from "./basketSlice";
+import basketReducer from "./basketSlice";
 import companySaga from "./companySaga";
-import CompanyReducer from "./companySlice";
+import companyReducer from "./companySlice";
 import itemSaga from "./itemSaga";
-import ItemReducer from "./itemSlice";
-import PaginationReducer from "./paginationSlice";
+import itemReducer from "./itemSlice";
+import itemTypeSaga from "./itemTypeSaga";
+import itemTypeReducer from "./itemTypeSlice";
+import paginationReducer from "./paginationSlice";
 import tagSaga from "./tagSaga";
-import TagReducer from "./tagSlice";
+import tagReducer from "./tagSlice";
 
 const SagaMiddleware = createSagaMiddleware();
 
 export const reduxStore = configureStore({
   reducer: {
-    company: CompanyReducer,
-    item: ItemReducer,
-    tag: TagReducer,
-    pagination: PaginationReducer,
-    basket: BasketReducer,
+    company: companyReducer,
+    item: itemReducer,
+    tag: tagReducer,
+    pagination: paginationReducer,
+    basket: basketReducer,
+    itemType: itemTypeReducer,
   },
   middleware: [SagaMiddleware],
 });
@@ -25,6 +32,7 @@ export const reduxStore = configureStore({
 SagaMiddleware.run(companySaga);
 SagaMiddleware.run(itemSaga);
 SagaMiddleware.run(tagSaga);
+SagaMiddleware.run(itemTypeSaga);
 
 export type AppDispatch = typeof reduxStore.dispatch;
 export type RootState = ReturnType<typeof reduxStore.getState>;

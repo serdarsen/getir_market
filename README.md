@@ -42,6 +42,7 @@ Focus points in this project :
     * Refactor widgets that include a checkbox or radio using a single reusable component.
     * Refactor context and service elements that have a similar structure using reusable modules.
     * Improve API error handling. Research and implement API best pratices like [Redux Toolkit Query](https://redux-toolkit.js.org/rtk-query/usage/examples)
+    * Add responsiveness to the sidebar for smaller screens.
 
 ## Usage
 - The project built with `node v18.8.0` and `npm 8.18.0`.

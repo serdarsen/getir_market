@@ -22,7 +22,11 @@
 
 
 @media screen and (max-width: 550px) {
+    .pagination {
+        flex-direction: column;
+    }
+
     .pagination__page-button-group {
-        margin: 0 0.1em 0 0.1em;
+        margin: 0.2em 0.1em 0.2em 0.1em;
     }
 }

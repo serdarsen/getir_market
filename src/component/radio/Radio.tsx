@@ -19,10 +19,7 @@ const Radio: React.FC<Prop> = ({
       className="radio__input"
       type="checkbox"
       checked={checked}
-      onChange={(e) => {
-        e.stopPropagation();
-        onChange();
-      }}
+      onChange={() => onChange()}
 
     />
     <div className="radio__body" />

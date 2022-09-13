@@ -10,8 +10,7 @@ const SlidingViewButton: React.FC = () => {
     <button
       type="button"
       className="sliding-view-button"
-      onClick={(e) => {
-        e.stopPropagation();
+      onClick={() => {
         setActive(!active);
       }}
     >

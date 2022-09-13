@@ -19,10 +19,8 @@ const Chip: React.FC<Prop> = ({
       className="chip__input"
       type="checkbox"
       checked={checked}
-      onChange={(e) => {
-        e.stopPropagation();
-        onChange();
-      }}
+      onChange={() => onChange()}
+
     />
     <div className="chip__body">
       <p className="chip__text">{children}</p>

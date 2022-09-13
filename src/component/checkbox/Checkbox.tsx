@@ -19,10 +19,7 @@ const Checkbox: React.FC<Prop> = ({
       className="checkbox__input"
       type="checkbox"
       checked={checked}
-      onChange={(e) => {
-        e.stopPropagation();
-        onChange();
-      }}
+      onChange={() => onChange()}
     />
     <div className="checkbox__body" />
     <div className="checkbox__text">{children}</div>

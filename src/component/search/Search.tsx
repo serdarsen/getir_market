@@ -14,7 +14,7 @@ const Search: React.FC<Prop> = ({
   <form
     id={`searchForm${id}`}
     onSubmit={(e) => {
-      e.stopPropagation();
+      e.preventDefault();
     }}
   >
     <input
@@ -24,10 +24,7 @@ const Search: React.FC<Prop> = ({
       placeholder={placeholder}
       name="search"
       value={searchTerm}
-      onChange={(e) => {
-        e.stopPropagation();
-        onSearch(e.target.value);
-      }}
+      onChange={(e) => onSearch(e.target.value)}
     />
   </form>
 );

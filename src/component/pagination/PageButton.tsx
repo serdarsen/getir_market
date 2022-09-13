@@ -30,10 +30,7 @@ const PageButton: React.FC<Prop> = ({
         name={name}
         className="page-button__input"
         type="radio"
-        onChange={(e) => {
-          e.stopPropagation();
-          onChange();
-        }}
+        onChange={() => onChange()}
         checked={pageNo === value}
       />
       <div className="page-button__body">

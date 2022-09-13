@@ -12,8 +12,7 @@ const BasketButton: React.FC = () => {
   return (
     <div
       className={`basket-button ${active ? "basket-button--active" : ""}`}
-      onClick={(e) => {
-        e.stopPropagation();
+      onClick={() => {
         setActive(!active);
       }}
       onKeyDown={(e) => e.stopPropagation()}

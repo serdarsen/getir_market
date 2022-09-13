@@ -4,11 +4,14 @@
 .sorting-view {
     width: 18.5em;
     height: 13.375em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75em;
 }
 
 .sorting-view__title {
     @include mixin.create-font(600, 0.8125rem, 1.125rem, color.$gray-500, normal);
-    margin: 0 0 0.75rem 0;
+    text-align: start;
 }
 
 .sorting-view__body {

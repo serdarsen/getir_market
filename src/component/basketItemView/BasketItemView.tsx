@@ -47,6 +47,7 @@ const BasketItemView: React.FC<Prop> = ({ basketItem }: Prop) => {
         </div>
         <div className="basket-item-view__right">
           <Counter
+            value={basketItem.quantity}
             onChange={onChangeCounter}
           />
         </div>

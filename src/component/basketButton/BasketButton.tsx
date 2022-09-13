@@ -1,4 +1,4 @@
-import React, { KeyboardEvent, MouseEvent, useState } from "react";
+import React, { useState } from "react";
 import { useAppSelector } from "../../context";
 import { BasketIcon } from "../../icon";
 import BasketView from "../basketView/BasketView";
@@ -9,22 +9,14 @@ const BasketButton: React.FC = () => {
   const [active, setActive] = useState(false);
   const totalPrice = useAppSelector((state) => state.basket.totalPrice);
 
-  const onClick = (e: MouseEvent<HTMLDivElement>): void => {
-    e.preventDefault();
-    e.stopPropagation();
-    setActive(!active);
-  };
-
-  const onKeyDown = (e: KeyboardEvent<HTMLDivElement>): void => {
-    e.preventDefault();
-    e.stopPropagation();
-  };
-
   return (
     <div
       className={`basket-button ${active ? "basket-button--active" : ""}`}
-      onClick={onClick}
-      onKeyDown={onKeyDown}
+      onClick={(e) => {
+        e.stopPropagation();
+        setActive(!active);
+      }}
+      onKeyDown={(e) => e.stopPropagation()}
       role="button"
       tabIndex={0}
     >

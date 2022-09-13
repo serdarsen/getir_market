@@ -1,24 +1,23 @@
-import React, { useState } from "react";
+import React, { MouseEvent } from "react";
 import { MinusIcon, PlusIcon } from "../../icon";
 import "./counter.scss";
 
 type Prop = {
+    value: number,
     onChange: (count: number) => void
 }
 
-const Counter: React.FC<Prop> = ({ onChange }: Prop) => {
-  const [count, setCount] = useState(1);
-
-  const onDecrease = (): void => {
-    if (count > 0) {
-      setCount(count - 1);
-      onChange(count - 1);
+const Counter: React.FC<Prop> = ({ value, onChange }: Prop) => {
+  const onDecrease = (e: MouseEvent<HTMLButtonElement>): void => {
+    e.stopPropagation();
+    if (value > 0) {
+      onChange(value - 1);
     }
   };
 
-  const onIncrease = (): void => {
-    setCount(count + 1);
-    onChange(count + 1);
+  const onIncrease = (e: MouseEvent<HTMLButtonElement>): void => {
+    e.stopPropagation();
+    onChange(value + 1);
   };
 
   return (
@@ -30,7 +29,7 @@ const Counter: React.FC<Prop> = ({ onChange }: Prop) => {
       >
         <MinusIcon className="counter__decrease-icon" />
       </button>
-      <p className="counter__label">{count}</p>
+      <p className="counter__label">{value}</p>
       <button
         type="button"
         className="counter__increase-button"

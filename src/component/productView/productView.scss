@@ -4,7 +4,6 @@
 .product-view {
     display: flex;
     flex-direction: column;
-    width: 38em;
 }
 
 .product-view__title {
@@ -26,19 +25,19 @@
     padding: 0 0 1.25em 0;
 }
 
-@media screen and (max-width: 1420px) {
+@media screen and (max-width: 690px) {
     .product-view__body {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
-@media screen and (max-width: 1155px) {
+@media screen and (max-width: 655px) {
     .product-view__body {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 550px) {
     .product-view__body {
         grid-template-columns: repeat(1, 1fr);
     }

@@ -7,7 +7,11 @@
     height: 4.5em;
     justify-content: center;
     align-items: center;
-    justify-items: center;
+}
+
+.header__left {
+    grid-column: 1 / 2;
+    display: none;
 }
 
 .header__center {
@@ -27,4 +31,10 @@
 .header__right {
     grid-column: 3 / 4;
     justify-self: end;
+}
+
+@media screen and (max-width: 1280px) {
+    .header__left {
+        display: unset;
+    }
 }

@@ -1,6 +1,7 @@
-.aside {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 1.5em;
+.aside {}
+
+@media screen and (max-width: 1280px) {
+    .aside {
+        display: none;
+    }
 }

@@ -8,7 +8,10 @@ const SortingView: React.FC = () => {
   const dispatch = useAppDispatch();
   const sortOption = useAppSelector((state) => state.pagination.sortOption);
 
-  const onChange = (order: string, field: string): void => {
+  const onChange = (
+    order: string,
+    field: string,
+  ): void => {
     dispatch(setSortOption({ order, field }));
   };
 
@@ -19,28 +22,28 @@ const SortingView: React.FC = () => {
         <div className="sorting-view__body">
           <Radio
             id="sortingViewRadioId1"
-            name="sortingViewRadioName"
+            name="sortingViewRadioName1"
             text="Price low to high"
             checked={sortOption[0] === "asc" && sortOption[1] === "price"}
             onChange={() => onChange("asc", "price")}
           />
           <Radio
             id="sortingViewRadioId2"
-            name="sortingViewRadioName"
+            name="sortingViewRadioName2"
             text="Price high to low"
             checked={sortOption[0] === "desc" && sortOption[1] === "price"}
             onChange={() => onChange("desc", "price")}
           />
           <Radio
             id="sortingViewRadioId3"
-            name="sortingViewRadioName"
+            name="sortingViewRadioName3"
             text="New to old"
             checked={sortOption[0] === "asc" && sortOption[1] === "added"}
             onChange={() => onChange("asc", "added")}
           />
           <Radio
             id="sortingViewRadioId4"
-            name="sortingViewRadioName"
+            name="sortingViewRadioName4"
             text="Old to new"
             checked={sortOption[0] === "desc" && sortOption[1] === "added"}
             onChange={() => onChange("desc", "added")}

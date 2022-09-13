@@ -1,4 +1,4 @@
-import React, { KeyboardEvent, MouseEvent } from "react";
+import React from "react";
 import { useAppSelector } from "../../context";
 import { BasketItem } from "../../model";
 import BasketItemView from "../basketItemView/BasketItemView";
@@ -13,21 +13,11 @@ const BasketView: React.FC<Prop> = ({ visible }: Prop) => {
   const basketItems = useAppSelector((state) => state.basket.basketItems);
   const totalPrice = useAppSelector((state) => state.basket.totalPrice);
 
-  const onClick = (e: MouseEvent<HTMLDivElement>): void => {
-    e.preventDefault();
-    e.stopPropagation();
-  };
-
-  const onKeyDown = (e: KeyboardEvent<HTMLDivElement>): void => {
-    e.preventDefault();
-    e.stopPropagation();
-  };
-
   return visible ? (
     <div
-      className="basket-view"
-      onClick={onClick}
-      onKeyDown={onKeyDown}
+      className="basket-view animation__scale-up-center"
+      onClick={(e) => e.stopPropagation()}
+      onKeyDown={(e) => e.stopPropagation()}
       role="button"
       tabIndex={0}
     >

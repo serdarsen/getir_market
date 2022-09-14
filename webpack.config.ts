@@ -13,7 +13,7 @@ import {
 import { WebpackManifestPlugin } from "webpack-manifest-plugin";
 
 interface Configuration extends WebpackConfiguration {
-    devServer: WebpackDevServerConfiguration;
+    devServer: WebpackDevServerConfiguration | undefined;
 }
 
 const isPro = process.env.npm_lifecycle_event === "build";
@@ -80,8 +80,8 @@ const config: Configuration = {
     extensions: [".tsx", ".ts", ".js"],
   },
   plugins: isPro ? proPlugins : devPlugins,
-  devtool: "inline-source-map",
-  devServer: {
+  devtool: isPro ? false : "inline-source-map",
+  devServer: isPro ? undefined : {
     static: path.join(__dirname, "public"),
     historyApiFallback: true,
     port: 4000,

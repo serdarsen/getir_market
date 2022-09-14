@@ -29,6 +29,10 @@ export {
   useAppDispatch,
   useAppSelector,
 } from "./reduxHook";
+export type {
+  AppStore,
+  RootState,
+} from "./reduxStore";
 export {
   findTagsFailure,
   findTagsFetch,

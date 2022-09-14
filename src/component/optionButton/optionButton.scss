@@ -1,20 +1,20 @@
 @use "../../scss/color.scss";
 @use "../../scss/mixin.scss";
 
-.sliding-view-button {
+.option-button {
     @include mixin.reset-button;
     margin: 0 0 0 1em;
     position: relative;
 }
 
-.sliding-view-button__close-icon {
+.option-button__close-icon {
     width: 1.5em;
     height: 1.5em;
     fill: none;
     stroke: color.$white;
 }
 
-.sliding-view-button__menu-icon {
+.option-button__menu-icon {
     width: 1.5em;
     height: 1.5em;
     fill: none;

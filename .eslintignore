@@ -5,7 +5,7 @@ node_modules/
 
 package-lock.json
 server.js
-src/mock/extract.js
+src/db/extract.js
 
 *.md
 *.json

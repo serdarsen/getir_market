@@ -19,12 +19,12 @@ const SagaMiddleware = createSagaMiddleware();
 
 export const reduxStore = configureStore({
   reducer: {
+    basket: basketReducer,
     company: companyReducer,
     item: itemReducer,
-    tag: tagReducer,
-    pagination: paginationReducer,
-    basket: basketReducer,
     itemType: itemTypeReducer,
+    pagination: paginationReducer,
+    tag: tagReducer,
   },
   middleware: [SagaMiddleware],
 });
@@ -34,6 +34,7 @@ SagaMiddleware.run(itemSaga);
 SagaMiddleware.run(tagSaga);
 SagaMiddleware.run(itemTypeSaga);
 
+export type AppStore = typeof reduxStore;
 export type AppDispatch = typeof reduxStore.dispatch;
 export type RootState = ReturnType<typeof reduxStore.getState>;
 export type AppThunk<ReturnType = void> = ThunkAction<

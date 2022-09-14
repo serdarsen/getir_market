@@ -1,25 +1,25 @@
 import React, { useState } from "react";
 import { CloseIcon, MenuIcon } from "../../icon";
 import SlidingView from "../slidingView/SlidingView";
-import "./slidingViewButton.scss";
+import "./optionButton.scss";
 
-const SlidingViewButton: React.FC = () => {
+const OptionButton: React.FC = () => {
   const [active, setActive] = useState(false);
 
   return (
     <button
       type="button"
-      className="sliding-view-button"
+      className="option-button"
       onClick={() => {
         setActive(!active);
       }}
     >
       {active
-        ? <CloseIcon className="sliding-view-button__close-icon" />
-        : <MenuIcon className="sliding-view-button__menu-icon" />}
+        ? <CloseIcon className="option-button__close-icon" />
+        : <MenuIcon className="option-button__menu-icon" />}
       <SlidingView visible={active} />
     </button>
   );
 };
 
-export default SlidingViewButton;
+export default OptionButton;

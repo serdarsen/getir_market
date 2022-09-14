@@ -5,16 +5,16 @@
    in order to create their mock database tables in db.json
 
    Usage
-   node ./src/mock/extract.js
+   node ./src/database/extract.js
 
 */
 
 const path = require("path");
 const fs = require("fs");
-const database =  require("./db.json");
+const db =  require("./db.json");
 
 const extract = () => {
-  const { items, companies } = database;
+  const { items, companies } = db;
 
   const tagsSet = {};
   const itemTypesSet = {};

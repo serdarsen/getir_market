@@ -2,13 +2,13 @@ import React from "react";
 
 import { LogoIcon } from "../../icon";
 import BasketButton from "../basketButton/BasketButton";
-import SlidingViewButton from "../slidingViewButton/SlidingViewButton";
+import OptionButton from "../optionButton/OptionButton";
 import "./header.scss";
 
 const Header: React.FC = () => (
   <header className="header">
     <div className="header__left">
-      <SlidingViewButton />
+      <OptionButton />
     </div>
     <div className="header__center">
       <LogoIcon className="header__logo" />

@@ -2,7 +2,7 @@ import Countable from "../model/Countable";
 import baseService from "./baseService";
 
 const tagService = {
-  findTags: async (options: any[]): Promise<Countable[]> => {
+  findTags: async (options: string[]): Promise<Countable[]> => {
     const [searchTerm] = options;
 
     let url = "tags_countable";

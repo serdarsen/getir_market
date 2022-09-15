@@ -2,7 +2,7 @@ import Countable from "../model/Countable";
 import baseService from "./baseService";
 
 const companyService = {
-  findCompanies: async (options: any[]): Promise<Countable[]> => {
+  findCompanies: async (options: string[]): Promise<Countable[]> => {
     const [searchTerm] = options;
 
     let url = "companies_countable";

@@ -18,8 +18,7 @@
         "jsx": "react-jsx"
     },
     "include": [
-        "./src/*",
-        "src/component/main/Main.test.tsx"
+        "./src/*"
     ],
     "exclude": [
         "./node_modules",

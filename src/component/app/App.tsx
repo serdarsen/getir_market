@@ -1,8 +1,8 @@
 import React from "react";
 import { Provider } from "react-redux";
+import { Footer, Header, Main } from "..";
+import { reduxStore } from "../../context/reduxStore";
 import "./app.scss";
-import { Footer, Header, Main } from "./component";
-import { reduxStore } from "./context/reduxStore";
 
 const App: React.FC = () => (
   <Provider store={reduxStore}>

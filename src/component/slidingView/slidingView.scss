@@ -9,3 +9,9 @@
     border: 0.5em solid #1EA4CE;
     padding: 1em 1em 1em 1em;
 }
+
+@media screen and (max-width: 700px) {
+    .sliding-view {
+        left: 1em;
+    }
+}

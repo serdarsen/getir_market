@@ -50,7 +50,25 @@
 
 @media screen and (max-width: 1280px) {
     .basket-button {
+        width: 5em;
         margin: 0 2.5em 0 0;
+        cursor: none;
+    }
+
+    .basket-button__price {
+        display: none;
+    }
+
+    .basket-button__popup {
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .basket-button {
+        width: 2em;
+        margin: 0 1.5em 0 0;
+        cursor: default;
     }
 
     .basket-button__price {

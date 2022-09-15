@@ -1,13 +1,14 @@
 import { PER_PAGE_ITEM_SIZE } from "../component/pagination/Pagination";
-import { Item, Pageable } from "../model";
+import { Item, Pageable, PageRequest } from "../model";
 import baseService from "./baseService";
 
 const itemService = {
-  findItems: async (options: (string | string[])[]):
+  findItems: async (options: PageRequest[]):
 Promise<Pageable<Item[]>> => {
-    const [
+    const [pageRequest] = options;
+    const {
       pageNo, sortOption, brandFilter, tagFilter, itemTypeFilter,
-    ] = options;
+    } = pageRequest;
 
     const createFilterQuery = (filters: string[], slug: string): string => {
       if (filters.length === 0 || filters.includes("All")) {

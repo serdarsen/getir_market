@@ -14,7 +14,7 @@ const getTagSearchTerm = (
 function* findTagsFetch(): Generator<
 SelectEffect | CallEffect | PutEffect, void
 > {
-  const tagSearchTerm = yield select(getTagSearchTerm);
+  const tagSearchTerm = (yield select(getTagSearchTerm)) as string;
 
   const tags = yield call(
     tagService.findTags,

@@ -3,6 +3,7 @@ import {
   put, PutEffect, select,
   SelectEffect, takeLatest,
 } from "redux-saga/effects";
+import { PageRequest } from "../model";
 import { itemService } from "../service";
 import { findItemsSuccess } from "./itemSlice";
 import { RootState } from "./reduxStore";
@@ -33,15 +34,19 @@ const getItemTypeFilter = (
 
 function* findItemsFetch(): Generator<
 SelectEffect | CallEffect | PutEffect, void> {
-  const pageNo = yield select(getPageNo);
-  const sortOption = yield select(getSortOption);
-  const brandFilter = yield select(getBrandFilter);
-  const tagFilter = yield select(getTagFilter);
-  const itemTypeFilter = yield select(getItemTypeFilter);
+  const pageNo = (yield select(getPageNo)) as number;
+  const sortOption = (yield select(getSortOption)) as string[];
+  const brandFilter = (yield select(getBrandFilter)) as string[];
+  const tagFilter = (yield select(getTagFilter)) as string[];
+  const itemTypeFilter = (yield select(getItemTypeFilter)) as string[];
+
+  const pageRequest: PageRequest = {
+    pageNo, sortOption, brandFilter, tagFilter, itemTypeFilter,
+  };
 
   const items = yield call(
     itemService.findItems,
-    [pageNo, sortOption, brandFilter, tagFilter, itemTypeFilter],
+    [pageRequest],
   );
 
   yield put(findItemsSuccess(items));

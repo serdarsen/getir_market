@@ -14,7 +14,7 @@ const getBrandSearchTerm = (
 function* findCompaniesFetch(): Generator<
 SelectEffect | CallEffect | PutEffect, void
 > {
-  const brandSearchTerm = yield select(getBrandSearchTerm);
+  const brandSearchTerm = (yield select(getBrandSearchTerm)) as string;
 
   const companies = yield call(
     companyService.findCompanies,

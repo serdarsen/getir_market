@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const isDev = process.env.DEV;
+const isDev = process.env.DEV === "true";
 
 if (isDev) {
   const { location } = window || {};

@@ -13,7 +13,7 @@ Getir Market is an implementation of my interview assignment given by Getir. Thi
     * Creating components from scratch in order to obtain an easy-to-maintain and easy-to-test codebase. 
     * Creating dev json server api.
     * Creating powerful global state management.
-    * Creating a styling infustructure by using SCSS variables, mixins, and BEM naming conventions
+    * Creating a consistent styling infrastructure by using SCSS variables, mixins, and BEM naming conventions
     * Testing application by simuliating the end user behaviours
 <br/><br/>    
 * I handled the context operations individually to have a separation of concerns.  

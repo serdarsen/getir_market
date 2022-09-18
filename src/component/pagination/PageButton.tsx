@@ -24,17 +24,22 @@ const PageButton: React.FC<Prop> = ({
   };
 
   return (
-    <label className={createClassName()} htmlFor={id}>
+    <label
+      className={createClassName()}
+      htmlFor={id}
+    >
       <input
         id={id}
         name={name}
         className="page-button__input"
         type="radio"
-        onChange={() => onChange()}
+        onChange={onChange}
         checked={pageNo === value}
       />
       <div className="page-button__body">
-        <p className="page-button__text">{isSeperator ? "..." : value}</p>
+        <p className="page-button__text">
+          {isSeperator ? "..." : value}
+        </p>
       </div>
     </label>
   );

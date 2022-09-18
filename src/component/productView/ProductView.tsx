@@ -1,8 +1,10 @@
 import React, { useEffect } from "react";
+import { productConst } from "../../constant";
 import {
   appendItemTypeFilter,
   findItemsFetch,
   removeItemTypeFilter,
+  setPageNo,
   useAppDispatch,
   useAppSelector,
 } from "../../context";
@@ -20,6 +22,7 @@ const ProductView: React.FC = () => {
   const items = useAppSelector((state) => state.item.pageable);
   const itemTypes = useAppSelector((state) => state.itemType.itemTypes);
   const basketItemIds = useAppSelector((state) => state.basket.basketItemIds);
+  const pageNo = useAppSelector((state) => state.pagination.pageNo);
   const itemTypeFilter = useAppSelector(
     (state) => state.pagination.itemTypeFilter,
   );
@@ -30,6 +33,10 @@ const ProductView: React.FC = () => {
     } else {
       dispatch(appendItemTypeFilter(itemTypeName));
     }
+  };
+
+  const onChangePageNo = (page: number):void => {
+    dispatch(setPageNo(page));
   };
 
   useEffect(() => {
@@ -69,8 +76,12 @@ const ProductView: React.FC = () => {
         </div>
       </Card>
 
-      <Pagination />
-
+      <Pagination
+        pageNo={pageNo}
+        perPageItemSize={productConst.PER_PAGE_ITEM_SIZE}
+        totalCount={items.totalCount}
+        onChangePageNo={onChangePageNo}
+      />
     </div>
   );
 };

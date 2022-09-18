@@ -1,21 +1,23 @@
 import _ from "lodash";
 import React from "react";
-import {
-  setPageNo,
-  useAppDispatch,
-  useAppSelector,
-} from "../../context";
 import ArrowButton from "./ArrowButton";
 import PageButton from "./PageButton";
 import "./pagination.scss";
 
-export const PER_PAGE_ITEM_SIZE = 16;
+type Prop = {
+    pageNo: number;
+    perPageItemSize: number;
+    totalCount: number;
+    onChangePageNo: (page: number) => void
+}
 
-const Pagination: React.FC = () => {
-  const dispatch = useAppDispatch();
-  const items = useAppSelector((state) => state.item.pageable);
-  const pageNo = useAppSelector((state) => state.pagination.pageNo);
-  const pageSize = Math.ceil(items.totalCount / PER_PAGE_ITEM_SIZE) || 1;
+const Pagination: React.FC<Prop> = ({
+  pageNo,
+  perPageItemSize,
+  totalCount,
+  onChangePageNo,
+}: Prop) => {
+  const pageSize = Math.ceil(totalCount / perPageItemSize) || 1;
   const hasPrev = pageNo > 1;
   const hasNext = pageNo < pageSize;
 
@@ -59,19 +61,19 @@ const Pagination: React.FC = () => {
 
   const onChangePageButton = (page: number): void => {
     if (page > 0) {
-      dispatch(setPageNo(page));
+      onChangePageNo(page);
     }
   };
 
   const onClickLeftArrowButton = (): void => {
     if (pageNo > 1) {
-      dispatch(setPageNo(pageNo - 1));
+      onChangePageNo(pageNo - 1);
     }
   };
 
   const onClickRightArrowButton = (): void => {
-    if (pageNo < items.totalCount) {
-      dispatch(setPageNo(pageNo + 1));
+    if (pageNo < totalCount) {
+      onChangePageNo(pageNo + 1);
     }
   };
 

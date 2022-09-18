@@ -1,4 +1,4 @@
-import { PER_PAGE_ITEM_SIZE } from "../component/pagination/Pagination";
+import { productConst } from "../constant";
 import { Item, Pageable, PageRequest } from "../model";
 import baseService from "./baseService";
 
@@ -35,7 +35,7 @@ Promise<Pageable<Item[]>> => {
     }&_page=${
       pageNo
     }&_limit=${
-      PER_PAGE_ITEM_SIZE
+      productConst.PER_PAGE_ITEM_SIZE
     }`;
 
     const response = await baseService.get(url);

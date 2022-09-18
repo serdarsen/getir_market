@@ -1,17 +1,6 @@
-// const Express = require("express");
 const Path = require("path");
 const JsonServer = require("json-server");
 
-//App Server
-// const appServerInstance = Express();
-// appServerInstance.use(Express.static(Path.join(__dirname, "public")));
-// appServerInstance.set("port", process.env.PORT || 8080);
-
-// appServerInstance.listen(appServerInstance.get("port"), () => {
-//   console.log("App server is running on port ", appServerInstance.get("port"));
-// });
-
-//Json Server
 const jsonServerInstance = JsonServer.create();
 
 const router = JsonServer.router(

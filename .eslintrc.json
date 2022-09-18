@@ -1,4 +1,5 @@
 {
+    "root": true,
     "env": {
         "browser": true,
         "es2021": true
@@ -8,19 +9,36 @@
         "airbnb",
         "plugin:@typescript-eslint/recommended"
     ],
+    "overrides": [
+        {
+            // Enables testing library rules only for tests
+            "files": [
+                "src/**/?(*.)+(spec|test).{ts,tsx}"
+            ],
+            "extends": [
+                "plugin:testing-library/react",
+                "plugin:jest-dom/recommended"
+            ]
+        }
+    ],
+    "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
         },
         "ecmaVersion": 12,
-        "sourceType": "module"
+        "sourceType": "module",
+        "project": [
+            "./tsconfig.json"
+        ]
     },
     "plugins": [
         "react",
         "@typescript-eslint",
-        "react-hooks"
+        "react-hooks",
+        "testing-library",
+        "jest-dom"
     ],
-    "parser": "@typescript-eslint/parser",
     "rules": {
         "quotes": [
             "error",
@@ -76,11 +94,20 @@
         ],
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "warn",
-        "import/prefer-default-export": "off"
+        "import/prefer-default-export": "off",
+        "testing-library/await-async-query": "error",
+        "testing-library/no-await-sync-query": "error",
+        "testing-library/no-debugging-utils": "warn",
+        "testing-library/no-dom-import": "off",
+        "jest-dom/prefer-checked": "error",
+        "jest-dom/prefer-enabled-disabled": "error",
+        "jest-dom/prefer-required": "error",
+        "jest-dom/prefer-to-have-attribute": "error"
     },
     "settings": {
         "import/resolver": {
             "typescript": {}
         }
-    }
+    },
+    "ignorePatterns": []
 }

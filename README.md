@@ -65,35 +65,27 @@ Getir Market is an implementation of my interview assignment given by Getir. Thi
     - [webpack-manifest-plugin](https://github.com/shellscape/webpack-manifest-plugin): Generates an asset manifest
     - [@types/dotenv-webpack]()
 - [Redux](https://redux.js.org/introduction/why-rtk-is-redux-today): A Predictable State Container for JS Apps
-    - [React-Redux](https://react-redux.js.org/): Official React bindings for Redux
-    - [Redux-Toolkit](https://redux-toolkit.js.org/): Official toolset for efficient Redux development
-    - [Redux-Saga](https://redux-saga.js.org/): An intuitive Redux side effect manager
-- [ESLint](): 
-    - [eslint](): 
-    - [eslint-config-airbnb](): 
-    - [eslint-import-resolver-typescript]():     
-    - [eslint-plugin-import]():     
-    - [eslint-plugin-jsx-a11y]():     
-    - [eslint-plugin-react]():     
-    - [eslint-plugin-react-hooks]():     
-    - [eslint-plugin-testing-library]():     
-    - [eslint-plugin-jest-dom]():     
-    - [@typescript-eslint/eslint-plugin](): 
-    - [@typescript-eslint/parser](): 
-- [axios]():     
-- [express]():     
-- [lodash]():     
-- [sass]():     
-- [json-server](https://github.com/typicode/json-server):     
-
-## Further Development
-* The following topics can be considered for further development:
-    * Add ability to save basket items and filters to database.
-    * Refactor search widgets using a single reusable component.
-    * Refactor widgets that include a checkbox or radio using a single reusable component.
-    * Refactor context and service elements that have a similar structure using reusable modules.
-    * Improve API error handling. Research and implement API best pratices like [Redux Toolkit Query](https://redux-toolkit.js.org/rtk-query/usage/examples)
-
+    - [react-redux](https://react-redux.js.org/): Official React bindings for Redux
+    - [@reduxjs/toolkit](https://redux-toolkit.js.org/): Official toolset for efficient Redux development
+    - [redux-saga](https://redux-saga.js.org/): An intuitive Redux side effect manager
+- [ESLint](https://eslint.org/): A pluggable linting utility for JavaScript, JSX, and TSX
+    - [eslint](https://github.com/eslint/eslint): A tool for identifying and reporting on patterns found in ECMAScript/JavaScript code.
+    - [eslint-config-airbnb](https://github.com/airbnb/javascript): Airbnb JavaScript style guide
+    - [eslint-plugin-import](https://github.com/import-js/eslint-plugin-import): Adds support linting of ES2015+ (ES6+) import/export syntax  
+    - [eslint-import-resolver-typescript](https://github.com/import-js/eslint-import-resolver-typescript): Adds `TypeScript` support to [eslint-plugin-import](https://github.com/import-js/eslint-plugin-import)      
+    - [eslint-plugin-jsx-a11y](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y): Static AST checker for accessibility rules on JSX elements
+    - [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react): React specific linting rules for eslint  
+    - [eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks): Enforces the [Rules of Hooks](https://reactjs.org/docs/hooks-rules.html)
+    - [eslint-plugin-testing-library](https://github.com/testing-library/eslint-plugin-testing-library): ESLint plugin to follow best practices and anticipate common mistakes when writing tests with Testing Library (e.g. when to use `getByRole` or `findByRole`)    
+    - [eslint-plugin-jest-dom](https://github.com/testing-library/eslint-plugin-jest-dom): ESLint plugin to follow best practices and anticipate common mistakes when writing tests with jest-dom    
+    - [@typescript-eslint/eslint-plugin](https://github.com/typescript-eslint/typescript-eslint): Monorepo for all the tooling which enables ESLint to support TypeScript
+    - [@typescript-eslint/parser](https://www.npmjs.com/package/@typescript-eslint/parser):  An ESLint parser which leverages [TypeScript ESTree](https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/typescript-estree) to allow for ESLint to lint TypeScript source
+- [json-server](https://github.com/typicode/json-server): Fake JSON server for REST API  
+- [axios](https://github.com/axios/axios): Promise based HTTP client for the browser and node.js
+- [express](https://github.com/expressjs/express): Fast, unopinionated, minimalist web framework for [Node.js](http://nodejs.org)
+- [lodash](https://github.com/lodash/lodash): The [Lodash](https://lodash.com/) library exported as a [UMD](https://github.com/umdjs/umd) module   
+- [sass](https://www.npmjs.com/package/sass): A pure JavaScript implementation of [Sass](https://sass-lang.com/). Sass makes CSS fun again     
+  
 ## Usage
 - The project built with `node v18.9.0` and `npm 8.19.1`.
 - To be able to watch logs and develop locally, create `.env` file in the project root dir with `PORT=4000`(optional) and `DEV=true` properties in it, then run `npm run dev-server` and `npm run dev` scripts in seperate terminals, browse `localhost:4000`
@@ -113,6 +105,14 @@ Getir Market is an implementation of my interview assignment given by Getir. Thi
 | `npm run start`            | Serve static web site at localhost:8080 using json-server                              |
 | `npm run test`             | Run the full test suite using Jest                                                     |
 | `npm run test:watch`       | Watch files for changes and rerun tests related to changed files                       |
+
+## Further Development
+* The following topics can be considered for further development:
+    * Add ability to save basket items and filters to database.
+    * Refactor search widgets using a single reusable component.
+    * Refactor widgets that include a checkbox or radio using a single reusable component.
+    * Refactor context and service elements that have a similar structure using reusable modules.
+    * Improve API error handling. Research and implement API best pratices like [Redux Toolkit Query](https://redux-toolkit.js.org/rtk-query/usage/examples)
 
 ## Reference
 - [Figma](https://www.figma.com)

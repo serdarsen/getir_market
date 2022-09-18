@@ -5,13 +5,28 @@
         "es2021": true
     },
     "extends": [
-        "plugin:react/recommended",
         "airbnb",
-        "plugin:@typescript-eslint/recommended"
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:import/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:jsx-a11y/recommended",
+        "plugin:react/jsx-runtime",
+        "plugin:react-hooks/recommended"
+    ],
+    "plugins": [
+        "react",
+        "@typescript-eslint",
+        "import",
+        "react-hooks",
+        "testing-library",
+        "jest-dom",
+        "jsx-a11y",
+        "react-hooks"
     ],
     "overrides": [
         {
-            // Enables testing library rules only for tests
+            // Enables testing plugins
             "files": [
                 "src/**/?(*.)+(spec|test).{ts,tsx}"
             ],
@@ -32,13 +47,6 @@
             "./tsconfig.json"
         ]
     },
-    "plugins": [
-        "react",
-        "@typescript-eslint",
-        "react-hooks",
-        "testing-library",
-        "jest-dom"
-    ],
     "rules": {
         "quotes": [
             "error",
@@ -92,6 +100,7 @@
                 "code": 80
             }
         ],
+        "import/no-unresolved": "error",
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "warn",
         "import/prefer-default-export": "off",
@@ -105,8 +114,25 @@
         "jest-dom/prefer-to-have-attribute": "error"
     },
     "settings": {
+        "import/parsers": {
+            "@typescript-eslint/parser": [
+                ".ts",
+                ".tsx"
+            ]
+        },
         "import/resolver": {
-            "typescript": {}
+            "typescript": {
+                "alwaysTryTypes": true,
+                "project": [
+                    "./tsconfig.json"
+                ]
+            },
+            "node": {
+                "extensions": [
+                    ".js",
+                    ".ts"
+                ]
+            }
         }
     },
     "ignorePatterns": []

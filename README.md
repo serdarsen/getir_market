@@ -9,7 +9,7 @@ Getir Market is an implementation of my interview assignment given by Getir. Thi
 ## Implementation
 * To be able to analyze in detail, I broke down the task into smaller pieces.
     * Creating main responsive layout struture using media queries, flex and grid properties. 
-    * Transforming Figma element sizes and colors into React components pixel perfectly using rem and em units. 
+    * Transforming Figma elements into React components pixel perfectly using rem and em units. 
     * Creating components from scratch in order to obtain an easy-to-maintain and easy-to-test codebase. 
     * Creating dev json server api.
     * Creating powerful global state management.
@@ -117,10 +117,8 @@ Getir Market is an implementation of my interview assignment given by Getir. Thi
 ## Reference
 - [Figma](https://www.figma.com)
 - [Animista](https://animista.net)
-<br/><br/>
 - [reduxjs/cra-template-redux-typescript](https://github.com/reduxjs/cra-template-redux-typescript)
 - [cloud-city-crafted/react-typescript-webpack-template](https://github.com/cloud-city-crafted/react-typescript-webpack-template)
-<br/><br/>
 - [How To Test a React App with Jest and React Testing Library by Alyssa Holland](https://www.digitalocean.com/community/tutorials/how-to-test-a-react-app-with-jest-and-react-testing-library)
 - [do-community/doggy-directory](https://github.com/do-community/doggy-directory)
 - [Testing Implementation Details by Kent C. Dodds](https://kentcdodds.com/blog/testing-implementation-details)

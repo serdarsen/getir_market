@@ -95,7 +95,7 @@ Getir Market is an implementation of my interview assignment given by Getir. Thi
 <br/><br/>
 - Before running `npm run build` make sure to check if `DEV=false` in the `.env`.
 
-### Script
+## Script
 | Command                    | Description                                                                            |
 | -------------------------- | -------------------------------------------------------------------------------------- |
 | `npm install`              | Install all dependent application packages                                             |
@@ -108,11 +108,12 @@ Getir Market is an implementation of my interview assignment given by Getir. Thi
 
 ## Further Development
 * The following topics can be considered for further development:
+    * Research and fix the `"asset(s) exceed the recommended size limit (244 KiB)"` build warning
+    * Improve API error handling. Research and implement API best pratices like [Redux Toolkit Query](https://redux-toolkit.js.org/rtk-query/usage/examples)
     * Add ability to save basket items and filters to database.
     * Refactor search widgets using a single reusable component.
     * Refactor widgets that include a checkbox or radio using a single reusable component.
     * Refactor context and service elements that have a similar structure using reusable modules.
-    * Improve API error handling. Research and implement API best pratices like [Redux Toolkit Query](https://redux-toolkit.js.org/rtk-query/usage/examples)
 
 ## Reference
 - [Figma](https://www.figma.com)

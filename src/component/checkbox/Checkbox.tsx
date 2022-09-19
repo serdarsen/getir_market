@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import { FC, ReactNode } from "react";
 import "./checkbox.scss";
 
 type Prop = {
@@ -9,7 +9,7 @@ type Prop = {
     onChange: () => void
 }
 
-const Checkbox: React.FC<Prop> = ({
+const Checkbox: FC<Prop> = ({
   id, name, children, checked, onChange,
 }: Prop) => (
   <label className="checkbox" htmlFor={id}>

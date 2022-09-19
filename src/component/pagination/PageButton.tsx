@@ -1,4 +1,4 @@
-import React from "react";
+import { FC } from "react";
 import "./pageButton.scss";
 
 type Prop = {
@@ -9,7 +9,7 @@ type Prop = {
     onChange: () => void
 }
 
-const PageButton: React.FC<Prop> = ({
+const PageButton: FC<Prop> = ({
   id, name, pageNo, value, onChange,
 }: Prop) => {
   const isSeperator = value < 0;

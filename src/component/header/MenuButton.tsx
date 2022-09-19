@@ -1,4 +1,4 @@
-import React from "react";
+import { FC } from "react";
 import { MenuIcon } from "../../icon";
 import "./menuButton.scss";
 
@@ -6,7 +6,7 @@ type Prop = {
     onClick: () => void
 }
 
-const MenuButton: React.FC<Prop> = ({ onClick }: Prop) => (
+const MenuButton: FC<Prop> = ({ onClick }: Prop) => (
   <button
     type="button"
     onClick={onClick}

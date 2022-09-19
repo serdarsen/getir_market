@@ -1,11 +1,10 @@
-import React from "react";
-
+import { FC } from "react";
 import { LogoIcon } from "../../icon";
 import BasketButton from "../basketButton/BasketButton";
 import OptionButton from "../optionButton/OptionButton";
 import "./header.scss";
 
-const Header: React.FC = () => (
+const Header: FC = () => (
   <header className="header">
     <div className="header__left">
       <OptionButton />

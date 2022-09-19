@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { FC, useEffect } from "react";
 import {
   appendBrandFilter,
   findCompaniesFetch,
@@ -13,7 +13,7 @@ import Checkbox from "../checkbox/Checkbox";
 import Search from "../search/Search";
 import "./brandView.scss";
 
-const Brands: React.FC = () => {
+const Brands: FC = () => {
   const dispatch = useAppDispatch();
   const companies = useAppSelector((state) => state.company.companies);
   const brandFilter = useAppSelector((state) => state.pagination.brandFilter);

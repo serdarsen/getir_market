@@ -1,10 +1,10 @@
-import React from "react";
+import { FC } from "react";
 
 type Prop = {
     className: string
 }
 
-const CloseIcon: React.FC<Prop> = ({ className }: Prop) => (
+const CloseIcon: FC<Prop> = ({ className }: Prop) => (
   <svg
     className={className}
     xmlns="http://www.w3.org/2000/svg"

@@ -1,4 +1,4 @@
-import React from "react";
+import { FC } from "react";
 import "./search.scss";
 
 type Prop = {
@@ -8,7 +8,7 @@ type Prop = {
     onSearch: (searchTerm: string) => void
 }
 
-const Search: React.FC<Prop> = ({
+const Search: FC<Prop> = ({
   id, placeholder, searchTerm, onSearch,
 }: Prop) => (
   <form

@@ -1,6 +1,6 @@
-import React from "react";
+import { FC } from "react";
 
-const CheckIcon: React.FC = () => (
+const CheckIcon: FC = () => (
   <div className="checkbox-icon">
     <svg
       width="13"

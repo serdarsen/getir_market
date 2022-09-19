@@ -1,4 +1,4 @@
-import React from "react";
+import { FC } from "react";
 import "./radio.scss";
 
 type Prop = {
@@ -9,7 +9,7 @@ type Prop = {
     onChange: () => void
 }
 
-const Radio: React.FC<Prop> = ({
+const Radio: FC<Prop> = ({
   id, name, text, checked, onChange,
 }: Prop) => (
   <label className="radio" htmlFor={id}>

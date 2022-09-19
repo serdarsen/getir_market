@@ -1,7 +1,7 @@
-import React from "react";
+import { FC } from "react";
 import "./footer.scss";
 
-const Footer: React.FC = () => (
+const Footer: FC = () => (
   <footer className="footer">
     <p>©2019 Market</p>
     <p>•</p>

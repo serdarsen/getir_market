@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { FC, useEffect } from "react";
 import {
   appendTagFilter,
   findTagsFetch,
@@ -13,7 +13,7 @@ import Checkbox from "../checkbox/Checkbox";
 import Search from "../search/Search";
 import "./tagView.scss";
 
-const TagView: React.FC = () => {
+const TagView: FC = () => {
   const dispatch = useAppDispatch();
   const tags = useAppSelector((state) => state.tag.tags);
   const tagFilter = useAppSelector((state) => state.pagination.tagFilter);

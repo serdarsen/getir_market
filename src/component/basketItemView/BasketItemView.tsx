@@ -1,4 +1,4 @@
-import React from "react";
+import { FC } from "react";
 import {
   removeBasketItem,
   updateBasketItem,
@@ -13,7 +13,7 @@ type Prop = {
     basketItem: BasketItem
 }
 
-const BasketItemView: React.FC<Prop> = ({ basketItem }: Prop) => {
+const BasketItemView: FC<Prop> = ({ basketItem }: Prop) => {
   const dispatch = useAppDispatch();
 
   const onChangeCounter = (count: number): void => {

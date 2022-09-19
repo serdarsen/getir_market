@@ -1,4 +1,4 @@
-import React from "react";
+import { FC } from "react";
 import { useAppSelector } from "../../context";
 import { BasketItem } from "../../model";
 import BasketItemView from "../basketItemView/BasketItemView";
@@ -9,7 +9,7 @@ type Prop = {
     visible: boolean
 }
 
-const BasketView: React.FC<Prop> = ({ visible }: Prop) => {
+const BasketView: FC<Prop> = ({ visible }: Prop) => {
   const basketItems = useAppSelector((state) => state.basket.basketItems);
   const totalPrice = useAppSelector((state) => state.basket.totalPrice);
 

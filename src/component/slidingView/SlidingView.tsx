@@ -1,4 +1,4 @@
-import React from "react";
+import { FC } from "react";
 import OptionView from "../optionView/OptionView";
 import "./slidingView.scss";
 
@@ -6,7 +6,7 @@ type Prop = {
     visible: boolean
 }
 
-const SlidingView: React.FC<Prop> = ({ visible }: Prop) => (visible ? (
+const SlidingView: FC<Prop> = ({ visible }: Prop) => (visible ? (
   <div
     className="sliding-view animation__slide-in-left"
     onClick={(e) => e.stopPropagation()}

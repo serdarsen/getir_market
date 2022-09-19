@@ -15,7 +15,7 @@ import paginationReducer from "./paginationSlice";
 import tagSaga from "./tagSaga";
 import tagReducer from "./tagSlice";
 
-const SagaMiddleware = createSagaMiddleware();
+const sagaMiddleware = createSagaMiddleware();
 
 export const reduxStore = configureStore({
   reducer: {
@@ -26,13 +26,13 @@ export const reduxStore = configureStore({
     pagination: paginationReducer,
     tag: tagReducer,
   },
-  middleware: [SagaMiddleware],
+  middleware: [sagaMiddleware],
 });
 
-SagaMiddleware.run(companySaga);
-SagaMiddleware.run(itemSaga);
-SagaMiddleware.run(tagSaga);
-SagaMiddleware.run(itemTypeSaga);
+sagaMiddleware.run(companySaga);
+sagaMiddleware.run(itemSaga);
+sagaMiddleware.run(tagSaga);
+sagaMiddleware.run(itemTypeSaga);
 
 export type AppStore = typeof reduxStore;
 export type AppDispatch = typeof reduxStore.dispatch;

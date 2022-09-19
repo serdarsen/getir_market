@@ -1,11 +1,11 @@
-import React, { ReactNode } from "react";
+import { FC, ReactNode } from "react";
 import "./card.scss";
 
 type Prop = {
     children: ReactNode
 }
 
-const Card: React.FC<Prop> = ({ children }: Prop) => (
+const Card: FC<Prop> = ({ children }: Prop) => (
   <div className="card">
     {children}
   </div>

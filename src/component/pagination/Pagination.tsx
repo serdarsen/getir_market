@@ -1,17 +1,17 @@
-import _ from "lodash";
-import React from "react";
+import range from "lodash/range";
+import { FC } from "react";
 import ArrowButton from "./ArrowButton";
 import PageButton from "./PageButton";
 import "./pagination.scss";
 
 type Prop = {
-    pageNo: number;
-    perPageItemSize: number;
-    totalCount: number;
-    onChangePageNo: (page: number) => void
-}
+  pageNo: number;
+  perPageItemSize: number;
+  totalCount: number;
+  onChangePageNo: (page: number) => void
+};
 
-const Pagination: React.FC<Prop> = ({
+const Pagination: FC<Prop> = ({
   pageNo,
   perPageItemSize,
   totalCount,
@@ -40,9 +40,9 @@ const Pagination: React.FC<Prop> = ({
     };
 
     const limit = createLimit();
-    const first = _.range(1, limit + 1);
-    const middle = _.range(pageNo - 1, pageNo + 2);
-    const last = _.range(pageSize - limit + 1, pageSize + 1);
+    const first = range(1, limit + 1);
+    const middle = range(pageNo - 1, pageNo + 2);
+    const last = range(pageSize - limit + 1, pageSize + 1);
 
     const createNumbers = (): number[] => {
       if (pageSizeWithinMax) {

@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import { FC, ReactNode } from "react";
 import "./chip.scss";
 
 type Prop = {
@@ -9,7 +9,7 @@ type Prop = {
     onChange: () => void
 }
 
-const Chip: React.FC<Prop> = ({
+const Chip: FC<Prop> = ({
   id, name, children, checked, onChange,
 }: Prop) => (
   <label className="chip" htmlFor={id}>

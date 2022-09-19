@@ -1,6 +1,6 @@
 public/
 build/
-
+dist/
 # Dependency directories
 node_modules/
 

@@ -1,8 +1,8 @@
-import React from "react";
+import { FC } from "react";
 import OptionView from "../optionView/OptionView";
 import "./aside.scss";
 
-const Aside: React.FC = () => (
+const Aside: FC = () => (
   <aside className="aside">
     <OptionView />
   </aside>

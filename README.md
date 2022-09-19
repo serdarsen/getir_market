@@ -26,8 +26,8 @@ Getir Market is an implementation of my interview assignment given by Getir. Thi
 ## Tooling
 - [React](https://reactjs.org): An open source JavaScript library for building UIs
   - [react](https://github.com/facebook/react): Core React library
-  - [react-dom](https://www.npmjs.com/package/react-dom): Renders React to DOM
   - [@types/react](https://www.npmjs.com/package/@types/react): Type definitions for `React`
+  - [react-dom](https://www.npmjs.com/package/react-dom): Renders React to DOM
   - [@types/react-dom](https://www.npmjs.com/package/@types/react-dom): Type definitions for `ReactDOM`
 - [TypeScript](https://www.typescriptlang.org/): A strongly typed language built on top of JavaScript.
   - [typescript](https://github.com/Microsoft/TypeScript): Core TypeScript programming language
@@ -35,6 +35,7 @@ Getir Market is an implementation of my interview assignment given by Getir. Thi
   - [@types/node](https://www.npmjs.com/package/@types/node): Type definitions for Node.js
 - [Jest](https://jestjs.io/): A JavaScript testing framework
   - [jest](https://github.com/facebook/jest): Core Jest library
+  - [@types/jest](https://www.npmjs.com/package/@types/jest)
   - [ts-jest](https://github.com/kulshekhar/ts-jest): A Jest transformer for TypeScript
   - [jest-environment-jsdom](https://github.com/facebook/jest): Simulates a DOM environment during jest tests (See: [Jest DOM Manipulation Guide](https://jestjs.io/docs/tutorial-jquery))
   - [@testing-library/jest-dom](https://github.com/testing-library/jest-dom): Jest matchers (e.g. `toHaveClass`, `toBeChecked`) to test the state of the DOM
@@ -63,7 +64,7 @@ Getir Market is an implementation of my interview assignment given by Getir. Thi
     - [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin): Generates HTML files when bundling
     - [mini-css-extract-plugin](https://github.com/webpack-contrib/mini-css-extract-plugin): Extracts CSS into separate files
     - [webpack-manifest-plugin](https://github.com/shellscape/webpack-manifest-plugin): Generates an asset manifest
-    - [@types/dotenv-webpack]()
+    - [@types/dotenv-webpack](https://www.npmjs.com/package/@types/dotenv-webpack)
 - [Redux](https://redux.js.org/introduction/why-rtk-is-redux-today): A Predictable State Container for JS Apps
     - [react-redux](https://react-redux.js.org/): Official React bindings for Redux
     - [@reduxjs/toolkit](https://redux-toolkit.js.org/): Official toolset for efficient Redux development
@@ -71,6 +72,7 @@ Getir Market is an implementation of my interview assignment given by Getir. Thi
 - [ESLint](https://eslint.org/): A pluggable linting utility for JavaScript, JSX, and TSX
     - [eslint](https://github.com/eslint/eslint): A tool for identifying and reporting on patterns found in ECMAScript/JavaScript code.
     - [eslint-config-airbnb](https://github.com/airbnb/javascript): Airbnb JavaScript style guide
+    - [eslint-config-airbnb-typescript](https://github.com/iamturns/eslint-config-airbnb-typescript): Enhances Airbnb's ESLint config with TypeScript support
     - [eslint-plugin-import](https://github.com/import-js/eslint-plugin-import): Adds support linting of ES2015+ (ES6+) import/export syntax  
     - [eslint-import-resolver-typescript](https://github.com/import-js/eslint-import-resolver-typescript): Adds `TypeScript` support to [eslint-plugin-import](https://github.com/import-js/eslint-plugin-import)      
     - [eslint-plugin-jsx-a11y](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y): Static AST checker for accessibility rules on JSX elements
@@ -81,10 +83,10 @@ Getir Market is an implementation of my interview assignment given by Getir. Thi
     - [@typescript-eslint/eslint-plugin](https://github.com/typescript-eslint/typescript-eslint): Monorepo for all the tooling which enables ESLint to support TypeScript
     - [@typescript-eslint/parser](https://www.npmjs.com/package/@typescript-eslint/parser):  An ESLint parser which leverages [TypeScript ESTree](https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/typescript-estree) to allow for ESLint to lint TypeScript source
 - [json-server](https://github.com/typicode/json-server): Fake JSON server for REST API  
-- [axios](https://github.com/axios/axios): Promise based HTTP client for the browser and node.js
-- [express](https://github.com/expressjs/express): Fast, unopinionated, minimalist web framework for [Node.js](http://nodejs.org)
 - [lodash](https://github.com/lodash/lodash): The [Lodash](https://lodash.com/) library exported as a [UMD](https://github.com/umdjs/umd) module   
-- [sass](https://www.npmjs.com/package/sass): A pure JavaScript implementation of [Sass](https://sass-lang.com/). Sass makes CSS fun again     
+- [@types/lodash](https://www.npmjs.com/package/@types/lodash)
+- [sass](https://www.npmjs.com/package/sass): A pure JavaScript implementation of [Sass](https://sass-lang.com/). Sass makes CSS fun again
+- [axios](https://github.com/axios/axios): Promise based HTTP client for the browser and node.js     
   
 ## Usage
 - The project built with `node v18.9.0` and `npm 8.19.1`.

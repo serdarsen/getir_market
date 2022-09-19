@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { CloseIcon, MenuIcon } from "../../icon";
 import SlidingView from "../slidingView/SlidingView";
 import "./optionButton.scss";
 
-const OptionButton: React.FC = () => {
+const OptionButton: FC = () => {
   const [active, setActive] = useState(false);
 
   return (

@@ -6,10 +6,6 @@ const config = {
     .replace(
       /\.test\.([tj]sx?)/,
       `.test${snapshotExtension}`,
-    )
-    .replace(
-      /src([/\\]components)/,
-      "__snapshots__",
     ),
 
   resolveTestPath: (
@@ -17,7 +13,7 @@ const config = {
     snapshotExtension: string,
   ) => snapshotFilePath
     .replace(snapshotExtension, ".tsx")
-    .replace("__snapshots__", "src/components"),
+    .replace("__snapshots__", "src/component"),
 
   testPathForConsistencyCheck: "src/component/some.test.tsx",
 };

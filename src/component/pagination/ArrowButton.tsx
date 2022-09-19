@@ -1,4 +1,4 @@
-import React from "react";
+import { FC } from "react";
 import { ArrowIcon } from "../../icon";
 import "./arrowButton.scss";
 
@@ -9,7 +9,7 @@ type Prop = {
     disabled: boolean
 }
 
-const ArrowButton: React.FC<Prop> = ({
+const ArrowButton: FC<Prop> = ({
   direction, text, onClick, disabled,
 }: Prop) => {
   const createClassName = (): string => {

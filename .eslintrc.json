@@ -6,6 +6,7 @@
     },
     "extends": [
         "airbnb",
+        "airbnb-typescript",
         "eslint:recommended",
         "plugin:react/recommended",
         "plugin:import/recommended",
@@ -48,9 +49,21 @@
         ]
     },
     "rules": {
-        "quotes": [
+        "@typescript-eslint/quotes": [
             "error",
             "double"
+        ],
+        "@typescript-eslint/no-use-before-define": [
+            "error"
+        ],
+        "@typescript-eslint/no-shadow": [
+            "error"
+        ],
+        "@typescript-eslint/explicit-function-return-type": [
+            "error",
+            {
+                "allowExpressions": true
+            }
         ],
         "no-plusplus": "off",
         "no-param-reassign": "off",
@@ -66,9 +79,6 @@
         "react/jsx-uses-react": "off",
         "react/react-in-jsx-scope": "off",
         "no-use-before-define": "off",
-        "@typescript-eslint/no-use-before-define": [
-            "error"
-        ],
         "react/jsx-filename-extension": [
             "warn",
             {
@@ -83,15 +93,6 @@
             {
                 "ts": "never",
                 "tsx": "never"
-            }
-        ],
-        "@typescript-eslint/no-shadow": [
-            "error"
-        ],
-        "@typescript-eslint/explicit-function-return-type": [
-            "error",
-            {
-                "allowExpressions": true
             }
         ],
         "max-len": [
@@ -111,7 +112,13 @@
         "jest-dom/prefer-checked": "error",
         "jest-dom/prefer-enabled-disabled": "error",
         "jest-dom/prefer-required": "error",
-        "jest-dom/prefer-to-have-attribute": "error"
+        "jest-dom/prefer-to-have-attribute": "error",
+        "import/no-extraneous-dependencies": [
+            "error",
+            {
+                "devDependencies": true
+            }
+        ]
     },
     "settings": {
         "import/parsers": {
@@ -125,12 +132,6 @@
                 "alwaysTryTypes": true,
                 "project": [
                     "./tsconfig.json"
-                ]
-            },
-            "node": {
-                "extensions": [
-                    ".js",
-                    ".ts"
                 ]
             }
         }

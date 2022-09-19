@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { FC, useEffect } from "react";
 import { productConst } from "../../constant";
 import {
   appendItemTypeFilter,
@@ -17,7 +17,7 @@ import Pagination from "../pagination/Pagination";
 import ProductItemView from "../productItemView/ProductItemView";
 import "./productView.scss";
 
-const ProductView: React.FC = () => {
+const ProductView: FC = () => {
   const dispatch = useAppDispatch();
   const items = useAppSelector((state) => state.item.pageable);
   const itemTypes = useAppSelector((state) => state.itemType.itemTypes);

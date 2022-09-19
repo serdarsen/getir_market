@@ -1,4 +1,4 @@
-import React from "react";
+import { FC } from "react";
 import { MinusIcon, PlusIcon } from "../../icon";
 import "./counter.scss";
 
@@ -7,7 +7,7 @@ type Prop = {
     onChange: (count: number) => void
 }
 
-const Counter: React.FC<Prop> = ({ value, onChange }: Prop) => {
+const Counter: FC<Prop> = ({ value, onChange }: Prop) => {
   const onDecrease = (): void => {
     if (value > 0) {
       onChange(value - 1);

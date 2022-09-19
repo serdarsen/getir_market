@@ -6,7 +6,7 @@ import {
 import { PageRequest } from "../model";
 import { itemService } from "../service";
 import { findItemsSuccess } from "./itemSlice";
-import { RootState } from "./reduxStore";
+import type { RootState } from "./reduxStore";
 
 const getPageNo = (
   state: RootState,

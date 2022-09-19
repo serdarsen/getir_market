@@ -1,5 +1,6 @@
 public/
 build/
+dist/
 docs/
 node_modules/
 

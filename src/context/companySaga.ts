@@ -5,7 +5,7 @@ import {
 } from "redux-saga/effects";
 import { companyService } from "../service";
 import { findCompaniesSuccess } from "./companySlice";
-import { RootState } from "./reduxStore";
+import type { RootState } from "./reduxStore";
 
 const getBrandSearchTerm = (
   state: RootState,

@@ -1,4 +1,4 @@
-import React from "react";
+import { FC } from "react";
 import {
   appendBasketItem,
   removeBasketItem,
@@ -14,7 +14,7 @@ type Prop = {
     itemInBasket: boolean
 }
 
-const ProductItemView: React.FC<Prop> = ({ item, itemInBasket }) => {
+const ProductItemView: FC<Prop> = ({ item, itemInBasket }) => {
   const dispatch = useAppDispatch();
 
   const onClickButton = (): void => {

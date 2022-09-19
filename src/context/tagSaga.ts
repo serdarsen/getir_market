@@ -4,7 +4,7 @@ import {
   SelectEffect, takeEvery,
 } from "redux-saga/effects";
 import { tagService } from "../service";
-import { RootState } from "./reduxStore";
+import type { RootState } from "./reduxStore";
 import { findTagsSuccess } from "./tagSlice";
 
 const getTagSearchTerm = (

@@ -21,6 +21,7 @@ const isPro = process.env.npm_lifecycle_event === "build";
 const commonPlugins = [
   new HtmlWebpackPlugin({
     template: path.join(__dirname, "src", "index.html"),
+    favicon: path.join(__dirname, "src", "favicon.ico"),
   }),
   new DotEnv({
     path: path.resolve(__dirname, ".env"),

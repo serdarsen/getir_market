@@ -15,12 +15,12 @@
     "keywords": [],
     "license": "MIT",
     "dependencies": {
+        "@reduxjs/toolkit": "^1.8.5",
         "json-server": "^0.17.0",
         "lodash": "^4.17.21",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-redux": "^8.0.2",
-        "@reduxjs/toolkit": "^1.8.5",
         "redux-saga": "^1.2.1"
     },
     "engines": {
@@ -42,7 +42,6 @@
         "@types/node": "^18.7.18",
         "@types/react": "^18.0.20",
         "@types/react-dom": "^18.0.6",
-        "@types/webpack-dev-server": "^4.7.2",
         "@typescript-eslint/eslint-plugin": "^5.37.0",
         "@typescript-eslint/parser": "^5.37.0",
         "axios": "^0.27.2",

@@ -41,7 +41,6 @@ Getir Market is an implementation of my interview assignment given by Getir. Thi
   - [@testing-library/jest-dom](https://github.com/testing-library/jest-dom): Jest matchers (e.g. `toHaveClass`, `toBeChecked`) to test the state of the DOM
   - [@testing-library/react](https://www.npmjs.com/package/@testing-library/react): React DOM testing utilities (e.g. `.queryByText`, `.getByRole`)
   - [@testing-library/user-event](https://github.com/testing-library/user-event): Fires events the same way the user does
-  - [@types/jest](https://github.com/DefinitelyTyped/DefinitelyTyped): TypeScript definitions for `jest`
 - [Babel](https://github.com/babel/babel): Compiles latest JavaScript features down to a supported version
   - [@babel-core](https://www.npmjs.com/package/@babel/core): Babel compiler core
   - [@babel-runtime](https://www.npmjs.com/package/@babel/runtime): Babel's modular runtime helper
@@ -52,7 +51,6 @@ Getir Market is an implementation of my interview assignment given by Getir. Thi
   - [webpack](https://github.com/webpack/webpack): Core webpack bundler
   - [webpack-cli](https://github.com/webpack/webpack-cli): CLI tooling for webpack (required for `npm` scripts that call `webpack`)
   - [webpack-dev-server](https://github.com/webpack/webpack-dev-server): Development server with live reloading
-  - [@types/webpack-dev-server](): 
   - [Loaders](https://webpack.js.org/loaders/)
     - [style-loader](https://github.com/webpack-contrib/style-loader): Injects CSS into the DOM when bundling
     - [css-loader](https://github.com/webpack-contrib/css-loader): Interprets and resolves `@import` and `url()` in CSS files when bundling

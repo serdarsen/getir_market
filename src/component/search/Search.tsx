@@ -2,11 +2,11 @@ import { FC } from "react";
 import "./search.scss";
 
 type Prop = {
-    id: string,
-    placeholder: string,
-    searchTerm: string,
-    onSearch: (searchTerm: string) => void
-}
+  id: string,
+  placeholder: string,
+  searchTerm: string,
+  onSearch: (searchTerm: string) => void
+};
 
 const Search: FC<Prop> = ({
   id, placeholder, searchTerm, onSearch,

@@ -3,6 +3,8 @@ import {
   appendTagFilter,
   findTagsFetch,
   removeTagFilter,
+  selectPagination,
+  selectTag,
   setTagSearchTerm,
   useAppDispatch,
   useAppSelector,
@@ -15,12 +17,8 @@ import "./tagView.scss";
 
 const TagView: FC = () => {
   const dispatch = useAppDispatch();
-  const tags = useAppSelector((state) => state.tag.tags);
-  const tagFilter = useAppSelector((state) => state.pagination.tagFilter);
-
-  const tagSearchTerm = useAppSelector(
-    (state) => state.pagination.tagSearchTerm,
-  );
+  const { tags } = useAppSelector(selectTag);
+  const { tagFilter, tagSearchTerm } = useAppSelector(selectPagination);
 
   const onChangeCheckbox = (tagName: string): void => {
     if (tagFilter.includes(tagName)) {

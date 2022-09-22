@@ -1,8 +1,8 @@
 import { FC } from "react";
 
 type Prop = {
-    className: string
-}
+  className: string
+};
 
 const PlusIcon: FC<Prop> = ({ className }: Prop) => (
   <svg

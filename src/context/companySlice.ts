@@ -1,11 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
+import type { RootState } from "./index";
+
+const initialState = {
+  companies: [],
+  isLoading: false,
+};
 
 export const companySlice = createSlice({
   name: "companySlice",
-  initialState: {
-    companies: [],
-    isLoading: false,
-  },
+  initialState,
   reducers: {
     findCompaniesFetch: (state) => {
       state.isLoading = true;
@@ -19,6 +22,10 @@ export const companySlice = createSlice({
     },
   },
 });
+
+export const selectCompany = (
+  state: RootState,
+): typeof initialState => state.company;
 
 export const {
   findCompaniesFetch,

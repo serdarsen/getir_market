@@ -1,8 +1,8 @@
 import { FC } from "react";
 
 type Prop = {
-    className: string
-}
+  className: string
+};
 
 const LogoIcon: FC<Prop> = ({ className }: Prop) => (
   <svg className={className}>

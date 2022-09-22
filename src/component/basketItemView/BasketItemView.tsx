@@ -10,8 +10,8 @@ import CurrencyView from "../currencyView/CurrencyView";
 import "./basketItemView.scss";
 
 type Prop = {
-    basketItem: BasketItem
-}
+  basketItem: BasketItem
+};
 
 const BasketItemView: FC<Prop> = ({ basketItem }: Prop) => {
   const dispatch = useAppDispatch();

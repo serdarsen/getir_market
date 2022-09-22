@@ -3,11 +3,11 @@ import { ArrowIcon } from "../../icon";
 import "./arrowButton.scss";
 
 type Prop = {
-    direction: "left" | "right";
-    text: string;
-    onClick: () => void,
-    disabled: boolean
-}
+  direction: "left" | "right";
+  text: string;
+  onClick: () => void,
+  disabled: boolean
+};
 
 const ArrowButton: FC<Prop> = ({
   direction, text, onClick, disabled,

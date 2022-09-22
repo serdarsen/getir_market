@@ -2,12 +2,12 @@ import { FC, ReactNode } from "react";
 import "./checkbox.scss";
 
 type Prop = {
-    id: string,
-    name: string,
-    children: ReactNode,
-    checked: boolean,
-    onChange: () => void
-}
+  id: string,
+  name: string,
+  children: ReactNode,
+  checked: boolean,
+  onChange: () => void
+};
 
 const Checkbox: FC<Prop> = ({
   id, name, children, checked, onChange,

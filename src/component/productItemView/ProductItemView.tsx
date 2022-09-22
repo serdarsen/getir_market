@@ -10,9 +10,9 @@ import CurrencyView from "../currencyView/CurrencyView";
 import "./productItemView.scss";
 
 type Prop = {
-    item: Item,
-    itemInBasket: boolean
-}
+  item: Item,
+  itemInBasket: boolean
+};
 
 const ProductItemView: FC<Prop> = ({ item, itemInBasket }) => {
   const dispatch = useAppDispatch();

@@ -1,17 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
+import type { RootState } from "./index";
+
+const initialState = {
+  items: { data: [], totalCount: 0 },
+  isLoading: false,
+};
 
 export const itemSlice = createSlice({
   name: "itemSlice",
-  initialState: {
-    pageable: { data: [], totalCount: 0 },
-    isLoading: false,
-  },
+  initialState,
   reducers: {
     findItemsFetch: (state) => {
       state.isLoading = true;
     },
     findItemsSuccess: (state, action) => {
-      state.pageable = action.payload;
+      state.items = action.payload;
       state.isLoading = false;
     },
     findItemsFailure: (state) => {
@@ -19,6 +22,10 @@ export const itemSlice = createSlice({
     },
   },
 });
+
+export const selectItem = (
+  state: RootState,
+): typeof initialState => state.item;
 
 export const {
   findItemsFetch,

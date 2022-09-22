@@ -1,6 +1,6 @@
 type Pageable<T> = {
-    data: T;
-    totalCount: number;
-}
+  data: T;
+  totalCount: number;
+};
 
 export default Pageable;

@@ -2,12 +2,12 @@ import { FC } from "react";
 import "./pageButton.scss";
 
 type Prop = {
-    id: string,
-    name: string,
-    pageNo: number,
-    value: number,
-    onChange: () => void
-}
+  id: string,
+  name: string,
+  pageNo: number,
+  value: number,
+  onChange: () => void
+};
 
 const PageButton: FC<Prop> = ({
   id, name, pageNo, value, onChange,

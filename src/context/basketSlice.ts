@@ -1,5 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { BasketItem } from "../model";
+import type { RootState } from "./index";
+
+const initialState = {
+  basketItems: [] as BasketItem[],
+  basketItemIds: [] as number[],
+  totalPrice: 0,
+};
 
 const calculateTotalPrice = (
   basketItems: BasketItem[],
@@ -36,11 +43,7 @@ const appendNewBasketItem = (
 
 export const basketSlice = createSlice({
   name: "basketSlice",
-  initialState: {
-    basketItems: [] as BasketItem[],
-    basketItemIds: [] as number[],
-    totalPrice: 0,
-  },
+  initialState,
   reducers: {
     appendBasketItem: (state, action) => {
       const { basketItems, basketItemIds } = state;
@@ -75,6 +78,10 @@ export const basketSlice = createSlice({
     },
   },
 });
+
+export const selectBasket = (
+  state: RootState,
+): typeof initialState => state.basket;
 
 export const {
   appendBasketItem,

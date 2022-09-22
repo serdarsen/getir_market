@@ -1,20 +1,16 @@
+import type {
+  CallEffect, ForkEffect, PutEffect, SelectEffect,
+} from "redux-saga/effects";
 import {
-  call, CallEffect, ForkEffect,
-  put, PutEffect, select,
-  SelectEffect, takeLatest,
+  call, put, select, takeLatest,
 } from "redux-saga/effects";
 import { companyService } from "../service";
-import { findCompaniesSuccess } from "./companySlice";
-import type { RootState } from "./reduxStore";
-
-const getBrandSearchTerm = (
-  state: RootState,
-): string => state.pagination.brandSearchTerm;
+import { findCompaniesSuccess, selectPagination } from "./index";
 
 function* findCompaniesFetch(): Generator<
 SelectEffect | CallEffect | PutEffect, void
 > {
-  const brandSearchTerm = (yield select(getBrandSearchTerm)) as string;
+  const { brandSearchTerm } = yield select(selectPagination);
 
   const companies = yield call(
     companyService.findCompanies,

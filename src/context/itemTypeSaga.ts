@@ -1,13 +1,15 @@
+import type {
+  CallEffect, ForkEffect, PutEffect,
+} from "redux-saga/effects";
 import {
-  call, CallEffect, ForkEffect,
-  put, PutEffect, takeLatest,
+  call, put, takeLatest,
 } from "redux-saga/effects";
 import { itemTypeService } from "../service";
-import { findItemTypesSuccess } from "./itemTypeSlice";
+import { findItemTypesSuccess } from "./index";
 
 function* findItemTypesFetch(): Generator<
- CallEffect | PutEffect, void
- > {
+CallEffect | PutEffect, void
+> {
   const itemTypes = yield call(
     itemTypeService.findItemTypes,
   );

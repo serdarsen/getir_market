@@ -3,9 +3,9 @@ import { MinusIcon, PlusIcon } from "../../icon";
 import "./counter.scss";
 
 type Prop = {
-    value: number,
-    onChange: (count: number) => void
-}
+  value: number,
+  onChange: (count: number) => void
+};
 
 const Counter: FC<Prop> = ({ value, onChange }: Prop) => {
   const onDecrease = (): void => {

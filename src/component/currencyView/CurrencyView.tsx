@@ -2,9 +2,9 @@ import { FC } from "react";
 import "./currencyView.scss";
 
 type Prop = {
-    currency: number
-    gap: number
-}
+  currency: number
+  gap: number
+};
 
 const CurrencyView: FC<Prop> = ({ currency, gap }: Prop) => {
   const formattedCurrency = new Intl.NumberFormat("tr-TR", {

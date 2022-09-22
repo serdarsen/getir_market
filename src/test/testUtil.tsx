@@ -1,7 +1,9 @@
-import { configureStore, PreloadedState } from "@reduxjs/toolkit";
+import type { PreloadedState } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 import type { RenderOptions, RenderResult } from "@testing-library/react";
 import { render } from "@testing-library/react";
-import React, { PropsWithChildren } from "react";
+import type { PropsWithChildren } from "react";
+import React from "react";
 import { Provider } from "react-redux";
 import type { AppStore, RootState } from "../context";
 import basketReducer from "../context/basketSlice";
@@ -36,7 +38,7 @@ export const renderWithProviders = (
     }),
     ...renderOptions
   }: ExtendedRenderOptions = {},
-): {store: AppStore, renderResult: RenderResult} => {
+): { store: AppStore, renderResult: RenderResult } => {
   const Wrapper = (
     { children }: PropsWithChildren<Record<string, unknown>>,
   ): JSX.Element => <Provider store={store}>{children}</Provider>;
@@ -44,6 +46,8 @@ export const renderWithProviders = (
   // Return an object with the store and all of RTL's query functions
   return {
     store,
-    renderResult: render(ui, { wrapper: Wrapper, ...renderOptions }),
+    renderResult: render(ui, {
+      wrapper: Wrapper, ...renderOptions,
+    }),
   };
 };

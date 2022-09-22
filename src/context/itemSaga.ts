@@ -1,44 +1,18 @@
+import type {
+  CallEffect, ForkEffect, PutEffect, SelectEffect,
+} from "redux-saga/effects";
 import {
-  call, CallEffect, ForkEffect,
-  put, PutEffect, select,
-  SelectEffect, takeLatest,
+  call, put, select, takeLatest,
 } from "redux-saga/effects";
 import { PageRequest } from "../model";
 import { itemService } from "../service";
-import { findItemsSuccess } from "./itemSlice";
-import type { RootState } from "./reduxStore";
+import { findItemsSuccess, selectPagination } from "./index";
 
-const getPageNo = (
-  state: RootState,
-): number => state.pagination.pageNo;
-
-const getSortOption = (
-  state: RootState,
-):
-  string[] => state.pagination.sortOption;
-
-const getBrandFilter = (
-  state: RootState,
-):
- string[] => state.pagination.brandFilter;
-
-const getTagFilter = (
-  state: RootState,
-):
-string[] => state.pagination.tagFilter;
-
-const getItemTypeFilter = (
-  state: RootState,
-):
-  string[] => state.pagination.itemTypeFilter;
-
-function* findItemsFetch(): Generator<
-SelectEffect | CallEffect | PutEffect, void> {
-  const pageNo = (yield select(getPageNo)) as number;
-  const sortOption = (yield select(getSortOption)) as string[];
-  const brandFilter = (yield select(getBrandFilter)) as string[];
-  const tagFilter = (yield select(getTagFilter)) as string[];
-  const itemTypeFilter = (yield select(getItemTypeFilter)) as string[];
+function* findItemsFetch():
+Generator<SelectEffect | CallEffect | PutEffect, void> {
+  const {
+    pageNo, sortOption, brandFilter, tagFilter, itemTypeFilter,
+  } = yield select(selectPagination);
 
   const pageRequest: PageRequest = {
     pageNo, sortOption, brandFilter, tagFilter, itemTypeFilter,

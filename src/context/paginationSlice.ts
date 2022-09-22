@@ -1,16 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
+import type { RootState } from "./index";
+
+const initialState = {
+  pageNo: 1,
+  sortOption: ["asc", "price"],
+  brandFilter: [] as string[],
+  tagFilter: [] as string[],
+  itemTypeFilter: [] as string[],
+  brandSearchTerm: "",
+  tagSearchTerm: "",
+};
 
 export const paginationSlice = createSlice({
   name: "paginationSlice",
-  initialState: {
-    pageNo: 1,
-    sortOption: ["asc", "price"],
-    brandFilter: [] as string[],
-    tagFilter: [] as string[],
-    itemTypeFilter: [] as string[],
-    brandSearchTerm: "" as string,
-    tagSearchTerm: "" as string,
-  },
+  initialState,
   reducers: {
     setPageNo: (state, action) => {
       state.pageNo = action.payload;
@@ -75,6 +78,10 @@ export const paginationSlice = createSlice({
     },
   },
 });
+
+export const selectPagination = (
+  state: RootState,
+): typeof initialState => state.pagination;
 
 export const {
   setPageNo,

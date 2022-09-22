@@ -3,6 +3,8 @@ import {
   appendBrandFilter,
   findCompaniesFetch,
   removeBrandFilter,
+  selectCompany,
+  selectPagination,
   setBrandSearchTerm,
   useAppDispatch,
   useAppSelector,
@@ -15,12 +17,8 @@ import "./brandView.scss";
 
 const Brands: FC = () => {
   const dispatch = useAppDispatch();
-  const companies = useAppSelector((state) => state.company.companies);
-  const brandFilter = useAppSelector((state) => state.pagination.brandFilter);
-
-  const brandSearchTerm = useAppSelector(
-    (state) => state.pagination.brandSearchTerm,
-  );
+  const { companies } = useAppSelector(selectCompany);
+  const { brandFilter, brandSearchTerm } = useAppSelector(selectPagination);
 
   const onChangeCheckbox = (brandName: string): void => {
     if (brandFilter.includes(brandName)) {

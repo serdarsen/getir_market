@@ -3,8 +3,7 @@ import { Item, Pageable, PageRequest } from "../model";
 import baseService from "./baseService";
 
 const itemService = {
-  findItems: async (options: PageRequest[]):
-Promise<Pageable<Item[]>> => {
+  findItems: async (options: PageRequest[]): Promise<Pageable<Item[]>> => {
     const [pageRequest] = options;
     const {
       pageNo, sortOption, brandFilter, tagFilter, itemTypeFilter,

@@ -3,8 +3,8 @@ import OptionView from "../optionView/OptionView";
 import "./slidingView.scss";
 
 type Prop = {
-    visible: boolean
-}
+  visible: boolean
+};
 
 const SlidingView: FC<Prop> = ({ visible }: Prop) => (visible ? (
   <div

@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import { useAppSelector } from "../../context";
+import { selectBasket, useAppSelector } from "../../context";
 import { BasketIcon } from "../../icon";
 import BasketView from "../basketView/BasketView";
 import CurrencyView from "../currencyView/CurrencyView";
@@ -7,7 +7,7 @@ import "./basketButton.scss";
 
 const BasketButton: FC = () => {
   const [active, setActive] = useState(false);
-  const totalPrice = useAppSelector((state) => state.basket.totalPrice);
+  const { totalPrice } = useAppSelector(selectBasket);
 
   return (
     <div

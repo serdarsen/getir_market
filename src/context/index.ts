@@ -1,18 +1,26 @@
 export {
   appendBasketItem,
   removeBasketItem,
+  selectBasket,
   updateBasketItem,
 } from "./basketSlice";
 export {
   findCompaniesFailure,
   findCompaniesFetch,
   findCompaniesSuccess,
+  selectCompany,
 } from "./companySlice";
 export {
   findItemsFailure,
   findItemsFetch,
   findItemsSuccess,
+  selectItem,
 } from "./itemSlice";
+export {
+  findItemTypesFetch,
+  findItemTypesSuccess,
+  selectItemType,
+} from "./itemTypeSlice";
 export {
   appendBrandFilter,
   appendItemTypeFilter,
@@ -20,6 +28,7 @@ export {
   removeBrandFilter,
   removeItemTypeFilter,
   removeTagFilter,
+  selectPagination,
   setBrandSearchTerm,
   setPageNo,
   setSortOption,
@@ -30,11 +39,14 @@ export {
   useAppSelector,
 } from "./reduxHook";
 export type {
+  AppDispatch,
   AppStore,
+  AppThunk,
   RootState,
 } from "./reduxStore";
 export {
   findTagsFailure,
   findTagsFetch,
   findTagsSuccess,
+  selectTag,
 } from "./tagSlice";

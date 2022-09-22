@@ -2,12 +2,12 @@ import { FC } from "react";
 import "./radio.scss";
 
 type Prop = {
-    id: string,
-    name: string,
-    text: string,
-    checked: boolean,
-    onChange: () => void
-}
+  id: string,
+  name: string,
+  text: string,
+  checked: boolean,
+  onChange: () => void
+};
 
 const Radio: FC<Prop> = ({
   id, name, text, checked, onChange,

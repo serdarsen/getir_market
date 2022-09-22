@@ -1,17 +1,16 @@
 import { FC } from "react";
-import { useAppSelector } from "../../context";
+import { selectBasket, useAppSelector } from "../../context";
 import { BasketItem } from "../../model";
 import BasketItemView from "../basketItemView/BasketItemView";
 import CurrencyView from "../currencyView/CurrencyView";
 import "./basketView.scss";
 
 type Prop = {
-    visible: boolean
-}
+  visible: boolean
+};
 
 const BasketView: FC<Prop> = ({ visible }: Prop) => {
-  const basketItems = useAppSelector((state) => state.basket.basketItems);
-  const totalPrice = useAppSelector((state) => state.basket.totalPrice);
+  const { basketItems, totalPrice } = useAppSelector(selectBasket);
 
   return visible ? (
     <div

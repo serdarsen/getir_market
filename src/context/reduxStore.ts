@@ -26,7 +26,8 @@ export const reduxStore = configureStore({
     pagination: paginationReducer,
     tag: tagReducer,
   },
-  middleware: [sagaMiddleware],
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware()
+    .concat(sagaMiddleware),
 });
 
 sagaMiddleware.run(companySaga);
@@ -38,8 +39,8 @@ export type AppStore = typeof reduxStore;
 export type AppDispatch = typeof reduxStore.dispatch;
 export type RootState = ReturnType<typeof reduxStore.getState>;
 export type AppThunk<ReturnType = void> = ThunkAction<
-  ReturnType,
-  RootState,
-  unknown,
-  Action<string>
-  >;
+ReturnType,
+RootState,
+unknown,
+Action<string>
+>;

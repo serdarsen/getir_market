@@ -1,12 +1,17 @@
 import { FC } from "react";
-import { setSortOption, useAppDispatch, useAppSelector } from "../../context";
+import {
+  selectPagination,
+  setSortOption,
+  useAppDispatch,
+  useAppSelector,
+} from "../../context";
 import Card from "../card/Card";
 import Radio from "../radio/Radio";
 import "./sortingView.scss";
 
 const SortingView: FC = () => {
   const dispatch = useAppDispatch();
-  const sortOption = useAppSelector((state) => state.pagination.sortOption);
+  const { sortOption } = useAppSelector(selectPagination);
 
   const onChange = (
     order: string,

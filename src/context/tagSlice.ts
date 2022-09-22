@@ -1,11 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
+import type { RootState } from "./index";
+
+const initialState = {
+  tags: [],
+  isLoading: false,
+};
 
 export const tagSlice = createSlice({
   name: "tagSlice",
-  initialState: {
-    tags: [],
-    isLoading: false,
-  },
+  initialState,
   reducers: {
     findTagsFetch: (state) => {
       state.isLoading = true;
@@ -19,6 +22,10 @@ export const tagSlice = createSlice({
     },
   },
 });
+
+export const selectTag = (
+  state: RootState,
+): typeof initialState => state.tag;
 
 export const {
   findTagsFetch,

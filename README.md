@@ -19,9 +19,9 @@ Getir Market is an implementation of my interview assignment given by Getir. Thi
 * I handled the context operations individually to have a separation of concerns.  
 * I applied the Clean Code Naming Conventions and the Single Responsibility Principle to write clean tests.
 <br/><br/>
-* We have Redux, React-Redux, Redux-Saga, and Redux-Toolkit libraries to create a global state management infrastructure.
+* We have Redux, React-Redux, and Redux-Toolkit libraries to create a global state management infrastructure.
     *  I avoided using Redux because of [its suggestion to use Redux-Toolkit](https://redux.js.org/introduction/why-rtk-is-redux-today).
-    *  I implemented React-Redux, Redux-Saga, and Redux-Toolkit libs to work together because of their efficiency.
+    *  I implemented React-Redux and Redux-Toolkit libs to work together because of their efficiency.
 
 ## Tooling
 - [React](https://reactjs.org): An open source JavaScript library for building UIs
@@ -62,11 +62,11 @@ Getir Market is an implementation of my interview assignment given by Getir. Thi
     - [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin): Generates HTML files when bundling
     - [mini-css-extract-plugin](https://github.com/webpack-contrib/mini-css-extract-plugin): Extracts CSS into separate files
     - [webpack-manifest-plugin](https://github.com/shellscape/webpack-manifest-plugin): Generates an asset manifest
+    - [copy-webpack-plugin](https://github.com/webpack-contrib/copy-webpack-plugin): Copies individual files or entire directories, which already exist, to the build directory
     - [@types/dotenv-webpack](https://www.npmjs.com/package/@types/dotenv-webpack)
 - [Redux](https://redux.js.org/introduction/why-rtk-is-redux-today): A Predictable State Container for JS Apps
     - [react-redux](https://react-redux.js.org/): Official React bindings for Redux
     - [@reduxjs/toolkit](https://redux-toolkit.js.org/): Official toolset for efficient Redux development
-    - [redux-saga](https://redux-saga.js.org/): An intuitive Redux side effect manager
 - [ESLint](https://eslint.org/): A pluggable linting utility for JavaScript, JSX, and TSX
     - [eslint](https://github.com/eslint/eslint): A tool for identifying and reporting on patterns found in ECMAScript/JavaScript code.
     - [eslint-config-airbnb](https://github.com/airbnb/javascript): Airbnb JavaScript style guide
@@ -80,15 +80,16 @@ Getir Market is an implementation of my interview assignment given by Getir. Thi
     - [eslint-plugin-jest-dom](https://github.com/testing-library/eslint-plugin-jest-dom): ESLint plugin to follow best practices and anticipate common mistakes when writing tests with jest-dom    
     - [@typescript-eslint/eslint-plugin](https://github.com/typescript-eslint/typescript-eslint): Monorepo for all the tooling which enables ESLint to support TypeScript
     - [@typescript-eslint/parser](https://www.npmjs.com/package/@typescript-eslint/parser):  An ESLint parser which leverages [TypeScript ESTree](https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/typescript-estree) to allow for ESLint to lint TypeScript source
-- [json-server](https://github.com/typicode/json-server): Fake JSON server for REST API  
+- [msw](https://www.npmjs.com/package/msw): Mock Service Worker (MSW) is a seamless REST/GraphQL API mocking library for browser and Node.js
+- [cross-fetch](https://github.com/lquixada/cross-fetch): Universal WHATWG Fetch API for Node, Browsers and React Native.
+- [express](https://github.com/expressjs/express): Fast, unopinionated, minimalist web framework for [Node.js](http://nodejs.org)
 - [lodash](https://github.com/lodash/lodash): The [Lodash](https://lodash.com/) library exported as a [UMD](https://github.com/umdjs/umd) module   
 - [@types/lodash](https://www.npmjs.com/package/@types/lodash)
-- [sass](https://www.npmjs.com/package/sass): A pure JavaScript implementation of [Sass](https://sass-lang.com/). Sass makes CSS fun again
-- [axios](https://github.com/axios/axios): Promise based HTTP client for the browser and node.js     
+- [sass](https://www.npmjs.com/package/sass): A pure JavaScript implementation of [Sass](https://sass-lang.com/). Sass makes CSS fun again 
   
 ## Usage
 - The project built with `node v18.9.0` and `npm 8.19.1`.
-- To be able to watch logs and develop locally, create `.env` file in the project root dir with `PORT=4000`(optional) and `DEV=true` properties in it, then run `npm run dev-server` and `npm run dev` scripts in seperate terminals, browse `localhost:4000`
+- To be able to watch logs and develop locally, create `.env` file in the project root dir with `PORT=3004`(optional) and `DEV=true` properties in it, then run `npm run dev-server` and `npm run dev` scripts in seperate terminals, browse `localhost:3004`
 <br/><br/>
 - Run `npm run test` to run tests.
 - Use `npx jest` to run a single test (e.g. `npx jest /src/component/pagination/Pagination.test.tsx -c jest.config.ts --watch`)
@@ -99,17 +100,17 @@ Getir Market is an implementation of my interview assignment given by Getir. Thi
 | Command                    | Description                                                                            |
 | -------------------------- | -------------------------------------------------------------------------------------- |
 | `npm install`              | Install all dependent application packages                                             |
-| `npm run dev-server`       | Start json server at localhost:3004                                                    |
-| `npm run dev`              | Start a local development web server at localhost:4000 using webpack-dev-server        |
+| `npm run dev`              | Start a local development web server at localhost:3004 using webpack-dev-server        |
 | `npm run build`            | Bundle application for Production using webpack (DEV=false in .env)                    |
-| `npm run start`            | Serve static web site at localhost:8080 using json-server                              |
+| `npm run start`            | Serve static web site at localhost:8080 using express                              |
 | `npm run test`             | Run the full test suite using Jest                                                     |
 | `npm run test:watch`       | Watch files for changes and rerun tests related to changed files                       |
 
 ## Further Development
 * The following topics can be considered for further development:
+    * Add ability to find countable entities dynamically
+    * Research and fix the `"a test was not wrapped in act(...)"` test warning
     * Research and fix the `"asset(s) exceed the recommended size limit (244 KiB)"` build warning
-    * Improve API error handling. Research and implement API best pratices like [Redux Toolkit Query](https://redux-toolkit.js.org/rtk-query/usage/examples)
     * Add ability to save basket items and filters to database.
     * Refactor search widgets using a single reusable component.
     * Refactor widgets that include a checkbox or radio using a single reusable component.
@@ -124,3 +125,4 @@ Getir Market is an implementation of my interview assignment given by Getir. Thi
 - [do-community/doggy-directory](https://github.com/do-community/doggy-directory)
 - [Testing Implementation Details by Kent C. Dodds](https://kentcdodds.com/blog/testing-implementation-details)
 - [Common mistakes with React Testing Library by Kent C. Dodds](https://kentcdodds.com/blog/common-mistakes-with-react-testing-library)
+- [mswjs/examples/rest-react](https://github.com/mswjs/examples/tree/master/examples/rest-react)

@@ -1,6 +1,6 @@
 import { FC } from "react";
 import {
-  selectPagination,
+  selectProduct,
   setSortOption,
   useAppDispatch,
   useAppSelector,
@@ -11,7 +11,7 @@ import "./sortingView.scss";
 
 const SortingView: FC = () => {
   const dispatch = useAppDispatch();
-  const { sortOption } = useAppSelector(selectPagination);
+  const { sortOption } = useAppSelector(selectProduct);
 
   const onChange = (
     order: string,

@@ -1,24 +1,23 @@
-import { FC, useEffect } from "react";
+import { FC } from "react";
 import {
   appendBrandFilter,
-  findCompaniesFetch,
   removeBrandFilter,
-  selectCompany,
-  selectPagination,
+  selectProduct,
   setBrandSearchTerm,
   useAppDispatch,
   useAppSelector,
 } from "../../context";
-import Countable from "../../model/Countable";
+import { Countable } from "../../model";
+import { useBrandsQuery } from "../../service";
 import Card from "../card/Card";
 import Checkbox from "../checkbox/Checkbox";
 import Search from "../search/Search";
 import "./brandView.scss";
 
-const Brands: FC = () => {
+const BrandView: FC = () => {
   const dispatch = useAppDispatch();
-  const { companies } = useAppSelector(selectCompany);
-  const { brandFilter, brandSearchTerm } = useAppSelector(selectPagination);
+  const { brandSearchTerm, brandFilter } = useAppSelector(selectProduct);
+  const { data: brands = [] } = useBrandsQuery(brandSearchTerm);
 
   const onChangeCheckbox = (brandName: string): void => {
     if (brandFilter.includes(brandName)) {
@@ -27,10 +26,6 @@ const Brands: FC = () => {
       dispatch(appendBrandFilter(brandName));
     }
   };
-
-  useEffect(() => {
-    dispatch(findCompaniesFetch());
-  }, [dispatch]);
 
   const onSearch = (searchTerm: string):void => {
     dispatch(setBrandSearchTerm(searchTerm));
@@ -59,26 +54,25 @@ const Brands: FC = () => {
             >
               <p className="brand-view__text">All</p>
             </Checkbox>
-            {companies.map(
-              (company: Countable) => (
+            {brands.map(
+              (brand: Countable) => (
                 <Checkbox
-                  id={`brandViewCheckboxId${company.name}`}
-                  key={`brandViewCheckboxKey${company.name}`}
-                  name={`brandViewCheckboxName${company.name}`}
+                  id={`brandViewCheckboxId${brand.name}`}
+                  key={`brandViewCheckboxKey${brand.name}`}
+                  name={`brandViewCheckboxName${brand.name}`}
                   checked={
                     brandFilter.includes("All")
-                    || brandFilter.includes(company.name)
+                    || brandFilter.includes(brand.name)
                 }
-                  onChange={() => onChangeCheckbox(company.name)}
+                  onChange={() => onChangeCheckbox(brand.name)}
                 >
                   <p className="brand-view__text">
-                    {company.name}
+                    {brand.name}
                     <span className="brand-view__count">
                       (
-                      {company.count}
+                      {brand.count}
                       )
                     </span>
-
                   </p>
                 </Checkbox>
               ),
@@ -90,4 +84,4 @@ const Brands: FC = () => {
   );
 };
 
-export default Brands;
+export default BrandView;

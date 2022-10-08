@@ -1,4 +1,4 @@
-type Company = {
+type Brand = {
   id: number;
   slug: string;
   name: string;
@@ -10,4 +10,4 @@ type Company = {
   contact: string;
 };
 
-export default Company;
+export default Brand;

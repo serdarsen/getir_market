@@ -11,13 +11,6 @@
     margin: 0 0 1.25rem 0;
 }
 
-.product-view__chip {
-    display: inline-flex;
-    flex-wrap: wrap;
-    gap: 0.5em;
-    margin: 0 0 1em 0;
-}
-
 .product-view__body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);

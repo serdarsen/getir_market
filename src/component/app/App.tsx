@@ -1,10 +1,10 @@
 import { Provider } from "react-redux";
 import { Footer, Header, Main } from "..";
-import { reduxStore } from "../../context/reduxStore";
+import { store } from "../../context";
 import "./app.scss";
 
 const App: FC = () => (
-  <Provider store={reduxStore}>
+  <Provider store={store}>
     <div className="app">
       <Header />
       <Main />

@@ -1,15 +1,14 @@
-import { FC, useEffect } from "react";
+import { FC } from "react";
 import {
   appendTagFilter,
-  findTagsFetch,
   removeTagFilter,
-  selectPagination,
-  selectTag,
+  selectProduct,
   setTagSearchTerm,
   useAppDispatch,
   useAppSelector,
 } from "../../context";
 import Countable from "../../model/Countable";
+import { useTagsQuery } from "../../service";
 import Card from "../card/Card";
 import Checkbox from "../checkbox/Checkbox";
 import Search from "../search/Search";
@@ -17,8 +16,8 @@ import "./tagView.scss";
 
 const TagView: FC = () => {
   const dispatch = useAppDispatch();
-  const { tags } = useAppSelector(selectTag);
-  const { tagFilter, tagSearchTerm } = useAppSelector(selectPagination);
+  const { tagSearchTerm, tagFilter } = useAppSelector(selectProduct);
+  const { data: tags = [] } = useTagsQuery(tagSearchTerm);
 
   const onChangeCheckbox = (tagName: string): void => {
     if (tagFilter.includes(tagName)) {
@@ -27,10 +26,6 @@ const TagView: FC = () => {
       dispatch(appendTagFilter(tagName));
     }
   };
-
-  useEffect(() => {
-    dispatch(findTagsFetch());
-  }, [dispatch]);
 
   const onSearch = (searchTerm: string):void => {
     dispatch(setTagSearchTerm(searchTerm));
@@ -68,7 +63,7 @@ const TagView: FC = () => {
                   checked={
                     tagFilter.includes("All")
                     || tagFilter.includes(tag.name)
-                  }
+                }
                   onChange={() => onChangeCheckbox(tag.name)}
                 >
                   <p className="tag-view__text">

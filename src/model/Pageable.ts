@@ -1,5 +1,7 @@
 type Pageable<T> = {
-  data: T;
+  pageNo: number,
+  perPage: number,
+  data: T[];
   totalCount: number;
 };
 

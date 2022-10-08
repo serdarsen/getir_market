@@ -1,39 +1,39 @@
 import { FC } from "react";
+import { productConst } from "../../constant";
 import {
   appendBasketItem,
   removeBasketItem,
   useAppDispatch,
 } from "../../context";
-import { Item } from "../../model";
-import { PRODUCT_PLACEHOLDER_IMAGE_URL } from "../../service/baseService";
+import { Product } from "../../model";
 import CurrencyView from "../currencyView/CurrencyView";
 import "./productItemView.scss";
 
 type Prop = {
-  item: Item,
-  itemInBasket: boolean
+  product: Product,
+  productInBasket: boolean
 };
 
-const ProductItemView: FC<Prop> = ({ item, itemInBasket }) => {
+const ProductItemView: FC<Prop> = ({ product, productInBasket }) => {
   const dispatch = useAppDispatch();
 
   const onClickButton = (): void => {
-    if (itemInBasket) {
-      dispatch(removeBasketItem(item));
+    if (productInBasket) {
+      dispatch(removeBasketItem(product));
       return;
     }
 
     dispatch(appendBasketItem({
-      id: item.id,
-      price: item.price,
-      name: item.name,
+      id: product.id,
+      price: product.price,
+      name: product.name,
       quantity: 1,
     }));
   };
 
   const createButtonClassName = (): string => {
     let className = "product-item-view__button";
-    if (itemInBasket) {
+    if (productInBasket) {
       className += " product-item-view__button--active";
     }
 
@@ -44,22 +44,24 @@ const ProductItemView: FC<Prop> = ({ item, itemInBasket }) => {
     <div className="product-item-view">
       <div className="product-item-view__bg">
         <img
-          src={PRODUCT_PLACEHOLDER_IMAGE_URL}
-          alt={item.name}
+          src={productConst.PRODUCT_PLACEHOLDER_IMAGE_URL}
+          alt={product.name}
         />
       </div>
       <div className="product-item-view__body">
         <div className="product-item-view__price">
-          <CurrencyView currency={item.price} gap={0.2} />
+          <CurrencyView currency={product.price} gap={0.2} />
         </div>
-        <p className="product-item-view__name" title={item.name}>{item.name}</p>
+        <p className="product-item-view__name" title={product.name}>
+          {product.name}
+        </p>
       </div>
       <button
         type="button"
         className={createButtonClassName()}
         onClick={onClickButton}
       >
-        {itemInBasket ? "Remove" : "Add"}
+        {productInBasket ? "Remove" : "Add"}
       </button>
     </div>
   );

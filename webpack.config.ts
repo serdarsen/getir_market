@@ -12,6 +12,8 @@ import {
 } from "webpack-dev-server";
 import { WebpackManifestPlugin } from "webpack-manifest-plugin";
 
+import CopyPlugin from "copy-webpack-plugin";
+
 interface Configuration extends WebpackConfiguration {
   devServer: WebpackDevServerConfiguration | undefined;
 }
@@ -25,6 +27,9 @@ const commonPlugins = [
   }),
   new DotEnv({
     path: path.resolve(__dirname, ".env"),
+  }),
+  new CopyPlugin({
+    patterns: [path.resolve(__dirname, "mockServiceWorker.js")],
   }),
 ];
 
@@ -44,7 +49,7 @@ const config: Configuration = {
   mode: isPro ? "production" : "development",
   entry: path.join(__dirname, "src", "index.tsx"),
   output: {
-    path: path.resolve(__dirname, "public"),
+    path: path.resolve(__dirname, "build"),
     filename: "main.[contenthash].js",
   },
   module: {
@@ -83,9 +88,9 @@ const config: Configuration = {
   plugins: isPro ? proPlugins : devPlugins,
   devtool: isPro ? "source-map" : "inline-source-map",
   devServer: isPro ? undefined : {
-    static: path.join(__dirname, "public"),
+    static: path.join(__dirname, "build"),
     historyApiFallback: true,
-    port: 4000,
+    port: 3004,
     open: false,
   },
 };

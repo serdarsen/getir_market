@@ -9,7 +9,7 @@ const config = {
   },
   testMatch: ["<rootDir>/src/**/?(*.)+(spec|test).{ts,tsx}"],
   moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json"],
-  testPathIgnorePatterns: ["/node_modules/", "/public/"],
+  testPathIgnorePatterns: ["/node_modules/", "/public/", "/build/"],
   setupFilesAfterEnv: ["<rootDir>/src/test/setupTest.ts"],
   snapshotResolver: "<rootDir>/src/test/snapshotResolver.ts",
 };

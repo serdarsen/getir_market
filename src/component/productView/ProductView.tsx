@@ -1,77 +1,67 @@
-import { FC, useEffect } from "react";
+import { FC } from "react";
 import { productConst } from "../../constant";
 import {
-  appendItemTypeFilter,
-  findItemsFetch,
-  findItemTypesFetch,
-  removeItemTypeFilter,
   selectBasket,
-  selectItem,
-  selectItemType,
-  selectPagination,
+  selectProduct,
   setPageNo,
   useAppDispatch,
   useAppSelector,
 } from "../../context";
-import { Item } from "../../model";
-import Countable from "../../model/Countable";
+import { Product } from "../../model";
+import { useProductsQuery } from "../../service";
 import Card from "../card/Card";
-import Chip from "../chip/Chip";
+import ItemtypeView from "../itemtypeView/ItemtypeView";
 import Pagination from "../pagination/Pagination";
 import ProductItemView from "../productItemView/ProductItemView";
 import "./productView.scss";
 
 const ProductView: FC = () => {
   const dispatch = useAppDispatch();
-  const { items } = useAppSelector(selectItem);
-  const { itemTypes } = useAppSelector(selectItemType);
-  const { basketItemIds } = useAppSelector(selectBasket);
-  const { pageNo, itemTypeFilter } = useAppSelector(selectPagination);
 
-  const onChangeChip = (itemTypeName: string): void => {
-    if (itemTypeFilter.includes(itemTypeName)) {
-      dispatch(removeItemTypeFilter(itemTypeName));
-    } else {
-      dispatch(appendItemTypeFilter(itemTypeName));
-    }
-  };
+  const {
+    pageNo,
+    sortOption,
+    tagFilter,
+    brandFilter,
+    itemtypeFilter,
+  } = useAppSelector(selectProduct);
+
+  const { basketItemIds } = useAppSelector(selectBasket);
+
+  const {
+    data: products = {
+      pageNo: 1,
+      perPage: productConst.PER_PAGE,
+      data: [],
+      totalCount: 0,
+    },
+  } = useProductsQuery({
+    tagFilter,
+    brandFilter,
+    itemtypeFilter,
+    order: sortOption[0],
+    sort: sortOption[1],
+    pageNo,
+    perPage: productConst.PER_PAGE,
+  });
 
   const onChangePageNo = (page: number):void => {
     dispatch(setPageNo(page));
   };
 
-  useEffect(() => {
-    dispatch(findItemsFetch());
-    dispatch(findItemTypesFetch());
-  }, [dispatch]);
-
   return (
     <div className="product-view">
-
       <h4 className="product-view__title">Products</h4>
-
-      <div className="product-view__chip">
-        {itemTypes.map((itemType: Countable) => (
-          <Chip
-            id={`chipId${itemType.name}`}
-            key={`chipKey${itemType.name}`}
-            name={`chipName${itemType.name}`}
-            checked={itemTypeFilter.includes(itemType.name)}
-            onChange={() => onChangeChip(itemType.name)}
-          >
-            {itemType.name}
-          </Chip>
-        ))}
-      </div>
+      <ItemtypeView />
 
       <Card>
         <div className="product-view__body">
-          {items.data.map(
-            (item: Item) => (
+          {products.data.map(
+            (product: Product) => (
               <ProductItemView
-                key={item.id}
-                item={item}
-                itemInBasket={basketItemIds.includes(item.id)}
+                key={product.id}
+                product={product}
+                productInBasket={basketItemIds.includes(product.id)}
               />
             ),
           )}
@@ -79,9 +69,10 @@ const ProductView: FC = () => {
       </Card>
 
       <Pagination
+        id="productPaginationId"
         pageNo={pageNo}
-        perPageItemSize={productConst.PER_PAGE_ITEM_SIZE}
-        totalCount={items.totalCount}
+        perPage={productConst.PER_PAGE}
+        totalCount={products.totalCount || 0}
         onChangePageNo={onChangePageNo}
       />
     </div>

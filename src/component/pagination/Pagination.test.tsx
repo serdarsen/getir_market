@@ -6,8 +6,9 @@ test("renders the pagination without separator", () => {
   const onChangePageNo = jest.fn();
   render(
     <Pagination
+      id="productPaginationId"
       pageNo={1}
-      perPageItemSize={2}
+      perPage={2}
       totalCount={14}
       onChangePageNo={onChangePageNo}
     />,
@@ -35,8 +36,9 @@ test("renders the pagination first page selected", () => {
   const onChangePageNo = jest.fn();
   render(
     <Pagination
+      id="productPaginationId"
       pageNo={1}
-      perPageItemSize={2}
+      perPage={2}
       totalCount={21}
       onChangePageNo={onChangePageNo}
     />,
@@ -74,8 +76,9 @@ test("renders the pagination fifth page selected", () => {
   const onChangePageNo = jest.fn();
   render(
     <Pagination
+      id="productPaginationId"
       pageNo={5}
-      perPageItemSize={2}
+      perPage={2}
       totalCount={21}
       onChangePageNo={onChangePageNo}
     />,
@@ -113,8 +116,9 @@ test("renders the pagination last page selected", () => {
   const onChangePageNo = jest.fn();
   render(
     <Pagination
+      id="productPaginationId"
       pageNo={11}
-      perPageItemSize={2}
+      perPage={2}
       totalCount={21}
       onChangePageNo={onChangePageNo}
     />,
@@ -154,8 +158,9 @@ test("changes page no by prev, next, or page buttons", async () => {
 
   render(
     <Pagination
+      id="productPaginationId"
       pageNo={pageNo}
-      perPageItemSize={2}
+      perPage={2}
       totalCount={21}
       onChangePageNo={onChangePageNo}
     />,

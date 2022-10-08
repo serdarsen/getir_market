@@ -6,12 +6,8 @@ import type { PropsWithChildren } from "react";
 import React from "react";
 import { Provider } from "react-redux";
 import type { AppStore, RootState } from "../context";
-import basketReducer from "../context/basketSlice";
-import companyReducer from "../context/companySlice";
-import itemReducer from "../context/itemSlice";
-import itemTypeReducer from "../context/itemTypeSlice";
-import paginationReducer from "../context/paginationSlice";
-import tagReducer from "../context/tagSlice";
+import { basketReducer, productReducer } from "../context";
+import { api } from "../service";
 
 // This type interface extends the default options for render from RTL, as well
 // as allows the user to specify other things such as initialState, store.
@@ -28,12 +24,11 @@ export const renderWithProviders = (
     store = configureStore({
       reducer: {
         basket: basketReducer,
-        company: companyReducer,
-        item: itemReducer,
-        itemType: itemTypeReducer,
-        pagination: paginationReducer,
-        tag: tagReducer,
+        product: productReducer,
+        [api.reducerPath]: api.reducer,
       },
+      middleware: (getDefaultMiddleware) => getDefaultMiddleware()
+        .prepend(api.middleware),
       preloadedState,
     }),
     ...renderOptions

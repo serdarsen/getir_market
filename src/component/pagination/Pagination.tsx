@@ -5,19 +5,21 @@ import PageButton from "./PageButton";
 import "./pagination.scss";
 
 type Prop = {
+  id: string,
   pageNo: number;
-  perPageItemSize: number;
+  perPage: number;
   totalCount: number;
   onChangePageNo: (page: number) => void
 };
 
 const Pagination: FC<Prop> = ({
+  id,
   pageNo,
-  perPageItemSize,
+  perPage,
   totalCount,
   onChangePageNo,
 }: Prop) => {
-  const pageSize = Math.ceil(totalCount / perPageItemSize) || 1;
+  const pageSize = Math.ceil(totalCount / perPage) || 1;
   const hasPrev = pageNo > 1;
   const hasNext = pageNo < pageSize;
 
@@ -88,9 +90,9 @@ const Pagination: FC<Prop> = ({
       <div className="pagination__page-button-group">
         {createPageNumbers().map((page: number) => (
           <PageButton
-            id={`pageButtonId${page}`}
-            key={`pageButtonKey${page}`}
-            name="pageButtonName"
+            id={`${id}pageButtonId${page}`}
+            key={`${id}pageButtonKey${page}`}
+            name={`${id}pageButtonName`}
             pageNo={pageNo}
             value={page}
             onChange={() => onChangePageButton(page)}

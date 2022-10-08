@@ -1,5 +1,5 @@
 {
-    "items": [
+    "products": [
         {
             "id": 1,
             "tags": [
@@ -25345,7 +25345,7 @@
             "itemType": "shirt"
         }
     ],
-    "companies": [
+    "brands": [
         {
             "id": 1,
             "slug": "Dickens-Franecki",
@@ -25589,7 +25589,7 @@
             "contact": "Cletus Hessel"
         }
     ],
-    "item_types_countable": [
+    "itemtypeCountable": [
         {
             "name": "mug",
             "count": 870
@@ -25599,7 +25599,7 @@
             "count": 870
         }
     ],
-    "tags_countable": [
+    "tagCountable": [
         {
             "name": "Trees",
             "count": 210
@@ -27013,7 +27013,7 @@
             "count": 2
         }
     ],
-    "companies_countable": [
+    "brandCountable": [
         {
             "name": "OHara-Group",
             "count": 72

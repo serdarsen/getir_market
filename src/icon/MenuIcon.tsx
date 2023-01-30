@@ -1,10 +1,9 @@
-import { FC } from "react";
 
 type Prop = {
   className: string
 };
 
-const MenuIcon: FC<Prop> = ({ className }: Prop) => (
+const MenuIcon: React.FC<Prop> = ({ className }: Prop) => (
   <svg
     className={className}
     xmlns="http://www.w3.org/2000/svg"

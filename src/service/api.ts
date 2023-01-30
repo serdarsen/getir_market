@@ -1,20 +1,15 @@
-import {
-  createApi,
-  fetchBaseQuery,
-} from "@reduxjs/toolkit/query/react";
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { Countable, Pageable, Product } from "../model";
 import ProductRequest from "../model/ProductRequest";
 
 const { location } = window || {};
 const { protocol, hostname } = location || {};
-const isDev = process.env.DEV === "true";
+const isDev = import.meta.env.DEV === true;
 
 export const api = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({
-    baseUrl: isDev
-      ? `${protocol}//${hostname}:3004/api`
-      : "/api",
+    baseUrl: isDev ? `${protocol}//${hostname}:3000/api` : "/api",
   }),
   tagTypes: ["Brand", "Itemtype", "Product", "Tag"],
   endpoints: (builder) => ({
@@ -49,7 +44,6 @@ export const api = createApi({
       }),
       providesTags: ["Itemtype"],
     }),
-
   }),
 });
 

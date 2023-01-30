@@ -1,12 +1,12 @@
 type Brand = {
-  id: number;
+  id: string;
   slug: string;
   name: string;
   address: string;
   city: string;
   state: string;
   zip: string;
-  account: number;
+  account: string;
   contact: string;
 };
 

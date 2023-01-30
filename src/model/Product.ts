@@ -1,13 +1,17 @@
+import Brand from "./Brand";
+import Tag from "./Tag";
+
 type Product = {
-  id: number;
-  tags: string[];
+  id: string;
+  tags: Tag[];
   price: number;
   name: string;
   description: string;
   slug: string;
   added: number;
-  manufacturer: string;
+  brand: Brand;
   itemType: string;
+  imageUrl: string;
 };
 
 export default Product;

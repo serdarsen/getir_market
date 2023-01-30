@@ -1,10 +1,9 @@
-import { FC } from "react";
 
 type Prop = {
   className: string
 };
 
-const ArrowIcon: FC<Prop> = ({ className }: Prop) => (
+const ArrowIcon: React.FC<Prop> = ({ className }: Prop) => (
   <svg className={className}>
     <path
       fillRule="evenodd"

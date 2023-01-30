@@ -1,10 +1,8 @@
-import { FC } from "react";
-
 type Prop = {
   className: string
 };
 
-const PlusIcon: FC<Prop> = ({ className }: Prop) => (
+const PlusIcon: React.FC<Prop> = ({ className }: Prop) => (
   <svg
     className={className}
     viewBox="0 0 12 12"

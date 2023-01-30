@@ -1,10 +1,9 @@
-import { FC } from "react";
 
 type Prop = {
   className: string
 };
 
-const MinusIcon: FC<Prop> = ({ className }: Prop) => (
+const MinusIcon: React.FC<Prop> = ({ className }: Prop) => (
   <svg
     className={className}
     viewBox="0 0 10 3"

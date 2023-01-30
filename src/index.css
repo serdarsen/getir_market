@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        font-family: "Open Sans", sans-serif;
+    }
+}
+
+@layer utilities {
+    .scrollbar::-webkit-scrollbar {
+        width: 6px;
+        background-color: transparent;
+    }
+
+    .scrollbar::-webkit-scrollbar-track {
+        box-shadow: unset;
+        background-color: transparent;
+    }
+
+    .scrollbar::-webkit-scrollbar-thumb {
+        background-color: #E0E0E0;
+        border-radius: 4px;
+    }
+}
+
+@keyframes keyframes__slide-in-left {
+    0% {
+        transform: translateX(-1000px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes keyframes__scale-up-center {
+    0% {
+        transform: scale(0.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.animation__slide-in-left {
+    animation: keyframes__slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.animation__scale-up-center {
+    animation: keyframes__scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}

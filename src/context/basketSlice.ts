@@ -4,7 +4,7 @@ import type { RootState } from "./index";
 
 const initialState = {
   basketItems: [] as BasketItem[],
-  basketItemIds: [] as number[],
+  basketItemIds: [] as string[],
   totalPrice: 0,
 };
 

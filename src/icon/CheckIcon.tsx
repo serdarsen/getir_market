@@ -1,8 +1,11 @@
-import { FC } from "react";
+type Prop = {
+  className: string
+};
 
-const CheckIcon: FC = () => (
+const CheckIcon: React.FC<Prop> = ({ className }: Prop) => (
   <div className="checkbox-icon">
     <svg
+      className={className}
       width="13"
       height="9"
       viewBox="0 0 13 9"
@@ -11,8 +14,7 @@ const CheckIcon: FC = () => (
     >
       <path
         d="M11.6667 1L4.33333 8.33333L1 5"
-        stroke="white"
-        strokeWidth="1.2"
+        strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
       />

@@ -1,10 +1,9 @@
-import { FC } from "react";
 
 type Prop = {
   className: string
 };
 
-const BasketIcon: FC<Prop> = ({ className }: Prop) => (
+const BasketIcon: React.FC<Prop> = ({ className }: Prop) => (
   <svg className={className}>
     <path
       d="M5.41174 9.46655H18.5884V21.0081H5.41174V9.46655Z"

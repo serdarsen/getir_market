@@ -5,7 +5,8 @@ import {
 } from "@reduxjs/toolkit";
 import { setupListeners } from "@reduxjs/toolkit/dist/query";
 import { api } from "../service";
-import { basketReducer, productReducer } from "./index";
+import basketReducer from "./basketSlice";
+import productReducer from "./productSlice";
 
 export const store = configureStore({
   reducer: {

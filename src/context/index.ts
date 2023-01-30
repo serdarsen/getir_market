@@ -1,5 +1,6 @@
 export {
-  appendBasketItem, default as basketReducer, removeBasketItem,
+  appendBasketItem,
+  removeBasketItem,
   selectBasket,
   updateBasketItem,
 } from "./basketSlice";
@@ -10,7 +11,8 @@ export {
 export {
   appendBrandFilter,
   appendItemtypeFilter,
-  appendTagFilter, default as productReducer, removeBrandFilter,
+  appendTagFilter,
+  removeBrandFilter,
   removeItemtypeFilter,
   removeTagFilter,
   selectProduct,

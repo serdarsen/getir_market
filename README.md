@@ -91,7 +91,6 @@ Getir Market is an implementation of my interview assignment given by Getir. Thi
     * Refactor search widgets using a single reusable component.
     * Refactor context and service elements that have a similar structure using reusable modules.
     * Research and implement cypress testing infrastructure.
-    * Implement dark mode.
 
 ## Reference
 

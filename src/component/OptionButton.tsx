@@ -23,7 +23,8 @@ const OptionButton: React.FC = () => {
             className="
               h-6
               w-6
-              stroke-white"
+              stroke-white
+              dark:stroke-gray-300"
           />
         )
         : (
@@ -31,7 +32,8 @@ const OptionButton: React.FC = () => {
             className="
               h-6
               w-6
-              stroke-white"
+              stroke-white
+              dark:stroke-gray-300"
           />
         )}
       <SlidingView visible={active} />

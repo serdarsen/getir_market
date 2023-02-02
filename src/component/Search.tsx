@@ -1,9 +1,9 @@
-type Prop = {
+interface Prop {
   id: string,
   placeholder: string,
   searchTerm: string,
   onSearch: (searchTerm: string) => void
-};
+}
 
 const Search: React.FC<Prop> = ({
   id, placeholder, searchTerm, onSearch,
@@ -13,15 +13,22 @@ const Search: React.FC<Prop> = ({
     onSubmit={(e) => {
       e.preventDefault();
     }}
-    className="border-custom-black-100
-               rounded-2
-               border-2
-               border-solid"
+    className="
+      border-custom-black-100
+      rounded-2
+      border-2
+      border-solid
+      dark:border-gray-500"
   >
     <input
       id={`searchInput${id}`}
-      className="w-full
-                 p-[0.75rem]"
+      className="
+        dark:bg-custom-gray-900
+        w-full
+        p-[0.75rem]
+        outline-none
+        dark:text-gray-400
+        dark:placeholder:text-gray-400"
       type="text"
       placeholder={placeholder}
       name="search"

@@ -1,148 +1,156 @@
 {
-    "root": true,
-    "env": {
-        "browser": true,
-        "es2021": true
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "airbnb",
+    "airbnb-typescript",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:import/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:react-hooks/recommended",
+    "plugin:tailwindcss/recommended"
+  ],
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "import",
+    "react-hooks",
+    "testing-library",
+    "jest-dom",
+    "jsx-a11y",
+    "react-hooks"
+  ],
+  "overrides": [
+    {
+      // Enables testing plugins
+      "files": [
+        "src/**/?(*.)+(spec|test).{ts,tsx}"
+      ],
+      "extends": [
+        "plugin:testing-library/react",
+        "plugin:jest-dom/recommended"
+      ]
+    }
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
     },
-    "extends": [
-        "airbnb",
-        "airbnb-typescript",
-        "eslint:recommended",
-        "plugin:react/recommended",
-        "plugin:import/recommended",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:jsx-a11y/recommended",
-        "plugin:react/jsx-runtime",
-        "plugin:react-hooks/recommended",
-        "plugin:tailwindcss/recommended"
+    "ecmaVersion": 12,
+    "sourceType": "module",
+    "project": [
+      "./tsconfig.json"
+    ]
+  },
+  "rules": {
+    "@typescript-eslint/indent": [
+      "error",
+      2,
+      {
+        "flatTernaryExpressions": true
+      }
     ],
-    "plugins": [
-        "react",
-        "@typescript-eslint",
-        "import",
-        "react-hooks",
-        "testing-library",
-        "jest-dom",
-        "jsx-a11y",
-        "react-hooks"
+    "@typescript-eslint/quotes": [
+      "error",
+      "double"
     ],
-    "overrides": [
-        {
-            // Enables testing plugins
-            "files": [
-                "src/**/?(*.)+(spec|test).{ts,tsx}"
-            ],
-            "extends": [
-                "plugin:testing-library/react",
-                "plugin:jest-dom/recommended"
-            ]
-        }
+    "@typescript-eslint/no-use-before-define": [
+      "error"
     ],
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 12,
-        "sourceType": "module",
-        "project": [
-            "./tsconfig.json"
+    "@typescript-eslint/no-shadow": [
+      "error"
+    ],
+    "@typescript-eslint/explicit-function-return-type": [
+      "error",
+      {
+        "allowExpressions": true
+      }
+    ],
+    "no-plusplus": "off",
+    "no-param-reassign": "off",
+    "react/prop-types": "off",
+    "no-console": "off",
+    "no-shadow": "off",
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": "arrow-function"
+      }
+    ],
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
+    "no-use-before-define": "off",
+    "react/jsx-filename-extension": [
+      "warn",
+      {
+        "extensions": [
+          ".tsx"
         ]
+      }
+    ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "max-len": [
+      "warn",
+      {
+        "code": 80
+      }
+    ],
+    "import/no-unresolved": "error",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "import/prefer-default-export": "off",
+    "testing-library/await-async-query": "error",
+    "testing-library/no-await-sync-query": "error",
+    "testing-library/no-debugging-utils": "warn",
+    "testing-library/no-dom-import": "off",
+    "jest-dom/prefer-checked": "error",
+    "jest-dom/prefer-enabled-disabled": "error",
+    "jest-dom/prefer-required": "error",
+    "jest-dom/prefer-to-have-attribute": "error",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true
+      }
+    ],
+    "import/no-cycle": [
+      2,
+      {
+        "maxDepth": 1
+      }
+    ],
+    "tailwindcss/no-custom-classname": "off",
+    "no-else-return": "off"
+  },
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [
+        ".ts",
+        ".tsx"
+      ]
     },
-    "rules": {
-        "@typescript-eslint/quotes": [
-            "error",
-            "double"
-        ],
-        "@typescript-eslint/no-use-before-define": [
-            "error"
-        ],
-        "@typescript-eslint/no-shadow": [
-            "error"
-        ],
-        "@typescript-eslint/explicit-function-return-type": [
-            "error",
-            {
-                "allowExpressions": true
-            }
-        ],
-        "no-plusplus": "off",
-        "no-param-reassign": "off",
-        "react/prop-types": "off",
-        "no-console": "off",
-        "no-shadow": "off",
-        "react/function-component-definition": [
-            2,
-            {
-                "namedComponents": "arrow-function"
-            }
-        ],
-        "react/jsx-uses-react": "off",
-        "react/react-in-jsx-scope": "off",
-        "no-use-before-define": "off",
-        "react/jsx-filename-extension": [
-            "warn",
-            {
-                "extensions": [
-                    ".tsx"
-                ]
-            }
-        ],
-        "import/extensions": [
-            "error",
-            "ignorePackages",
-            {
-                "ts": "never",
-                "tsx": "never"
-            }
-        ],
-        "max-len": [
-            "warn",
-            {
-                "code": 80
-            }
-        ],
-        "import/no-unresolved": "error",
-        "react-hooks/rules-of-hooks": "error",
-        "react-hooks/exhaustive-deps": "warn",
-        "import/prefer-default-export": "off",
-        "testing-library/await-async-query": "error",
-        "testing-library/no-await-sync-query": "error",
-        "testing-library/no-debugging-utils": "warn",
-        "testing-library/no-dom-import": "off",
-        "jest-dom/prefer-checked": "error",
-        "jest-dom/prefer-enabled-disabled": "error",
-        "jest-dom/prefer-required": "error",
-        "jest-dom/prefer-to-have-attribute": "error",
-        "import/no-extraneous-dependencies": [
-            "error",
-            {
-                "devDependencies": true
-            }
-        ],
-        "import/no-cycle": [
-            2,
-            {
-                "maxDepth": 1
-            }
-        ],
-        "tailwindcss/no-custom-classname": "off"
-    },
-    "settings": {
-        "import/parsers": {
-            "@typescript-eslint/parser": [
-                ".ts",
-                ".tsx"
-            ]
-        },
-        "import/resolver": {
-            "typescript": {
-                "alwaysTryTypes": true,
-                "project": [
-                    "./tsconfig.json"
-                ]
-            }
-        }
-    },
-    "ignorePatterns": []
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true,
+        "project": [
+          "./tsconfig.json"
+        ]
+      }
+    }
+  },
+  "ignorePatterns": []
 }

@@ -9,6 +9,10 @@
 }
 
 @layer utilities {
+    .scrollbar--hidden::-webkit-scrollbar {
+        display: none;
+    }
+
     .scrollbar::-webkit-scrollbar {
         width: 6px;
         background-color: transparent;
@@ -22,6 +26,10 @@
     .scrollbar::-webkit-scrollbar-thumb {
         background-color: #E0E0E0;
         border-radius: 4px;
+    }
+
+    .dark .scrollbar::-webkit-scrollbar-thumb {
+        background-color: #818181;
     }
 }
 

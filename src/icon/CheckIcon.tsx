@@ -1,6 +1,6 @@
-type Prop = {
+interface Prop {
   className: string
-};
+}
 
 const CheckIcon: React.FC<Prop> = ({ className }: Prop) => (
   <div className="checkbox-icon">

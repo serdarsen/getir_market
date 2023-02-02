@@ -47,26 +47,33 @@ const ProductView: React.FC = () => {
   };
 
   return (
-    <div className="flex
-                    flex-col"
+    <div
+      className="
+        flex
+        flex-col"
     >
-      <h4 className="text-custom-gray-500
-                     mb-[1.25rem]
-                     text-sm"
+      <h4
+        className="
+          text-custom-gray-500
+          mb-[1.25rem]
+          text-sm
+          dark:text-gray-400"
       >
         Products
       </h4>
       <ItemtypeView />
       <Card>
-        <div className="grid
-                        min-h-[64rem]
-                        content-start
-                        justify-items-center
-                        p-[1.25rem]
-                        max-[1830px]:grid-cols-3
-                        max-[1430px]:grid-cols-2
-                        max-[1010px]:grid-cols-1
-                        min-[1831px]:grid-cols-4"
+        <div
+          className="
+            grid
+            min-h-[64rem]
+            content-start
+            justify-items-center
+            p-[1.25rem]
+            max-[1830px]:grid-cols-3
+            max-[1430px]:grid-cols-2
+            max-[1010px]:grid-cols-1
+            min-[1831px]:grid-cols-4"
         >
           {products.data.map(
             (product: Product) => (

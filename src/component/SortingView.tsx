@@ -19,25 +19,32 @@ const SortingView: React.FC = () => {
   };
 
   return (
-    <div className="flex
-                    h-[13rem]
-                    w-[18.5rem]
-                    flex-col
-                    gap-[0.75rem]"
+    <div
+      className="
+        flex
+        h-[13rem]
+        w-[18.5rem]
+        flex-col
+        gap-[0.75rem]"
     >
-      <p className="text-custom-gray-500
-                    text-start
-                    text-sm"
+      <p
+        className="
+          text-custom-gray-500
+          text-start
+          text-sm
+          dark:text-gray-400"
       >
         Sorting
       </p>
       <Card>
-        <div className="flex
-                        h-[11.5rem]
-                        w-[18.5rem]
-                        flex-col
-                        gap-[1rem]
-                        p-[1.5rem]"
+        <div
+          className="
+            flex
+            h-[11.5rem]
+            w-[18.5rem]
+            flex-col
+            gap-[1rem]
+            p-[1.5rem]"
         >
           <Radio
             id="sortingViewRadioId1"

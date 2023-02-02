@@ -42,7 +42,6 @@ Getir Market is an implementation of my interview assignment given by Getir. Thi
 - [Vite](https://vitejs.dev/): Next Generation Frontend Tooling.
   - [@vitejs/plugin-react](https://github.com/vitejs/vite/tree/main/packages/plugin-react#readme): The all-in-one Vite plugin for React projects.
   - [vitest](https://github.com/vitest-dev/vitest#readme): A blazing fast unit test framework powered by Vite.
-- [Ant Design](https://ant.design/): An enterprise-class UI design language and React UI library.
 - [Tailwind CSS](https://tailwindcss.com/): A utility-first CSS framework for rapidly building custom user interfaces.
 - [Postcss](https://github.com/postcss/postcss): PostCSS is a tool for transforming styles with JS plugins.
   - [autoprofixer](https://github.com/postcss/autoprefixer): [PostCSS](https://github.com/postcss/postcss) plugin to parse CSS and add vendor prefixes to CSS rules.
@@ -101,6 +100,7 @@ Getir Market is an implementation of my interview assignment given by Getir. Thi
 - [Blog: How To Test a React App with Jest and React Testing Library by Alyssa Holland](https://www.digitalocean.com/community/tutorials/how-to-test-a-react-app-with-jest-and-react-testing-library)
 - [Blog: Testing Implementation Details by Kent C. Dodds](https://kentcdodds.com/blog/testing-implementation-details)
 - [Blog: Common mistakes with React Testing Library by Kent C. Dodds](https://kentcdodds.com/blog/common-mistakes-with-react-testing-library)
+- [Blog: Build a React Switch Toggle Component by James Dietrich](https://upmostly.com/tutorials/build-a-react-switch-toggle-component)
 - [Github: reduxjs/cra-template-redux-typescript](https://github.com/reduxjs/cra-template-redux-typescript)
 - [Github: cloud-city-crafted/react-typescript-webpack-template](https://github.com/cloud-city-crafted/react-typescript-webpack-template)
 - [Github: do-community/doggy-directory](https://github.com/do-community/doggy-directory)

@@ -2,13 +2,13 @@ import { range } from "lodash";
 import ArrowButton from "./ArrowButton";
 import PageButton from "./PageButton";
 
-type Prop = {
+interface Prop {
   id: string,
   pageNo: number;
   perPage: number;
   totalCount: number;
   onChangePageNo: (page: number) => void
-};
+}
 
 const Pagination: React.FC<Prop> = ({
   id,
@@ -78,14 +78,16 @@ const Pagination: React.FC<Prop> = ({
   };
 
   return (
-    <div className="mt-[2.5rem]
-                    mb-[1rem]
-                    flex
-                    h-[2.5rem]
-                    flex-row
-                    items-center
-                    justify-center
-                    max-[570px]:flex-col"
+    <div
+      className="
+        mt-[2.5rem]
+        mb-[1rem]
+        flex
+        h-[2.5rem]
+        flex-row
+        items-center
+        justify-center
+        max-[570px]:flex-col"
     >
       <ArrowButton
         text="Prev"
@@ -93,13 +95,15 @@ const Pagination: React.FC<Prop> = ({
         onClick={onClickLeftArrowButton}
         disabled={!hasPrev}
       />
-      <div className="mx-[2.8rem]
-                      flex
-                      h-[2.5rem]
-                      flex-row
-                      items-center
-                      justify-center
-                      gap-[0.1rem]"
+      <div
+        className="
+          mx-[2.8rem]
+          flex
+          h-[2.5rem]
+          flex-row
+          items-center
+          justify-center
+          gap-[0.1rem]"
       >
         {createPageNumbers().map((page: number) => (
           <PageButton

@@ -11,15 +11,16 @@ const BasketButton: FC = () => {
   return (
     <div
       className={
-       `hover:bg-custom-blue-200
-        relative
-        mr-4
-        inline-flex
-        h-full
-        min-w-[8rem]
-        items-center
-        justify-center
-        ${active ? "bg-custom-blue-200" : ""}`
+        `hover:bg-custom-blue-200
+         hover:dark:bg-custom-blue-300
+         relative
+         mr-4
+         inline-flex
+         h-full
+         w-[8rem]
+         items-center
+         justify-center
+         ${active ? "bg-custom-blue-200" : ""}`
       }
       onClick={() => {
         setActive(!active);
@@ -28,13 +29,18 @@ const BasketButton: FC = () => {
       role="button"
       tabIndex={0}
     >
-      <BasketIcon className="h-[1.5rem]
-                             w-[1.5rem]
-                             fill-white"
+      <BasketIcon
+        className="
+          h-[1.5rem]
+          w-[1.5rem]
+          fill-white
+          dark:fill-gray-300"
       />
-      <div className="mr-[0.5rem]
-                      pt-[0.19rem]
-                      text-white"
+      <div
+        className="
+          mr-[0.5rem]
+          pt-[0.19rem]
+          text-white"
       >
         <CurrencyView currency={totalPrice} gap={0.3} />
       </div>

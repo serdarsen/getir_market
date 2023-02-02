@@ -30,23 +30,33 @@ const TagView: React.FC = () => {
   };
 
   return (
-    <div className="flex
-                    h-[17rem]
-                    w-[18.5rem]
-                    flex-col
-                    gap-[0.75rem]"
+    <div
+      className="
+        flex
+        h-[17rem]
+        w-[18.5rem]
+        flex-col
+        gap-[0.75rem]"
     >
-      <p className="text-custom-gray-500
-                    text-start
-                    text-sm"
+      <p
+        className="
+          text-custom-gray-500
+          text-start
+          text-sm
+          dark:text-gray-400"
       >
         Tags
       </p>
       <Card>
-        <div className="h-[15.25rem]
-                        w-[18.5rem]"
+        <div
+          className="
+            h-[15.25rem]
+            w-[18.5rem]"
         >
-          <div className="p-[1.5rem]">
+          <div
+            className="
+              p-[1.5rem]"
+          >
             <Search
               id="tagViewSearchId"
               placeholder="Search tag"
@@ -54,16 +64,18 @@ const TagView: React.FC = () => {
               onSearch={onSearch}
             />
           </div>
-          <div className="scrollbar
-                          flex
-                          h-[8.8rem]
-                          w-[17rem]
-                          flex-col
-                          gap-[1.125rem]
-                          overflow-y-scroll
-                          px-[1.5rem]
-                          pt-[0.35rem]
-                          pb-[0.8125rem]"
+          <div
+            className="
+              scrollbar
+              flex
+              h-[8.8rem]
+              w-[17rem]
+              flex-col
+              gap-[1.125rem]
+              overflow-y-scroll
+              px-[1.5rem]
+              pt-[0.35rem]
+              pb-[0.8125rem]"
           >
             <Checkbox
               id="tagViewCheckboxIdAll"
@@ -72,8 +84,12 @@ const TagView: React.FC = () => {
               checked={tagFilter.includes("All")}
               onChange={() => onChangeCheckbox("All")}
             >
-              <p className="text-custom-black-600
-                            text-start text-sm"
+              <p
+                className="
+                  text-custom-black-600
+                  text-start
+                  text-sm
+                  dark:text-gray-400"
               >
                 All
               </p>
@@ -87,17 +103,23 @@ const TagView: React.FC = () => {
                   checked={
                     tagFilter.includes("All")
                     || tagFilter.includes(tag.name)
-                }
+                  }
                   onChange={() => onChangeCheckbox(tag.name)}
                 >
-                  <p className="text-custom-black-600
-                                text-start
-                                text-sm"
+                  <p
+                    className="
+                      text-custom-black-600
+                      text-start
+                      text-sm
+                      dark:text-gray-400"
                   >
                     {tag.name}
-                    <span className="text-custom-black-300
-                                     ml-1
-                                     text-sm"
+                    <span
+                      className="
+                        text-custom-black-300
+                        ml-1
+                        text-sm
+                        dark:text-gray-500"
                     >
                       (
                       {tag.count}

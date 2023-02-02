@@ -1,7 +1,6 @@
-
-type Prop = {
+interface Prop {
   className: string
-};
+}
 
 const MinusIcon: React.FC<Prop> = ({ className }: Prop) => (
   <svg

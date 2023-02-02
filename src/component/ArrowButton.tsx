@@ -1,11 +1,11 @@
 import { ArrowIcon } from "../icon";
 
-type Prop = {
+interface Prop {
   direction: "left" | "right";
   text: string;
   onClick: () => void,
   disabled: boolean
-};
+}
 
 const ArrowButton: React.FC<Prop> = ({
   direction, text, onClick, disabled,
@@ -23,16 +23,18 @@ const ArrowButton: React.FC<Prop> = ({
          items-center 
          justify-center
          gap-[0.75rem]
-         ${isLeft ? "flex-row" : "flex-row-reverse"}`
-       }
+         ${isLeft ? "flex-row" : "flex-row-reverse"}
+         group`
+      }
       onClick={onClick}
     >
       <ArrowIcon
         className={
-         `h-[0.9rem] 
-          w-[0.9rem]  
-          ${isLeft ? "rotate-180" : ""}
-          ${disabled ? "fill-custom-gray-500" : "fill-custom-blue-100"}`
+          `group-disabled:fill-custom-gray-500 
+           fill-custom-blue-100
+           h-[0.9rem]
+           w-[0.9rem]  
+           ${isLeft ? "rotate-180" : ""}`
         }
       />
       {text}

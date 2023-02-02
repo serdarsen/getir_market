@@ -34,7 +34,7 @@ const db = factory({
     added: () => parseFloat(faker.random.numeric()),
     brand: oneOf("brand"),
     itemType: () => faker.helpers.arrayElement(itemTypes),
-    imageUrl: () => "//www.colorbook.io/imagecreator.php?hex=C4C4C4&width=92&height=92&text=Item",
+    imageUrl: () => faker.image.cats(92, 92),
   },
 });
 

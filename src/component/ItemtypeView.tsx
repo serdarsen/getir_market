@@ -24,10 +24,12 @@ const ItemtypeView: React.FC = () => {
   };
 
   return (
-    <div className="mb-[1rem]
-                    inline-flex
-                    flex-wrap
-                    gap-[0.5rem]"
+    <div
+      className="
+        mb-[1rem]
+        inline-flex
+        flex-wrap
+        gap-[0.5rem]"
     >
       {itemtypes.map((itemtype: Countable) => (
         <Chip

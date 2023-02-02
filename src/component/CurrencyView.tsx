@@ -1,7 +1,7 @@
-type Prop = {
+interface Prop {
   currency: number
   gap: number
-};
+}
 
 const CurrencyView: React.FC<Prop> = ({ currency, gap }: Prop) => {
   const formattedCurrency = new Intl.NumberFormat("tr-TR", {
@@ -12,7 +12,13 @@ const CurrencyView: React.FC<Prop> = ({ currency, gap }: Prop) => {
   const [symbol, ...numerical] = formattedCurrency;
 
   return (
-    <div className="inline-flex" style={{ gap: `${gap}em` }}>
+    <div
+      className="
+        inline-flex
+        dark:text-gray-300
+    "
+      style={{ gap: `${gap}em` }}
+    >
       <p>{symbol}</p>
       <p>{numerical}</p>
     </div>

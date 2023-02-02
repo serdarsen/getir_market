@@ -6,10 +6,13 @@ import Main from "./Main";
 
 const App: React.FC = () => (
   <Provider store={store}>
-    <div className="text-custom-black-600
-                    bg-custom-gray-50
-                    flex
-                    flex-col"
+    <div
+      className="
+        text-custom-black-600
+        bg-custom-gray-50
+        dark:bg-custom-gray-800
+        flex
+        flex-col"
     >
       <Header />
       <Main />

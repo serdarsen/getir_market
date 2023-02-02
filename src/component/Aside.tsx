@@ -3,7 +3,10 @@ import OptionView from "./OptionView";
 
 const Aside: FC = () => (
   <aside>
-    <div className="max-[955px]:hidden">
+    <div
+      className="
+       max-[955px]:hidden"
+    >
       <OptionView />
     </div>
   </aside>

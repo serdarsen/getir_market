@@ -1,12 +1,12 @@
 import { ReactNode } from "react";
 
-type Prop = {
+interface Prop {
   id: string,
   name: string,
   children: ReactNode,
   checked: boolean,
   onChange: () => void
-};
+}
 
 const Chip: React.FC<Prop> = ({
   id, name, children, checked, onChange,
@@ -15,23 +15,33 @@ const Chip: React.FC<Prop> = ({
     <input
       id={id}
       name={name}
-      className="hidden"
+      className="
+        peer
+        hidden"
       type="checkbox"
       checked={checked}
       onChange={() => onChange()}
 
     />
-    <div className={`
-        flex 
+    <div
+      className="
+        peer-checked:bg-custom-blue-100
+        peer-checked:dark:bg-custom-blue-200
+        bg-custom-gray-100
+        flex
         cursor-pointer
         flex-col
-        items-center 
+        items-center
         rounded-sm
         py-[0.3rem]
         px-[1rem]
-        ${checked ? "bg-custom-blue-100" : "bg-custom-gray-100"}`}
+        dark:bg-gray-500"
     >
-      <div className={`${checked ? "text-white" : "text-custom-blue-100"}`}>
+      <div
+        className={checked
+          ? "text-white dark:text-gray-300"
+          : "text-custom-blue-100 dark:text-gray-300"}
+      >
         {children}
       </div>
     </div>

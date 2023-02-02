@@ -8,25 +8,30 @@ const OptionButton: React.FC = () => {
   return (
     <button
       type="button"
-      className="relative
-                 ml-4
-                 hidden
-                 max-[955px]:block"
+      className="
+        relative
+        ml-4
+        hidden
+        max-[955px]:block"
       onClick={() => {
         setActive(!active);
       }}
     >
       {active
         ? (
-          <CloseIcon className="h-6
-                                w-6
-                                stroke-white"
+          <CloseIcon
+            className="
+              h-6
+              w-6
+              stroke-white"
           />
         )
         : (
-          <MenuIcon className="h-6
-                               w-6
-                               stroke-white"
+          <MenuIcon
+            className="
+              h-6
+              w-6
+              stroke-white"
           />
         )}
       <SlidingView visible={active} />

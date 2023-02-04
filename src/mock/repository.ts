@@ -3,7 +3,7 @@ import {
   factory, manyOf, oneOf, primaryKey,
 } from "@mswjs/data";
 import type {
-  QuerySelectorWhere,
+  QuerySelectorWhere, SortDirection,
 } from "@mswjs/data/lib/query/queryTypes";
 import { range } from "lodash";
 import type { Countable, Pageable } from "../model";
@@ -87,7 +87,7 @@ export const findProductPageable = (
   tagFilter: string[],
   brandFilter: string[],
   itemtypeFilter: string[],
-  order: "asc" | "desc",
+  order: SortDirection,
   sort: string,
   pageNo: number,
   perPage: number,
@@ -113,7 +113,7 @@ export const findProductPageable = (
     skip: (pageNo - 1) * perPage,
     take: perPage,
     // orderBy: {
-    //  [sort]: order
+    //  [sort]: order,
     // },
   });
 

@@ -13,6 +13,7 @@ import Pagination from "./Pagination";
 import ProductItemView from "./ProductItemView";
 
 const ProductView: React.FC = () => {
+  const PER_PAGE = 16;
   const dispatch = useAppDispatch();
 
   const {
@@ -28,7 +29,7 @@ const ProductView: React.FC = () => {
   const {
     data: products = {
       pageNo: 1,
-      perPage: 15,
+      perPage: PER_PAGE,
       data: [],
       totalCount: 0,
     },
@@ -39,7 +40,7 @@ const ProductView: React.FC = () => {
     order: sortOption[0],
     sort: sortOption[1],
     pageNo,
-    perPage: 15,
+    perPage: PER_PAGE,
   });
 
   const onChangePageNo = (page: number):void => {

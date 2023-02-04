@@ -48,6 +48,11 @@ Getir Market is an implementation of my interview assignment given by Getir. Thi
 - [Redux](https://redux.js.org/introduction/why-rtk-is-redux-today): A Predictable State Container for JS Apps
     - [react-redux](https://react-redux.js.org/): Official React bindings for Redux
     - [@reduxjs/toolkit](https://redux-toolkit.js.org/): Official toolset for efficient Redux development
+- [Testing Library](https://github.com/testing-library):  The home for all testing-library projects
+    - [@testing-library/dom](https://github.com/testing-library/dom-testing-library#readme): Simple and complete DOM testing utilities that encourage good testing practices.
+    - [@testing-library/jest-dom](https://github.com/testing-library/jest-dom#readme): Custom jest matchers to test the state of the DOM
+    - [@testing-library/react](https://github.com/testing-library/react-testing-library#readme): Simple and complete React DOM testing utilities that encourage good testing practices.  
+    - [@testing-library/user-event](https://github.com/testing-library/user-event#readme): Fire events the same way the user does
 - [ESLint](https://eslint.org/): A pluggable linting utility for JavaScript, JSX, and TSX
     - [eslint](https://github.com/eslint/eslint): A tool for identifying and reporting on patterns found in ECMAScript/JavaScript code.
     - [eslint-config-airbnb](https://github.com/airbnb/javascript): Airbnb JavaScript style guide

@@ -34,7 +34,7 @@ const db = factory({
     name: faker.commerce.productName,
     description: faker.commerce.productDescription,
     slug: faker.lorem.slug,
-    added: () => faker.date.recent(),
+    added: faker.date.recent,
     brand: oneOf("brand"),
     itemType: () => faker.helpers.arrayElement(itemTypes),
     imageUrl: () => faker.image.cats(92, 92),

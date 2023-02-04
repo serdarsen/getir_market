@@ -50,8 +50,8 @@ Getir Market is an implementation of my interview assignment given by Getir. Thi
     - [@reduxjs/toolkit](https://redux-toolkit.js.org/): Official toolset for efficient Redux development
 - [Testing Library](https://github.com/testing-library):  The home for all testing-library projects
     - [@testing-library/dom](https://github.com/testing-library/dom-testing-library#readme): Simple and complete DOM testing utilities that encourage good testing practices.
-    - [@testing-library/jest-dom](https://github.com/testing-library/jest-dom#readme): Custom jest matchers to test the state of the DOM
-    - [@testing-library/react](https://github.com/testing-library/react-testing-library#readme): Simple and complete React DOM testing utilities that encourage good testing practices.  
+    - [@testing-library/jest-dom](https://github.com/testing-library/jest-dom#readme): Jest matchers (e.g. toHaveClass, toBeChecked) to test the state of the DOM
+    - [@testing-library/react](https://github.com/testing-library/react-testing-library#readme): React DOM testing utilities (e.g. .queryByText, .getByRole)  
     - [@testing-library/user-event](https://github.com/testing-library/user-event#readme): Fire events the same way the user does
 - [ESLint](https://eslint.org/): A pluggable linting utility for JavaScript, JSX, and TSX
     - [eslint](https://github.com/eslint/eslint): A tool for identifying and reporting on patterns found in ECMAScript/JavaScript code.
@@ -104,6 +104,7 @@ Getir Market is an implementation of my interview assignment given by Getir. Thi
 - [Blog: Testing Implementation Details by Kent C. Dodds](https://kentcdodds.com/blog/testing-implementation-details)
 - [Blog: Common mistakes with React Testing Library by Kent C. Dodds](https://kentcdodds.com/blog/common-mistakes-with-react-testing-library)
 - [Blog: Build a React Switch Toggle Component by James Dietrich](https://upmostly.com/tutorials/build-a-react-switch-toggle-component)
+- [Blog: How did I test my pagination component by Serdar ŞEN](https://serdarsen.hashnode.dev/how-did-i-test-my-pagination-component)
 - [Github: reduxjs/cra-template-redux-typescript](https://github.com/reduxjs/cra-template-redux-typescript)
 - [Github: cloud-city-crafted/react-typescript-webpack-template](https://github.com/cloud-city-crafted/react-typescript-webpack-template)
 - [Github: do-community/doggy-directory](https://github.com/do-community/doggy-directory)

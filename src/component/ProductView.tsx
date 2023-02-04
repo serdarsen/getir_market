@@ -28,7 +28,7 @@ const ProductView: React.FC = () => {
   const {
     data: products = {
       pageNo: 1,
-      perPage: 16,
+      perPage: 15,
       data: [],
       totalCount: 0,
     },
@@ -39,7 +39,7 @@ const ProductView: React.FC = () => {
     order: sortOption[0],
     sort: sortOption[1],
     pageNo,
-    perPage: 16,
+    perPage: 15,
   });
 
   const onChangePageNo = (page: number):void => {

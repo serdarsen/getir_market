@@ -2,6 +2,9 @@ import { faker } from "@faker-js/faker";
 import {
   factory, manyOf, oneOf, primaryKey,
 } from "@mswjs/data";
+import type {
+  QuerySelectorWhere,
+} from "@mswjs/data/lib/query/queryTypes";
 import { range } from "lodash";
 import type { Countable, Pageable } from "../model";
 
@@ -89,30 +92,36 @@ export const findProductPageable = (
   pageNo: number,
   perPage: number,
 ): Pageable<MockProduct> => {
-  const data = db.product.findMany({
-    where: {
-      tags: {
-        name: {
-          in: tagFilter?.length ? tagFilter : mockTagNames,
-        },
-      },
-      brand: {
-        name: {
-          in: brandFilter?.length ? brandFilter : mockBrandNames,
-        },
-      },
-      itemType: {
-        in: itemtypeFilter?.length ? itemtypeFilter : itemTypes,
+  const where: QuerySelectorWhere<MockProduct> = {
+    tags: {
+      name: {
+        in: tagFilter?.length ? tagFilter : mockTagNames,
       },
     },
-    take: perPage,
+    brand: {
+      name: {
+        in: brandFilter?.length ? brandFilter : mockBrandNames,
+      },
+    },
+    itemType: {
+      in: itemtypeFilter?.length ? itemtypeFilter : itemTypes,
+    },
+  };
+
+  const data = db.product.findMany({
+    where,
     skip: (pageNo - 1) * perPage,
+    take: perPage,
     // orderBy: {
-    //   [sort]: order,
+    //  [sort]: order
     // },
   });
 
-  const totalCount = db.product.count();
+  const totalCount = db.product.count(
+    {
+      where,
+    },
+  );
 
   return {
     pageNo,

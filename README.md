@@ -84,7 +84,6 @@ Getir Market is an implementation of my interview assignment given by Getir. Thi
 
 ## Further Development
 * The following topics can be considered for further development:
-    * Add the ability to sort products by the selected option.
     * Research differences between msw worker and msw server.
     * Research and fix the `"Some chunks are larger than 500 KiB after minification"` build warning.
     * Add ability to save basket items and filters to database.

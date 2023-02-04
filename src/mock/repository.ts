@@ -95,12 +95,14 @@ export const findProductPageable = (
   const where: QuerySelectorWhere<MockProduct> = {
     tags: {
       name: {
-        in: tagFilter?.length ? tagFilter : mockTagNames,
+        in: tagFilter?.includes("All") || !tagFilter?.length
+          ? mockTagNames : tagFilter,
       },
     },
     brand: {
       name: {
-        in: brandFilter?.length ? brandFilter : mockBrandNames,
+        in: brandFilter?.includes("All") || !brandFilter?.length
+          ? mockBrandNames : brandFilter,
       },
     },
     itemType: {

@@ -34,7 +34,7 @@ const db = factory({
     name: faker.commerce.productName,
     description: faker.commerce.productDescription,
     slug: faker.lorem.slug,
-    added: () => parseFloat(faker.random.numeric()),
+    added: () => faker.date.recent(),
     brand: oneOf("brand"),
     itemType: () => faker.helpers.arrayElement(itemTypes),
     imageUrl: () => faker.image.cats(92, 92),
@@ -112,9 +112,11 @@ export const findProductPageable = (
     where,
     skip: (pageNo - 1) * perPage,
     take: perPage,
-    // orderBy: {
-    //  [sort]: order,
-    // },
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    orderBy: {
+      [sort]: order,
+    },
   });
 
   const totalCount = db.product.count(
